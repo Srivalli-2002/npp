@@ -29,110 +29,111 @@ import com.project.npp.service.UserEntityService;
 @ExtendWith(MockitoExtension.class)
 public class SystemAdminControllerTest {
 
-    @InjectMocks
-    private SystemAdminController systemAdminController;
+	@InjectMocks
+	private SystemAdminController systemAdminController;
 
-    @Mock
-    private UserEntityService userService;
+	@Mock
+	private UserEntityService userService;
 
-    @Mock
-    private RoleService roleService;
+	@Mock
+	private RoleService roleService;
 
-    @Mock
-    private OperatorService operatorService;
+	@Mock
+	private OperatorService operatorService;
 
-    private OperatorRequest operatorRequest;
-    private Operator operator;
+	private OperatorRequest operatorRequest;
+	private Operator operator;
 
-    @BeforeEach
-    void setUp() {
-        operatorRequest = new OperatorRequest();
-        operatorRequest.setOperatorName("Test Operator");
-        operatorRequest.setContactInfo("test@example.com");
+	@BeforeEach
+	void setUp() {
+		operatorRequest = new OperatorRequest();
+		operatorRequest.setOperatorName("Test Operator");
+		operatorRequest.setContactInfo("test@example.com");
 
-        operator = new Operator();
-        operator.setOperatorId(1);
-        operator.setOperatorName("Test Operator");
-        operator.setContactInfo("test@example.com");
-    }
+		operator = new Operator();
+		operator.setOperatorId(1);
+		operator.setOperatorName("Test Operator");
+		operator.setContactInfo("test@example.com");
+	}
 
-    @Test
-    void testUpdateUserRole() throws RoleNotFoundException {
-        Role role = new Role();
-        role.setName(ERole.ROLE_SYSTEM_ADMIN);
-        when(roleService.findRoleByName(ERole.ROLE_SYSTEM_ADMIN)).thenReturn(Optional.of(role));
-        when(userService.updateRole(1, role)).thenReturn("Role updated successfully");
+	@Test
+	void testUpdateUserRole() throws RoleNotFoundException {
+		Role role = new Role();
+		role.setName(ERole.ROLE_SYSTEM_ADMIN);
+		when(roleService.findRoleByName(ERole.ROLE_SYSTEM_ADMIN)).thenReturn(Optional.of(role));
+		when(userService.updateRole(1, role)).thenReturn("Role updated successfully");
 
-        ResponseEntity<String> response = systemAdminController.updateUserRole(1, ERole.ROLE_SYSTEM_ADMIN);
+		ResponseEntity<String> response = systemAdminController.updateUserRole(1, ERole.ROLE_SYSTEM_ADMIN);
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Role updated successfully", response.getBody());
-    }
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals("Role updated successfully", response.getBody());
+	}
 
-    @Test
-    void testAddOperator() {
-        when(operatorService.addOperator(any(Operator.class))).thenReturn(operator);
+	@Test
+	void testAddOperator() {
+		when(operatorService.addOperator(any(Operator.class))).thenReturn(operator);
 
-        ResponseEntity<Operator> response = systemAdminController.addOperator(operatorRequest);
+		ResponseEntity<Operator> response = systemAdminController.addOperator(operatorRequest);
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(operator, response.getBody());
-    }
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(operator, response.getBody());
+	}
 
-    @Test
-    void testGetOperator() throws OperatorNotFoundException {
-        when(operatorService.getOperatorById(1)).thenReturn(operator);
+	@Test
+	void testGetOperator() throws OperatorNotFoundException {
+		when(operatorService.getOperatorById(1)).thenReturn(operator);
 
-        ResponseEntity<Operator> response = systemAdminController.getOperator(1);
+		ResponseEntity<Operator> response = systemAdminController.getOperator(1);
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(operator, response.getBody());
-    }
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(operator, response.getBody());
+	}
 
-    @Test
-    void testGetOperatorNotFound() throws OperatorNotFoundException {
-        when(operatorService.getOperatorById(1)).thenThrow(new OperatorNotFoundException("Ope=rator not found"));
+	@Test
+	void testGetOperatorNotFound() throws OperatorNotFoundException {
+		when(operatorService.getOperatorById(1)).thenThrow(new OperatorNotFoundException("Ope=rator not found"));
 
-        assertThrows(OperatorNotFoundException.class, () -> {
-            systemAdminController.getOperator(1);
-        });
-    }
+		assertThrows(OperatorNotFoundException.class, () -> {
+			systemAdminController.getOperator(1);
+		});
+	}
 
-    @Test
-    void testUpdateOperator() throws OperatorNotFoundException {
-        when(operatorService.updateOperator(any(Operator.class))).thenReturn(operator);
+	@Test
+	void testUpdateOperator() throws OperatorNotFoundException {
+		when(operatorService.updateOperator(any(Operator.class))).thenReturn(operator);
 
-        ResponseEntity<Operator> response = systemAdminController.updateOperator(operator);
+		ResponseEntity<Operator> response = systemAdminController.updateOperator(operator);
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals(operator, response.getBody());
-    }
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(operator, response.getBody());
+	}
 
-    @Test
-    void testUpdateOperatorNotFound() throws OperatorNotFoundException {
-        when(operatorService.updateOperator(any(Operator.class))).thenThrow(new OperatorNotFoundException("Operator not found"));
+	@Test
+	void testUpdateOperatorNotFound() throws OperatorNotFoundException {
+		when(operatorService.updateOperator(any(Operator.class)))
+				.thenThrow(new OperatorNotFoundException("Operator not found"));
 
-        assertThrows(OperatorNotFoundException.class, () -> {
-            systemAdminController.updateOperator(operator);
-        });
-    }
+		assertThrows(OperatorNotFoundException.class, () -> {
+			systemAdminController.updateOperator(operator);
+		});
+	}
 
-    @Test
-    void testDeleteOperator() throws OperatorNotFoundException {
-        when(operatorService.deleteOperator(1)).thenReturn("Operator deleted successfully");
+	@Test
+	void testDeleteOperator() throws OperatorNotFoundException {
+		when(operatorService.deleteOperator(1)).thenReturn("Operator deleted successfully");
 
-        ResponseEntity<String> response = systemAdminController.deleteOperator(1);
+		ResponseEntity<String> response = systemAdminController.deleteOperator(1);
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("Operator deleted successfully", response.getBody());
-    }
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals("Operator deleted successfully", response.getBody());
+	}
 
-    @Test
-    void testDeleteOperatorNotFound() throws OperatorNotFoundException {
-        when(operatorService.deleteOperator(1)).thenThrow(new OperatorNotFoundException("Operator not found"));
+	@Test
+	void testDeleteOperatorNotFound() throws OperatorNotFoundException {
+		when(operatorService.deleteOperator(1)).thenThrow(new OperatorNotFoundException("Operator not found"));
 
-        assertThrows(OperatorNotFoundException.class, () -> {
-            systemAdminController.deleteOperator(1);
-        });
-    }
+		assertThrows(OperatorNotFoundException.class, () -> {
+			systemAdminController.deleteOperator(1);
+		});
+	}
 }

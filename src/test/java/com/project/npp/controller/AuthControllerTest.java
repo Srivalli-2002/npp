@@ -33,83 +33,85 @@ import com.project.npp.service.UserEntityService;
 
 class AuthControllerTest {
 
-    private AuthController authController;
+	private AuthController authController;
 
-    private AuthenticationManager authenticationManager;
-    private JwtUtils jwtUtils;
-    private UserDetailsServiceImpl userDetailsService;
-    private UserEntityService userService;
-    private RoleService roleService;
-    private PasswordEncoder passwordEncoder;
-    private OperatorService operatorService;
+	private AuthenticationManager authenticationManager;
+	private JwtUtils jwtUtils;
+	private UserDetailsServiceImpl userDetailsService;
+	private UserEntityService userService;
+	private RoleService roleService;
+	private PasswordEncoder passwordEncoder;
+	private OperatorService operatorService;
 
-    @BeforeEach
-    void setUp() {
-        authenticationManager = mock(AuthenticationManager.class);
-        jwtUtils = mock(JwtUtils.class);
-        userDetailsService = mock(UserDetailsServiceImpl.class);
-        userService = mock(UserEntityService.class);
-        roleService = mock(RoleService.class);
-        passwordEncoder = mock(PasswordEncoder.class);
-        operatorService = mock(OperatorService.class);
+	@BeforeEach
+	void setUp() {
+		authenticationManager = mock(AuthenticationManager.class);
+		jwtUtils = mock(JwtUtils.class);
+		userDetailsService = mock(UserDetailsServiceImpl.class);
+		userService = mock(UserEntityService.class);
+		roleService = mock(RoleService.class);
+		passwordEncoder = mock(PasswordEncoder.class);
+		operatorService = mock(OperatorService.class);
 
-        authController = new AuthController();
-        authController.authenticationManager = authenticationManager;
-        authController.jwtUtils = jwtUtils;
-        authController.userDetailsService = userDetailsService;
-        authController.userService = userService;
-        authController.roleService = roleService;
-        authController.passwordEncoder = passwordEncoder;
-        authController.operatorService = operatorService;
-    }
+		authController = new AuthController();
+		authController.authenticationManager = authenticationManager;
+		authController.jwtUtils = jwtUtils;
+		authController.userDetailsService = userDetailsService;
+		authController.userService = userService;
+		authController.roleService = roleService;
+		authController.passwordEncoder = passwordEncoder;
+		authController.operatorService = operatorService;
+	}
 
-    @Test
-    void testAuthenticateUser() {
-        // Mocking
-        Authentication authentication = mock(Authentication.class);
-        UserDetailsImpl userDetails = new UserDetailsImpl(1, "test_user", "password", mock(GrantedAuthority.class), new Operator());
-        when(authentication.getPrincipal()).thenReturn(userDetails);
-        when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class))).thenReturn(authentication);
-        when(jwtUtils.generateJwtToken(authentication)).thenReturn("test_token");
+	@Test
+	void testAuthenticateUser() {
+		// Mocking
+		Authentication authentication = mock(Authentication.class);
+		UserDetailsImpl userDetails = new UserDetailsImpl(1, "test_user", "password", mock(GrantedAuthority.class),
+				new Operator());
+		when(authentication.getPrincipal()).thenReturn(userDetails);
+		when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
+				.thenReturn(authentication);
+		when(jwtUtils.generateJwtToken(authentication)).thenReturn("test_token");
 
-        // Test
-        LoginRequest loginRequest = new LoginRequest("test_user", "password");
-        ResponseEntity<JwtResponse> response = authController.authenticateUser(loginRequest);
+		// Test
+		LoginRequest loginRequest = new LoginRequest("test_user", "password");
+		ResponseEntity<JwtResponse> response = authController.authenticateUser(loginRequest);
 
-        // Assertion
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("test_token", response.getBody().getAccessToken());
-        assertEquals(1, response.getBody().getId());
-        assertEquals("test_user", response.getBody().getUsername());
-    }
+		// Assertion
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals("test_token", response.getBody().getAccessToken());
+		assertEquals(1, response.getBody().getId());
+		assertEquals("test_user", response.getBody().getUsername());
+	}
 
-    @Test
-    void testRegisterUser() throws OperatorNotFoundException, RoleNotFoundException {
-        // Mocking
-        SignupRequest signupRequest = new SignupRequest("new_user", "password", 1);
-        Role role = new Role();
-        role.setId(4);
-        when(userService.existsByUsername("new_user")).thenReturn(false);
-        when(roleService.findRoleByName(ERole.ROLE_USER)).thenReturn(java.util.Optional.of(role));
-        when(operatorService.getOperatorById(1)).thenReturn(new Operator());
+	@Test
+	void testRegisterUser() throws OperatorNotFoundException, RoleNotFoundException {
+		// Mocking
+		SignupRequest signupRequest = new SignupRequest("new_user", "password", 1);
+		Role role = new Role();
+		role.setId(4);
+		when(userService.existsByUsername("new_user")).thenReturn(false);
+		when(roleService.findRoleByName(ERole.ROLE_USER)).thenReturn(java.util.Optional.of(role));
+		when(operatorService.getOperatorById(1)).thenReturn(new Operator());
 
-        // Test
-        ResponseEntity<MessageResponse> response = authController.registerUser(signupRequest);
+		// Test
+		ResponseEntity<MessageResponse> response = authController.registerUser(signupRequest);
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("User registered successfully!", response.getBody().getMessage());
-    }
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals("User registered successfully!", response.getBody().getMessage());
+	}
 
-    @Test
-    void testRegisterUserExistingUsername() throws OperatorNotFoundException, RoleNotFoundException {
-        // Mocking
-        SignupRequest signupRequest = new SignupRequest("existing_user", "password", 1);
-        when(userService.existsByUsername("existing_user")).thenReturn(true);
+	@Test
+	void testRegisterUserExistingUsername() throws OperatorNotFoundException, RoleNotFoundException {
+		// Mocking
+		SignupRequest signupRequest = new SignupRequest("existing_user", "password", 1);
+		when(userService.existsByUsername("existing_user")).thenReturn(true);
 
-        // Test
-        ResponseEntity<MessageResponse> response = authController.registerUser(signupRequest);
+		// Test
+		ResponseEntity<MessageResponse> response = authController.registerUser(signupRequest);
 
-        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-        assertEquals("Error: Username is already taken!", response.getBody().getMessage());
-    }
+		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+		assertEquals("Error: Username is already taken!", response.getBody().getMessage());
+	}
 }
