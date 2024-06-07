@@ -23,7 +23,7 @@ public interface UserEntityService {
 
 	// Find by role
 	public Optional<UserEntity> findByRole(ERole role);
-	
+
 	// Get all users
 	public List<UserEntity> getAllUserEntities();
 }

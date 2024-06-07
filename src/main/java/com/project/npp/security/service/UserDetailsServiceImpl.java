@@ -10,8 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.project.npp.entities.UserEntity;
 import com.project.npp.service.UserEntityService;
 
-
-
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
@@ -25,6 +23,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		return UserDetailsImpl.build(user);
 	}
-
 
 }

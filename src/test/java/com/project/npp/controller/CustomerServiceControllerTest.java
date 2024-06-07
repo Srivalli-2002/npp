@@ -2,10 +2,16 @@ package com.project.npp.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -278,5 +284,59 @@ public class CustomerServiceControllerTest {
 		assertThrows(PortRequestNotFoundException.class, () -> {
 			customerServiceController.deletePortRequest(1);
 		});
+	}
+
+	@Test
+	void testGetAllCustomerSuccess() throws CustomerNotFoundException {
+		List<Customer> mockCustomers = new ArrayList<>();
+		mockCustomers.add(customer);
+
+		when(customerService.getAllCustomers()).thenReturn(mockCustomers);
+
+		ResponseEntity<List<Customer>> response = customerServiceController.getAllCustomer();
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(mockCustomers, response.getBody());
+		verify(customerService, times(1)).getAllCustomers();
+	}
+
+	@Test
+	void testGetAllCustomerEmptyList() throws CustomerNotFoundException {
+		List<Customer> mockCustomers = Collections.emptyList();
+
+		when(customerService.getAllCustomers()).thenReturn(mockCustomers);
+
+		ResponseEntity<List<Customer>> response = customerServiceController.getAllCustomer();
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertTrue(response.getBody().isEmpty());
+		verify(customerService, times(1)).getAllCustomers();
+	}
+
+	@Test
+	void testGetAllPortRequestsSuccess() throws PortRequestNotFoundException {
+		List<PortRequest> mockPortRequests = new ArrayList<>();
+		mockPortRequests.add(portRequest);
+
+		when(portRequestService.getAllPortRequest()).thenReturn(mockPortRequests);
+
+		ResponseEntity<List<PortRequest>> response = customerServiceController.getAllPortRequests();
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(mockPortRequests, response.getBody());
+		verify(portRequestService, times(1)).getAllPortRequest();
+	}
+
+	@Test
+	void testGetAllPortRequestsEmptyList() throws PortRequestNotFoundException {
+		List<PortRequest> mockPortRequests = Collections.emptyList();
+
+		when(portRequestService.getAllPortRequest()).thenReturn(mockPortRequests);
+
+		ResponseEntity<List<PortRequest>> response = customerServiceController.getAllPortRequests();
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertTrue(response.getBody().isEmpty());
+		verify(portRequestService, times(1)).getAllPortRequest();
 	}
 }

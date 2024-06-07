@@ -15,12 +15,12 @@ import com.project.npp.repositories.OperatorRepository;
 
 @Service
 public class OperatorServiceImpl implements OperatorService {
-	
+
 	private static Logger loggers = LogManager.getLogger(OperatorServiceImpl.class);
 
 	@Autowired
 	private OperatorRepository repo;
-	
+
 	// Method to add a new operator
 	@Override
 	public Operator addOperator(Operator operator) {
@@ -32,57 +32,49 @@ public class OperatorServiceImpl implements OperatorService {
 	@Override
 	public Operator getOperatorById(Integer id) throws OperatorNotFoundException {
 		Optional<Operator> operator = repo.findById(id);
-		if (operator.isPresent())
-		{
+		if (operator.isPresent()) {
 			loggers.info(QueryMapper.GET_OPERATOR);
 			return operator.get();
-		}
-		else  
+		} else
 			loggers.error(QueryMapper.CANNOT_GET_OPERATOR);
-			throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
+		throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
 	}
 
 	// Method to update an existing operator
 	@Override
 	public Operator updateOperator(Operator operator) throws OperatorNotFoundException {
 		Optional<Operator> op = repo.findById(operator.getOperatorId());
-		if (op.isPresent()) 
-		{
+		if (op.isPresent()) {
 			loggers.info(QueryMapper.UPDATE_CUSTOMER);
 			return repo.save(operator);
-		}
-		else 
+		} else
 			loggers.error(QueryMapper.CANNOT_UPDATE_CUSTOMER);
-			throw new OperatorNotFoundException(QueryMapper.CANNOT_UPDATE_OPERATOR);
+		throw new OperatorNotFoundException(QueryMapper.CANNOT_UPDATE_OPERATOR);
 	}
 
 	// Method to delete an operator by ID
 	@Override
-	public String deleteOperator(Integer id) throws OperatorNotFoundException{
-		 Optional<Operator> operator= repo.findById(id);
-		 if(operator.isPresent())
-		 {
-			 repo.deleteById(id);
-			 loggers.info(QueryMapper.DELETE_CUSTOMER);
-			 return "Deleted Successfully!!";
-		 }
-		 else 
-			 loggers.error(QueryMapper.CANNOT_DELETE_CUSTOMER);
-			 throw new OperatorNotFoundException(QueryMapper.CANNOT_DELETE_OPERATOR);
+	public String deleteOperator(Integer id) throws OperatorNotFoundException {
+		Optional<Operator> operator = repo.findById(id);
+		if (operator.isPresent()) {
+			repo.deleteById(id);
+			loggers.info(QueryMapper.DELETE_CUSTOMER);
+			return "Deleted Successfully!!";
+		} else
+			loggers.error(QueryMapper.CANNOT_DELETE_CUSTOMER);
+		throw new OperatorNotFoundException(QueryMapper.CANNOT_DELETE_OPERATOR);
 	}
 
 	// Method to get all operators
 	@Override
 	public List<Operator> getAllOperators() throws OperatorNotFoundException {
-		List<Operator> allOperators= (List<Operator>) repo.findAll();
-		if(!allOperators.isEmpty())
-		{
+		List<Operator> allOperators = (List<Operator>) repo.findAll();
+		if (!allOperators.isEmpty()) {
 			loggers.info(QueryMapper.GET_OPERATOR);
 			return allOperators;
-		}
-		else 
+		} else
 			loggers.error(QueryMapper.CANNOT_GET_OPERATOR);
-			throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
+		throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
 	}
 
 }

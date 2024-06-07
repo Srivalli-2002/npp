@@ -14,6 +14,7 @@ import lombok.ToString.Exclude;
 @Setter
 @ToString
 public class JwtResponse {
+	
 	private String accessToken;
 	private String tokenType = "Bearer";
 	private Integer id;

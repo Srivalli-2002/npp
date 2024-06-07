@@ -41,10 +41,10 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class AuthController {
-	
+
 	private static Logger loggers = LogManager.getLogger(AuthController.class);
 
-	@Autowired 
+	@Autowired
 	AuthenticationManager authenticationManager;
 
 	@Autowired
@@ -68,7 +68,7 @@ public class AuthController {
 	// API end point for user authentication
 	@PostMapping("/signin")
 	public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-		
+
 		loggers.info("signin");
 
 		// Authenticate user credentials
@@ -91,8 +91,9 @@ public class AuthController {
 
 	// API end point for user registration
 	@PostMapping("/signup")
-	public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signUpRequest) throws OperatorNotFoundException, RoleNotFoundException {
-		
+	public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signUpRequest)
+			throws OperatorNotFoundException, RoleNotFoundException {
+
 		loggers.info("signin");
 		if (userService.existsByUsername(signUpRequest.getUsername())) {
 			loggers.error(QueryMapper.USERNAME_TAKEN);
@@ -103,22 +104,21 @@ public class AuthController {
 		UserEntity user = new UserEntity();
 		user.setUsername(signUpRequest.getUsername());
 		user.setPasswordHash(passwordEncoder.encode(signUpRequest.getPassword()));
-		
+
 		// Find user role by name and assign it
 		Optional<Role> role = Optional.of(roleService.findRoleByName(ERole.ROLE_USER).get());
 		if (role.isPresent()) {
 			user.setRole(role.get());
 		}
-		
+
 		// Find operator by ID and assign it to the user
 		Operator operator = operatorService.getOperatorById(signUpRequest.getOperatorId());
 		user.setOperator(operator);
-		
+
 		// Save the user entity
 		userService.addUserEntity(user);
 		loggers.info(QueryMapper.USERNAME_REGISTERED);
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
 	}
-	
-	
+
 }

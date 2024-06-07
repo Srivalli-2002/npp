@@ -15,24 +15,24 @@ import com.project.npp.repositories.RoleRepository;
 
 @Service
 public class RoleServiceImpl implements RoleService {
-	
+
 	private static Logger loggers = LogManager.getLogger(RoleServiceImpl.class);
 
 	@Autowired
 	private RoleRepository repo;
-	
+
 	// Method to find a role by its name
 	@Override
-	public Optional<Role> findRoleByName(ERole role) throws RoleNotFoundException{
-		Optional<Role> r= repo.findByName(role);
+	public Optional<Role> findRoleByName(ERole role) throws RoleNotFoundException {
+		Optional<Role> r = repo.findByName(role);
 		loggers.info(QueryMapper.ROLE_FOUND_BY_NAME);
 		return r;
 	}
-	
+
 	// Method to find a role by its ID
 	@Override
-	public Optional<Role> findRoleById(Integer id) throws RoleNotFoundException{
-		Optional<Role> role= repo.findById(id);
+	public Optional<Role> findRoleById(Integer id) throws RoleNotFoundException {
+		Optional<Role> role = repo.findById(id);
 		loggers.info(QueryMapper.ROLE_FOUND);
 		return role;
 	}

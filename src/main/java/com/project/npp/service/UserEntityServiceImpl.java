@@ -70,8 +70,8 @@ public class UserEntityServiceImpl implements UserEntityService {
 
 	// Method to get the list of users
 	@Override
-	public List<UserEntity> getAllUserEntities()  {
-		List<UserEntity> allUsers= (List<UserEntity>) repo.findAll();
+	public List<UserEntity> getAllUserEntities() {
+		List<UserEntity> allUsers = (List<UserEntity>) repo.findAll();
 		loggers.info(QueryMapper.ROLE_FOUND);
 		return allUsers;
 	}

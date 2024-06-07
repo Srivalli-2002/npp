@@ -3,8 +3,13 @@ package com.project.npp.controller;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -19,6 +24,7 @@ import org.springframework.http.ResponseEntity;
 import com.project.npp.entities.ERole;
 import com.project.npp.entities.Operator;
 import com.project.npp.entities.Role;
+import com.project.npp.entities.UserEntity;
 import com.project.npp.entities.request.OperatorRequest;
 import com.project.npp.exceptions.OperatorNotFoundException;
 import com.project.npp.exceptions.RoleNotFoundException;
@@ -135,5 +141,71 @@ public class SystemAdminControllerTest {
 		assertThrows(OperatorNotFoundException.class, () -> {
 			systemAdminController.deleteOperator(1);
 		});
+	}
+
+	@Test
+	void testGetAllOperatorsSuccess() throws OperatorNotFoundException {
+		List<Operator> mockOperators = new ArrayList<>();
+		mockOperators.add(new Operator());
+
+		when(operatorService.getAllOperators()).thenReturn(mockOperators);
+
+		ResponseEntity<List<Operator>> response = systemAdminController.getAllOperators();
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(mockOperators, response.getBody());
+		verify(operatorService, times(1)).getAllOperators();
+	}
+
+	@Test
+	void testGetAllOperatorsEmptyList() throws OperatorNotFoundException {
+		List<Operator> mockOperators = Collections.emptyList();
+
+		when(operatorService.getAllOperators()).thenReturn(mockOperators);
+
+		ResponseEntity<List<Operator>> response = systemAdminController.getAllOperators();
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(mockOperators, response.getBody());
+		verify(operatorService, times(1)).getAllOperators();
+	}
+
+	@Test
+	void testGetAllOperatorsNotFound() throws OperatorNotFoundException {
+		List<Operator> mockOperators = Collections.emptyList();
+
+		when(operatorService.getAllOperators()).thenThrow(new OperatorNotFoundException("Operators not found"));
+
+		assertThrows(OperatorNotFoundException.class, () -> {
+			systemAdminController.getAllOperators();
+		});
+		verify(operatorService, times(1)).getAllOperators();
+	}
+
+	@Test
+	void testGetAllUserEntitiesSuccess() {
+		List<UserEntity> mockUsers = new ArrayList<>();
+		mockUsers.add(new UserEntity());
+
+		when(userService.getAllUserEntities()).thenReturn(mockUsers);
+
+		ResponseEntity<List<UserEntity>> response = systemAdminController.getAllUserEntities();
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(mockUsers, response.getBody());
+		verify(userService, times(1)).getAllUserEntities();
+	}
+
+	@Test
+	void testGetAllUserEntitiesEmptyList() {
+		List<UserEntity> mockUsers = Collections.emptyList();
+
+		when(userService.getAllUserEntities()).thenReturn(mockUsers);
+
+		ResponseEntity<List<UserEntity>> response = systemAdminController.getAllUserEntities();
+
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertEquals(mockUsers, response.getBody());
+		verify(userService, times(1)).getAllUserEntities();
 	}
 }

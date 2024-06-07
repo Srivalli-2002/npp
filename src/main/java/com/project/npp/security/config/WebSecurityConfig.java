@@ -14,21 +14,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-//
-//import com.project.npp.security.jwt.AuthEntryPointJwt;
 import com.project.npp.security.jwt.AuthTokenFilter;
 import com.project.npp.security.service.UserDetailsServiceImpl;
-
-
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
-
-//	@Autowired
-//	private AuthEntryPointJwt unauthorizedHandler;
 
 	@Bean
 	public AuthTokenFilter authenticationJwtTokenFilter() {
@@ -54,26 +47,25 @@ public class WebSecurityConfig {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
-	public final static String[] PUBLIC_REQUEST_MATCHERS = { "/api/test/all", "/api/auth/**", "/api-docs/**", "/swagger-ui/**","/v3/api-docs/**" };
-	
-		@Bean
-		public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-			//http.cors(AbstractHttpConfigurer::disable)
-			http.csrf(AbstractHttpConfigurer::disable)
-					.authorizeHttpRequests(req -> req.requestMatchers(PUBLIC_REQUEST_MATCHERS).permitAll()
-							//.requestMatchers("/api/test/systemadmin").hasRole("SYSTEM_ADMIN")
-							//.requestMatchers("/api/test/compliance").hasRole("COMPLIANCE_OFFICER")
-							//.requestMatchers("/api/test/customerservice").hasRole("CUSTOMER_SERVICE")
-							.requestMatchers("/api/admin/**").hasRole("SYSTEM_ADMIN")
-							.requestMatchers("/api/customerservice/**").hasRole("CUSTOMER_SERVICE")
-							.requestMatchers("/api/complianceofficer/**").hasRole("COMPLIANCE_OFFICER"))
-					.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-					.authenticationProvider(authenticationProvider())
-					.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-			return http.build();
-		}
-	
+
+	public final static String[] PUBLIC_REQUEST_MATCHERS = { "/api/test/all", "/api/auth/**", "/api-docs/**",
+			"/swagger-ui/**", "/v3/api-docs/**" };
+
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		// http.cors(AbstractHttpConfigurer::disable)
+		http.csrf(AbstractHttpConfigurer::disable)
+				.authorizeHttpRequests(req -> req.requestMatchers(PUBLIC_REQUEST_MATCHERS).permitAll()
+						.requestMatchers("/api/test/systemadmin").hasRole("SYSTEM_ADMIN")
+						.requestMatchers("/api/test/compliance").hasRole("COMPLIANCE_OFFICER")
+						.requestMatchers("/api/test/customerservice").hasRole("CUSTOMER_SERVICE")
+						.requestMatchers("/api/admin/**").hasRole("SYSTEM_ADMIN")
+						.requestMatchers("/api/customerservice/**").hasRole("CUSTOMER_SERVICE")
+						.requestMatchers("/api/complianceofficer/**").hasRole("COMPLIANCE_OFFICER"))
+				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.authenticationProvider(authenticationProvider())
+				.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+		return http.build();
+	}
 
 }
-

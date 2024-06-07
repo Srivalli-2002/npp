@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,8 +30,9 @@ import com.project.npp.service.UserEntityService;
 
 @RestController
 @RequestMapping("/api/admin")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class SystemAdminController {
-	
+
 	private static Logger loggers = LogManager.getLogger(SystemAdminController.class);
 
 	@Autowired
@@ -44,12 +46,13 @@ public class SystemAdminController {
 
 	// API end point to update user role
 	@PostMapping("/updateuserrole")
-	public ResponseEntity<String> updateUserRole(@RequestParam("id") Integer userId, @RequestParam("role") ERole role) throws RoleNotFoundException {
+	public ResponseEntity<String> updateUserRole(@RequestParam("id") Integer userId, @RequestParam("role") ERole role)
+			throws RoleNotFoundException {
 		loggers.info("Update user role");
-		
+
 		// Find the role by name
 		Optional<Role> r = roleService.findRoleByName(role);
-		
+
 		// Update the user role
 		String message = userService.updateRole(userId, r.get());
 		loggers.info(QueryMapper.ROLE_UPDATE_SUCCESSFULL);
@@ -60,12 +63,12 @@ public class SystemAdminController {
 	@PostMapping("/addoperator")
 	public ResponseEntity<Operator> addOperator(@RequestBody OperatorRequest operatorRequest) {
 		loggers.info("Add operator");
-		
+
 		// Create a new Operator object and populate it with the request data
 		Operator operator = new Operator();
 		operator.setOperatorName(operatorRequest.getOperatorName());
 		operator.setContactInfo(operatorRequest.getContactInfo());
-		
+
 		// Add the operator and retrieve the persisted object
 		Operator op = operatorService.addOperator(operator);
 		loggers.info(QueryMapper.ADD_OPERATOR_SUCCESSFULL);
@@ -74,53 +77,53 @@ public class SystemAdminController {
 
 	// API end point to retrieve an operator by its ID
 	@PostMapping("/getoperator")
-	public ResponseEntity<Operator> getOperator(@RequestParam("operatorId") Integer operatorId) throws OperatorNotFoundException {
+	public ResponseEntity<Operator> getOperator(@RequestParam("operatorId") Integer operatorId)
+			throws OperatorNotFoundException {
 		loggers.info("Get operator");
-		
+
 		// Retrieve the operator by its ID
 		Operator operator = operatorService.getOperatorById(operatorId);
 		loggers.info(QueryMapper.GET_OPERATOR_SUCCESSFULL);
 		return new ResponseEntity<Operator>(operator, HttpStatus.OK);
 	}
-	
+
 	// API end point to update an operator
 	@PostMapping("/updateoperator")
 	public ResponseEntity<Operator> updateOperator(@RequestBody Operator operator) throws OperatorNotFoundException {
 		loggers.info("Update operator");
-		
+
 		// Update the operator and retrieve the updated object
 		Operator op = operatorService.updateOperator(operator);
 		loggers.info(QueryMapper.UPDATE_OPERATOR_SUCCESSFULL);
 		return new ResponseEntity<Operator>(op, HttpStatus.OK);
 	}
-	
+
 	// API end point to delete an operator by its ID
 	@PostMapping("/deleteoperator")
-	public ResponseEntity<String> deleteOperator(@RequestParam("operatorId") Integer operatorId) throws OperatorNotFoundException {
+	public ResponseEntity<String> deleteOperator(@RequestParam("operatorId") Integer operatorId)
+			throws OperatorNotFoundException {
 		loggers.info("Delete operator");
-		
+
 		// Delete the operator and retrieve the deletion message
 		String message = operatorService.deleteOperator(operatorId);
 		loggers.info(QueryMapper.DELETE_OPERATOR_SUCCESSFULL);
 		return new ResponseEntity<String>(message, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/getAllOperators")
 	public ResponseEntity<List<Operator>> getAllOperators() throws OperatorNotFoundException {
 		loggers.info("Get all Operators");
-		List<Operator> allOperators= operatorService.getAllOperators();
+		List<Operator> allOperators = operatorService.getAllOperators();
 		loggers.info(QueryMapper.GET_OPERATOR);
 		return new ResponseEntity<>(allOperators, HttpStatus.OK);
 	}
-	
-	
+
 	@GetMapping("/getAllUsers")
 	public ResponseEntity<List<UserEntity>> getAllUserEntities() {
 		loggers.info("Get all Users");
-		List<UserEntity> allUsers= userService.getAllUserEntities() ;
+		List<UserEntity> allUsers = userService.getAllUserEntities();
 		loggers.info(QueryMapper.GET_USER);
 		return new ResponseEntity<List<UserEntity>>(allUsers, HttpStatus.OK);
 	}
-	
 
 }
