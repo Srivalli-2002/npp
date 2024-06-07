@@ -1,10 +1,14 @@
 package com.project.npp.controller;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +32,7 @@ import com.project.npp.service.PortRequestService;
 
 @RestController
 @RequestMapping("/api/customerservice")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class CustomerServiceController {
 	
 	private static Logger loggers = LogManager.getLogger(CustomerServiceController.class);
@@ -115,6 +120,19 @@ public class CustomerServiceController {
 		return new ResponseEntity<String>(message,HttpStatus.OK);
 	}
 	
+	// API end point to get all customers
+	@GetMapping("/getallcustomers")
+	public ResponseEntity<List<Customer>> getAllCustomer() throws CustomerNotFoundException
+	{
+		loggers.info("Get all customers");
+		List<Customer> customers= customerService.getAllCustomers();
+		
+		loggers.info(QueryMapper.GET_CUSTOMER);
+		return new ResponseEntity<List<Customer>>(customers,HttpStatus.OK);
+	}
+	
+	
+	
 	// API end point to submit a port request
 	@PostMapping("/submitportrequest")
 	public ResponseEntity<PortRequest> submitPortRequest(@RequestBody UserPortRequest userPortRequest) throws CustomerNotFoundException
@@ -181,6 +199,17 @@ public class CustomerServiceController {
 		
 		// Return the deletion message in the response
 		return new ResponseEntity<String>(message,HttpStatus.OK);
+	}
+	
+	// API end point to get all port requests
+	@GetMapping("/getallportrequests")
+	public ResponseEntity<List<PortRequest>> getAllPortRequests() throws PortRequestNotFoundException
+	{
+		// Get all the port requests and retrieve the list of port requests
+		List<PortRequest> portRequests=portRequestService.getAllPortRequest();
+		loggers.info(QueryMapper.GET_PORTREQUEST_SUCCESSFULL);
+		// Return all the port requests in the response
+		return new ResponseEntity<>(portRequests,HttpStatus.OK);
 	}
 
 }

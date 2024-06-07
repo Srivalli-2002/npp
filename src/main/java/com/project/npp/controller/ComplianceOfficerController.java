@@ -1,11 +1,14 @@
 package com.project.npp.controller;
 
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -96,6 +99,19 @@ public class ComplianceOfficerController {
 		
 		// Return the updated compliance log in the response
 		return new ResponseEntity<ComplianceLogs>(complianceLog,HttpStatus.OK);
+	}
+	
+	// API end point to get all compliance logs
+	@GetMapping("/getalllogs")
+	public ResponseEntity<List<ComplianceLogs>> getAllComplianceLogs() throws LogNotFoundException{
+		
+		//Retrive list of compliance logs 
+		List<ComplianceLogs> complianceLogs= complianceLogsService.getAllComplianceLogs();
+		loggers.info(QueryMapper.GET_LOG_SUCCESSFULL);
+		
+		//Return the list of compliance logs in the response
+		return new ResponseEntity<List<ComplianceLogs>>(complianceLogs,HttpStatus.OK);
+		
 	}
 		
 }

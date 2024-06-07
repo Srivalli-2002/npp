@@ -1,6 +1,7 @@
 package com.project.npp.service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -103,6 +104,19 @@ public class PortRequestServiceImpl implements PortRequestService {
 		else
 			loggers.error(QueryMapper.CANNOT_DELETE_PORTREQUEST);
 			throw new  PortRequestNotFoundException(QueryMapper.CANNOT_DELETE_PORTREQUEST);
+	}
+
+	// Method to get all port requests
+	@Override
+	public List<PortRequest> getAllPortRequest() throws PortRequestNotFoundException {
+		List<PortRequest> portRequests= (List<PortRequest>) repo.findAll();
+		if(!portRequests.isEmpty()){
+			loggers.info(QueryMapper.GET_PORTREQUEST);
+			return portRequests;
+		}
+		else 
+			loggers.error(QueryMapper.CANNOT_GET_PORTREQUEST);
+			throw new PortRequestNotFoundException(QueryMapper.GET_PORTREQUEST);
 	}
 
 }

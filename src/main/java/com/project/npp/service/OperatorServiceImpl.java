@@ -1,5 +1,6 @@
 package com.project.npp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -68,6 +69,20 @@ public class OperatorServiceImpl implements OperatorService {
 		 else 
 			 loggers.error(QueryMapper.CANNOT_DELETE_CUSTOMER);
 			 throw new OperatorNotFoundException(QueryMapper.CANNOT_DELETE_OPERATOR);
+	}
+
+	// Method to get all operators
+	@Override
+	public List<Operator> getAllOperators() throws OperatorNotFoundException {
+		List<Operator> allOperators= (List<Operator>) repo.findAll();
+		if(!allOperators.isEmpty())
+		{
+			loggers.info(QueryMapper.GET_OPERATOR);
+			return allOperators;
+		}
+		else 
+			loggers.error(QueryMapper.CANNOT_GET_OPERATOR);
+			throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
 	}
 
 }

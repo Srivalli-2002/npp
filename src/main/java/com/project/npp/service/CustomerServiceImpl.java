@@ -1,5 +1,6 @@
 package com.project.npp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -77,6 +78,20 @@ public class CustomerServiceImpl implements CustomerService {
 		else
 			loggers.error(QueryMapper.CANNOT_DELETE_CUSTOMER);
 			throw new CustomerNotFoundException(QueryMapper.CANNOT_DELETE_CUSTOMER);
+	}
+
+	// Method to get all customers
+	@Override
+	public List<Customer> getAllCustomers() throws CustomerNotFoundException {
+		List<Customer> customers= (List<Customer>) repo.findAll();
+		if(!customers.isEmpty()) { 
+			// Get all customers from the repository
+			loggers.info(QueryMapper.GET_CUSTOMER);
+			return customers;
+		}
+		else 
+			loggers.error(QueryMapper.CANNOT_GET_CUSTOMER);
+			throw new CustomerNotFoundException(QueryMapper.CANNOT_GET_CUSTOMER);
 	}
 
 }

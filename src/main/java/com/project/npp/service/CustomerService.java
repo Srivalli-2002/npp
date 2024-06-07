@@ -1,5 +1,7 @@
 package com.project.npp.service;
 
+import java.util.List;
+
 import com.project.npp.entities.Customer;
 import com.project.npp.exceptions.CustomerNotFoundException;
 
@@ -16,4 +18,7 @@ public interface CustomerService {
 	
 	// Delete customer
 	public String deleteCustomerById(Integer id) throws CustomerNotFoundException; 
+	
+	// Get all customers
+	public List<Customer> getAllCustomers() throws CustomerNotFoundException;
 }

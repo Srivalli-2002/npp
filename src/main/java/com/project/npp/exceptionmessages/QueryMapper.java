@@ -11,6 +11,7 @@ public class QueryMapper {
 	public static final String CANNOT_UPDATE_CUSTOMER = "Customer not found";
 	public static final String CANNOT_DELETE_CUSTOMER = "Customer not found";
 	
+	
 	public static final String ADD_CUSTOMER = "Customer found";
 	public static final String GET_CUSTOMER = "Customer found";
 	public static final String UPDATE_CUSTOMER = "Customer found";
@@ -65,6 +66,7 @@ public class QueryMapper {
 	public static final String ROLE_UPDATE_UNSUCCESSFULL ="Role found";
 	
 	public static final String ADD_USER = "User added successfully !!";
+	public static final String GET_USER = "User found";
 	public static final String FIND_BY_USERNAME = "User found";
 	public static final String EXIST_BY_USERNAME = "User found";
 }

@@ -1,5 +1,6 @@
 package com.project.npp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.project.npp.entities.ERole;
@@ -22,4 +23,7 @@ public interface UserEntityService {
 
 	// Find by role
 	public Optional<UserEntity> findByRole(ERole role);
+	
+	// Get all users
+	public List<UserEntity> getAllUserEntities();
 }

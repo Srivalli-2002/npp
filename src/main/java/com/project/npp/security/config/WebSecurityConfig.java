@@ -55,15 +55,16 @@ public class WebSecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 	
-	public final static String[] PUBLIC_REQUEST_MATCHERS = { "/api/auth/**", "/api-docs/**", "/swagger-ui/**","/v3/api-docs/**" };
+	public final static String[] PUBLIC_REQUEST_MATCHERS = { "/api/test/all", "/api/auth/**", "/api-docs/**", "/swagger-ui/**","/v3/api-docs/**" };
 	
 		@Bean
 		public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-			http.cors(AbstractHttpConfigurer::disable).csrf(AbstractHttpConfigurer::disable)
+			//http.cors(AbstractHttpConfigurer::disable)
+			http.csrf(AbstractHttpConfigurer::disable)
 					.authorizeHttpRequests(req -> req.requestMatchers(PUBLIC_REQUEST_MATCHERS).permitAll()
-							.requestMatchers("/api/test/systemadmin").hasRole("SYSTEM_ADMIN")
-							.requestMatchers("/api/test/compliance").hasRole("COMPLIANCE_OFFICER")
-							.requestMatchers("/api/test/customerservice").hasRole("CUSTOMER_SERVICE")
+							//.requestMatchers("/api/test/systemadmin").hasRole("SYSTEM_ADMIN")
+							//.requestMatchers("/api/test/compliance").hasRole("COMPLIANCE_OFFICER")
+							//.requestMatchers("/api/test/customerservice").hasRole("CUSTOMER_SERVICE")
 							.requestMatchers("/api/admin/**").hasRole("SYSTEM_ADMIN")
 							.requestMatchers("/api/customerservice/**").hasRole("CUSTOMER_SERVICE")
 							.requestMatchers("/api/complianceofficer/**").hasRole("COMPLIANCE_OFFICER"))

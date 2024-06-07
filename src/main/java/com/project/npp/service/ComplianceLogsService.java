@@ -1,5 +1,7 @@
 package com.project.npp.service;
 
+import java.util.List;
+
 import com.project.npp.entities.ComplianceLogs;
 import com.project.npp.exceptions.CustomerNotFoundException;
 import com.project.npp.exceptions.LogNotFoundException;
@@ -15,4 +17,8 @@ public interface ComplianceLogsService {
 	
 	// Update log
 	public ComplianceLogs UpdateLog(ComplianceLogs complianceLogs) throws LogNotFoundException, PortRequestNotFoundException, CustomerNotFoundException;
+	
+	// Get all logs
+	public List<ComplianceLogs> getAllComplianceLogs() throws LogNotFoundException;
 }
+

@@ -1,5 +1,6 @@
 package com.project.npp.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -7,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.npp.entities.ERole;
 import com.project.npp.entities.Operator;
 import com.project.npp.entities.Role;
+import com.project.npp.entities.UserEntity;
 import com.project.npp.entities.request.OperatorRequest;
 import com.project.npp.exceptionmessages.QueryMapper;
 import com.project.npp.exceptions.OperatorNotFoundException;
@@ -101,5 +104,23 @@ public class SystemAdminController {
 		loggers.info(QueryMapper.DELETE_OPERATOR_SUCCESSFULL);
 		return new ResponseEntity<String>(message, HttpStatus.OK);
 	}
+	
+	@GetMapping("/getAllOperators")
+	public ResponseEntity<List<Operator>> getAllOperators() throws OperatorNotFoundException {
+		loggers.info("Get all Operators");
+		List<Operator> allOperators= operatorService.getAllOperators();
+		loggers.info(QueryMapper.GET_OPERATOR);
+		return new ResponseEntity<>(allOperators, HttpStatus.OK);
+	}
+	
+	
+	@GetMapping("/getAllUsers")
+	public ResponseEntity<List<UserEntity>> getAllUserEntities() {
+		loggers.info("Get all Users");
+		List<UserEntity> allUsers= userService.getAllUserEntities() ;
+		loggers.info(QueryMapper.GET_USER);
+		return new ResponseEntity<List<UserEntity>>(allUsers, HttpStatus.OK);
+	}
+	
 
 }

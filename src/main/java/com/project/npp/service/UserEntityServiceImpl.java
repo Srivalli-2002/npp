@@ -1,5 +1,6 @@
 package com.project.npp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -65,6 +66,14 @@ public class UserEntityServiceImpl implements UserEntityService {
 		Optional<UserEntity> user = repo.findByRole(role);
 		loggers.info(QueryMapper.ROLE_FOUND);
 		return user;
+	}
+
+	// Method to get the list of users
+	@Override
+	public List<UserEntity> getAllUserEntities()  {
+		List<UserEntity> allUsers= (List<UserEntity>) repo.findAll();
+		loggers.info(QueryMapper.ROLE_FOUND);
+		return allUsers;
 	}
 
 }

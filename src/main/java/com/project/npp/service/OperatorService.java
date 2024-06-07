@@ -1,5 +1,7 @@
 package com.project.npp.service;
 
+import java.util.List;
+
 import com.project.npp.entities.Operator;
 import com.project.npp.exceptions.OperatorNotFoundException;
 
@@ -16,4 +18,7 @@ public interface OperatorService {
 	
 	// Delete operator
 	public String deleteOperator(Integer id) throws OperatorNotFoundException;
+	
+	// Get all operators
+	public List<Operator> getAllOperators() throws OperatorNotFoundException ;
 }

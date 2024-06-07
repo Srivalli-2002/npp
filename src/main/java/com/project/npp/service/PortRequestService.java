@@ -1,5 +1,7 @@
 package com.project.npp.service;
 
+import java.util.List;
+
 import com.project.npp.entities.PortRequest;
 import com.project.npp.exceptions.CustomerNotFoundException;
 import com.project.npp.exceptions.PortRequestNotFoundException;
@@ -17,4 +19,7 @@ public interface PortRequestService {
 
 	// Delete port request
 	public String deletePortRequest(Integer portRequestId) throws PortRequestNotFoundException;
+	
+	// Get all post requests
+	public List<PortRequest> getAllPortRequest() throws PortRequestNotFoundException;
 }

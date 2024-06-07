@@ -1,5 +1,6 @@
 package com.project.npp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -84,8 +85,25 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 			 return complianceLog.get();
 			}
 		else 
+		{
 			loggers.error(QueryMapper.CANNOT_UPDATE_LOG);
 			throw new  LogNotFoundException(QueryMapper.CANNOT_UPDATE_LOG);
+		}
+	}
+
+	// Method to get all logs
+	@Override
+	public List<ComplianceLogs> getAllComplianceLogs() throws LogNotFoundException {
+		List<ComplianceLogs> complianceLogs = (List<ComplianceLogs>) repo.findAll();
+		if(!complianceLogs.isEmpty()) {
+			loggers.info(QueryMapper.GET_LOG);
+			return complianceLogs;
+		}
+		else 
+		{
+			loggers.error(QueryMapper.CANNOT_GET_LOG);
+			throw new LogNotFoundException(QueryMapper.CANNOT_GET_LOG);
+		}
 	}
 
 }
