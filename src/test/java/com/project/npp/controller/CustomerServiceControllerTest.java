@@ -99,7 +99,6 @@ public class CustomerServiceControllerTest {
 		updatePortRequest = new UpdatePortRequest();
 		updatePortRequest.setRequestId(1);
 		updatePortRequest.setRequestDate(LocalDate.of(2023, 06, 05));
-		updatePortRequest.setComplianceChecked(true);
 		updatePortRequest.setCustomerId(1);
 	}
 

@@ -25,7 +25,9 @@ import com.project.npp.entities.ERole;
 import com.project.npp.entities.Operator;
 import com.project.npp.entities.Role;
 import com.project.npp.entities.UserEntity;
+import com.project.npp.entities.request.GetOperatorRequest;
 import com.project.npp.entities.request.OperatorRequest;
+import com.project.npp.entities.request.UpdateUserRoleRequest;
 import com.project.npp.exceptions.OperatorNotFoundException;
 import com.project.npp.exceptions.RoleNotFoundException;
 import com.project.npp.service.OperatorService;
@@ -74,6 +76,44 @@ public class SystemAdminControllerTest {
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 		assertEquals("Role updated successfully", response.getBody());
 	}
+	
+	@Test
+	void testUpdateUserRole_Success() throws RoleNotFoundException {
+	    Role role = new Role();
+	    role.setName(ERole.ROLE_SYSTEM_ADMIN);
+	    when(roleService.findRoleByName(ERole.ROLE_SYSTEM_ADMIN)).thenReturn(Optional.of(role));
+	    when(userService.updateRole(1, role)).thenReturn("Role updated successfully");
+
+	    UpdateUserRoleRequest request = new UpdateUserRoleRequest();
+	    request.setUserId(1);
+	    request.setRole(ERole.ROLE_SYSTEM_ADMIN);
+
+	    ResponseEntity<String> response = systemAdminController.updateUserRole(request);
+
+	    assertEquals(HttpStatus.OK, response.getStatusCode());
+	    assertEquals("Role updated successfully", response.getBody());
+	    verify(roleService, times(1)).findRoleByName(ERole.ROLE_SYSTEM_ADMIN);
+	    verify(userService, times(1)).updateRole(1, role);
+	}
+
+	@Test
+	void testUpdateUserRole_InvalidUserId() throws RoleNotFoundException {
+	    Role role = new Role();
+	    role.setName(ERole.ROLE_SYSTEM_ADMIN);
+	    when(roleService.findRoleByName(ERole.ROLE_SYSTEM_ADMIN)).thenReturn(Optional.of(role));
+	    when(userService.updateRole(999, role)).thenReturn("User not found");
+
+	    UpdateUserRoleRequest request = new UpdateUserRoleRequest();
+	    request.setUserId(999);
+	    request.setRole(ERole.ROLE_SYSTEM_ADMIN);
+
+	    ResponseEntity<String> response = systemAdminController.updateUserRole(request);
+
+	    assertEquals(HttpStatus.OK, response.getStatusCode());
+	    assertEquals("User not found", response.getBody());
+	    verify(roleService, times(1)).findRoleByName(ERole.ROLE_SYSTEM_ADMIN);
+	    verify(userService, times(1)).updateRole(999, role);
+	}
 
 	@Test
 	void testAddOperator() {
@@ -103,6 +143,51 @@ public class SystemAdminControllerTest {
 			systemAdminController.getOperator(1);
 		});
 	}
+	
+	@Test
+	void testGetOperator_Success() throws OperatorNotFoundException {
+	    Operator operator = new Operator();
+	    operator.setOperatorId(1);
+	    operator.setOperatorName("Test Operator");
+	    operator.setContactInfo("test@example.com");
+	    when(operatorService.getOperatorById(1)).thenReturn(operator);
+
+	    GetOperatorRequest request = new GetOperatorRequest();
+	    request.setOperatorId(1);
+
+	    ResponseEntity<Operator> response = systemAdminController.getOperator(request);
+
+	    assertEquals(HttpStatus.OK, response.getStatusCode());
+	    assertEquals(operator, response.getBody());
+	    verify(operatorService, times(1)).getOperatorById(1);
+	}
+
+	@Test
+	void testGetOperator_NotFound() throws OperatorNotFoundException {
+	    when(operatorService.getOperatorById(1)).thenThrow(new OperatorNotFoundException("Operator not found"));
+
+	    GetOperatorRequest request = new GetOperatorRequest();
+	    request.setOperatorId(1);
+
+	    assertThrows(OperatorNotFoundException.class, () -> {
+	        systemAdminController.getOperator(request);
+	    });
+	    verify(operatorService, times(1)).getOperatorById(1);
+	}
+
+	@Test
+	void testGetOperator_InvalidOperatorId() throws OperatorNotFoundException {
+	    when(operatorService.getOperatorById(999)).thenThrow(new OperatorNotFoundException("Operator not found"));
+
+	    GetOperatorRequest request = new GetOperatorRequest();
+	    request.setOperatorId(999);
+
+	    assertThrows(OperatorNotFoundException.class, () -> {
+	        systemAdminController.getOperator(request);
+	    });
+	    verify(operatorService, times(1)).getOperatorById(999);
+	}
+
 
 	@Test
 	void testUpdateOperator() throws OperatorNotFoundException {
@@ -142,6 +227,47 @@ public class SystemAdminControllerTest {
 			systemAdminController.deleteOperator(1);
 		});
 	}
+	
+	@Test
+	void testDeleteOperator_Success() throws OperatorNotFoundException {
+	    when(operatorService.deleteOperator(1)).thenReturn("Operator deleted successfully");
+
+	    GetOperatorRequest request = new GetOperatorRequest();
+	    request.setOperatorId(1);
+
+	    ResponseEntity<String> response = systemAdminController.deleteOperator(request);
+
+	    assertEquals(HttpStatus.OK, response.getStatusCode());
+	    assertEquals("Operator deleted successfully", response.getBody());
+	    verify(operatorService, times(1)).deleteOperator(1);
+	}
+
+	@Test
+	void testDeleteOperator_NotFound() throws OperatorNotFoundException {
+	    when(operatorService.deleteOperator(1)).thenThrow(new OperatorNotFoundException("Operator not found"));
+
+	    GetOperatorRequest request = new GetOperatorRequest();
+	    request.setOperatorId(1);
+
+	    assertThrows(OperatorNotFoundException.class, () -> {
+	        systemAdminController.deleteOperator(request);
+	    });
+	    verify(operatorService, times(1)).deleteOperator(1);
+	}
+
+	@Test
+	void testDeleteOperator_InvalidOperatorId() throws OperatorNotFoundException {
+	    when(operatorService.deleteOperator(999)).thenThrow(new OperatorNotFoundException("Operator not found"));
+
+	    GetOperatorRequest request = new GetOperatorRequest();
+	    request.setOperatorId(999);
+
+	    assertThrows(OperatorNotFoundException.class, () -> {
+	        systemAdminController.deleteOperator(request);
+	    });
+	    verify(operatorService, times(1)).deleteOperator(999);
+	}
+
 
 	@Test
 	void testGetAllOperatorsSuccess() throws OperatorNotFoundException {
@@ -172,6 +298,7 @@ public class SystemAdminControllerTest {
 
 	@Test
 	void testGetAllOperatorsNotFound() throws OperatorNotFoundException {
+		@SuppressWarnings("unused")
 		List<Operator> mockOperators = Collections.emptyList();
 
 		when(operatorService.getAllOperators()).thenThrow(new OperatorNotFoundException("Operators not found"));
