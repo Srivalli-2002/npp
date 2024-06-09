@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -27,6 +28,8 @@ import com.project.npp.entities.Operator;
 import com.project.npp.entities.PortRequest;
 import com.project.npp.entities.Status;
 import com.project.npp.entities.request.CustomerRequest;
+import com.project.npp.entities.request.GetCustomerRequest;
+import com.project.npp.entities.request.GetPortRequest;
 import com.project.npp.entities.request.UpdateCustomerRequest;
 import com.project.npp.entities.request.UpdatePortRequest;
 import com.project.npp.entities.request.UserPortRequest;
@@ -141,6 +144,40 @@ public class CustomerServiceControllerTest {
 			customerServiceController.getCustomer(1);
 		});
 	}
+	
+	@Test
+    public void testGetCustomerByRequestBody_Success() throws CustomerNotFoundException {
+        // Arrange
+        GetCustomerRequest getCustomerRequest = new GetCustomerRequest();
+        getCustomerRequest.setCustomerId(1);
+
+        Customer customer = new Customer();
+        customer.setCustomerId(1);
+        customer.setName("John Doe");
+
+        when(customerService.getCustomerById(anyInt())).thenReturn(customer);
+
+        // Act
+        ResponseEntity<Customer> response = customerServiceController.getCustomer(getCustomerRequest);
+
+        // Assert
+        assert(response.getStatusCode() == HttpStatus.OK);
+        assert(response.getBody().equals(customer));
+    }
+
+    @Test
+    public void testGetCustomerByRequestBody_CustomerNotFound() throws CustomerNotFoundException {
+        // Arrange
+        GetCustomerRequest getCustomerRequest = new GetCustomerRequest();
+        getCustomerRequest.setCustomerId(1);
+
+        when(customerService.getCustomerById(anyInt())).thenThrow(new CustomerNotFoundException("Customer not found"));
+
+        // Act & Assert
+        assertThrows(CustomerNotFoundException.class, () -> {
+            customerServiceController.getCustomer(getCustomerRequest);
+        });
+    }
 
 	@Test
 	void testUpdateCustomer() throws OperatorNotFoundException, CustomerNotFoundException {
@@ -193,6 +230,39 @@ public class CustomerServiceControllerTest {
 			customerServiceController.deleteCustomer(1);
 		});
 	}
+	
+	@Test
+    public void testDeleteCustomerByRequestBody_Success() throws CustomerNotFoundException {
+        // Arrange
+        GetCustomerRequest getCustomerRequest = new GetCustomerRequest();
+        getCustomerRequest.setCustomerId(1);
+
+        String expectedMessage = "Customer deleted successfully";
+
+        when(customerService.deleteCustomerById(anyInt())).thenReturn(expectedMessage);
+
+        // Act
+        ResponseEntity<String> response = customerServiceController.deleteCustomer(getCustomerRequest);
+
+        // Assert
+        assert(response.getStatusCode() == HttpStatus.OK);
+        assert(response.getBody().equals(expectedMessage));
+    }
+
+    @Test
+    public void testDeleteCustomerByRequestBody_CustomerNotFound() throws CustomerNotFoundException {
+        // Arrange
+        GetCustomerRequest getCustomerRequest = new GetCustomerRequest();
+        getCustomerRequest.setCustomerId(1);
+
+        when(customerService.deleteCustomerById(anyInt())).thenThrow(new CustomerNotFoundException("Customer not found"));
+
+        // Act & Assert
+        assertThrows(CustomerNotFoundException.class, () -> {
+            customerServiceController.deleteCustomer(getCustomerRequest);
+        });
+    }
+
 
 	@Test
 	void testSubmitPortRequest() throws CustomerNotFoundException {
@@ -233,6 +303,39 @@ public class CustomerServiceControllerTest {
 			customerServiceController.getPortRequest(1);
 		});
 	}
+	
+	@Test
+    public void testGetPortRequestByRequestBody_Success() throws PortRequestNotFoundException {
+        // Arrange
+        GetPortRequest getPortRequest = new GetPortRequest();
+        getPortRequest.setRequestId(1);
+
+        PortRequest portRequest = new PortRequest();
+        portRequest.setRequestId(1);
+
+        when(portRequestService.getPortRequest(anyInt())).thenReturn(portRequest);
+
+        // Act
+        ResponseEntity<PortRequest> response = customerServiceController.getPortRequest(getPortRequest);
+
+        // Assert
+        assert(response.getStatusCode() == HttpStatus.OK);
+        assert(response.getBody().equals(portRequest));
+    }
+
+    @Test
+    public void testGetPortRequestByRequestBody_PortRequestNotFound() throws PortRequestNotFoundException {
+        // Arrange
+        GetPortRequest getPortRequest = new GetPortRequest();
+        getPortRequest.setRequestId(1);
+
+        when(portRequestService.getPortRequest(anyInt())).thenThrow(new PortRequestNotFoundException("Port request not found"));
+
+        // Act & Assert
+        assertThrows(PortRequestNotFoundException.class, () -> {
+            customerServiceController.getPortRequest(getPortRequest);
+        });
+    }
 
 	@Test
 	void testUpdatePortRequest() throws CustomerNotFoundException, PortRequestNotFoundException {
@@ -284,6 +387,38 @@ public class CustomerServiceControllerTest {
 			customerServiceController.deletePortRequest(1);
 		});
 	}
+	
+	@Test
+    public void testDeletePortRequestByRequestBody_Success() throws PortRequestNotFoundException {
+        // Arrange
+        GetPortRequest getPortRequest = new GetPortRequest();
+        getPortRequest.setRequestId(1);
+
+        String expectedMessage = "Port request deleted successfully";
+
+        when(portRequestService.deletePortRequest(anyInt())).thenReturn(expectedMessage);
+
+        // Act
+        ResponseEntity<String> response = customerServiceController.deletePortRequest(getPortRequest);
+
+        // Assert
+        assert(response.getStatusCode() == HttpStatus.OK);
+        assert(response.getBody().equals(expectedMessage));
+    }
+
+    @Test
+    public void testDeletePortRequestByRequestBody_PortRequestNotFound() throws PortRequestNotFoundException {
+        // Arrange
+        GetPortRequest getPortRequest = new GetPortRequest();
+        getPortRequest.setRequestId(1);
+
+        when(portRequestService.deletePortRequest(anyInt())).thenThrow(new PortRequestNotFoundException("Port request not found"));
+
+        // Act & Assert
+        assertThrows(PortRequestNotFoundException.class, () -> {
+            customerServiceController.deletePortRequest(getPortRequest);
+        });
+    }
 
 	@Test
 	void testGetAllCustomerSuccess() throws CustomerNotFoundException {
