@@ -19,6 +19,8 @@ import CustomerServiceManagement from "./forms/CustomerServiceManagement";
 import UpdateCustomer from "./forms/UpdateCustomer";
 import PortRequestManagement from "./forms/PortRequestManagement";
 import UpdatePortRequest from "./forms/UpdatePortRequest";
+import LogManagement from "./forms/LogManagement";
+import UpdateLog from "./forms/UpdateLog";
 
 
 const App = () => {
@@ -58,7 +60,7 @@ const App = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <nav className="navbar fixed-top navbar-expand navbar-dark bg-dark">
         <Link to={"/"} className="navbar-brand">
         NUMBER PORTABILITY PORTAL
         </Link>
@@ -156,7 +158,8 @@ const App = () => {
           <Route path="/operatormanagement" element={<OperatorManagement/>} />
           <Route path="/update-userrole/:userId" element={<UpdateUser/>} />
           <Route path="/update-operator/:operatorId" element={<UpdateOperator/>} />
-          {/* <Route path="/complianceofficer" element={<ComplianceOfficerDashboard/>} /> */}
+          <Route path="/compliancelogs" element={<LogManagement/>} />
+          <Route path="/update-log/:logId" element={<UpdateLog/>} />
         </Routes>
       </div>
 

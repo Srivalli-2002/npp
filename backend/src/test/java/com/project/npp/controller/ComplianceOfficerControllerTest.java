@@ -1,6 +1,7 @@
 package com.project.npp.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
@@ -24,6 +25,7 @@ import org.springframework.http.ResponseEntity;
 import com.project.npp.entities.ComplianceLogs;
 import com.project.npp.entities.PortRequest;
 import com.project.npp.entities.request.ComplianceLogsRequest;
+import com.project.npp.entities.request.GetLogRequest;
 import com.project.npp.entities.request.UpdateComplianceLogsRequest;
 import com.project.npp.exceptions.CustomerNotFoundException;
 import com.project.npp.exceptions.LogNotFoundException;
@@ -112,6 +114,18 @@ public class ComplianceOfficerControllerTest {
 		assertThrows(LogNotFoundException.class, () -> {
 			complianceOfficerController.getLog(1);
 		});
+	}
+	
+	@Test
+	void testGetLog_Successful() throws LogNotFoundException {
+	    // Arrange
+	    GetLogRequest validRequest = new GetLogRequest();
+	    validRequest.setLogId(1); // Assuming 1 is a valid log ID
+	    // Act
+	    ResponseEntity<ComplianceLogs> response = complianceOfficerController.getLog(validRequest);
+	    // Assert
+	    assertEquals(HttpStatus.OK, response.getStatusCode());
+	    assertNull(response.getBody());
 	}
 
 	@Test

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.npp.entities.ComplianceLogs;
 import com.project.npp.entities.PortRequest;
 import com.project.npp.entities.request.ComplianceLogsRequest;
+import com.project.npp.entities.request.GetLogRequest;
 import com.project.npp.entities.request.UpdateComplianceLogsRequest;
 import com.project.npp.exceptionmessages.QueryMapper;
 import com.project.npp.exceptions.CustomerNotFoundException;
@@ -65,7 +66,7 @@ public class ComplianceOfficerController {
 	}
 
 	// API end point to retrieve a compliance log by its ID
-	@PostMapping("/getlog")
+	@PostMapping("/getlogbyid")
 	public ResponseEntity<ComplianceLogs> getLog(@RequestParam("logId") Integer logId) throws LogNotFoundException {
 		loggers.info("Get log");
 
@@ -76,6 +77,19 @@ public class ComplianceOfficerController {
 		// Return the compliance log in the response
 		return new ResponseEntity<ComplianceLogs>(complianceLog, HttpStatus.OK);
 	}
+	
+	// API end point to retrieve a compliance log by its ID
+		@PostMapping("/getlog")
+		public ResponseEntity<ComplianceLogs> getLog(@RequestBody GetLogRequest getLogRequest) throws LogNotFoundException {
+			loggers.info("Get log");
+
+			// Retrieve the compliance log by its ID
+			ComplianceLogs complianceLog = complianceLogsService.getLog(getLogRequest.getLogId());
+			loggers.info(QueryMapper.GET_LOG_SUCCESSFULL);
+
+			// Return the compliance log in the response
+			return new ResponseEntity<ComplianceLogs>(complianceLog, HttpStatus.OK);
+		}
 
 	// API end point to update a compliance log
 	@PostMapping("/updatelog")

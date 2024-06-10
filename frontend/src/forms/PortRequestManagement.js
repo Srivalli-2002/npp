@@ -120,7 +120,7 @@ const PortRequestManagement = () => {
               <td>{portRequest.customer.customerId}</td>
               <td>{portRequest.approvalStatus}</td>
               <td>{portRequest.requestDate}</td>
-              <td>{portRequest.complianceChecked}</td>
+              <td>{portRequest.complianceChecked.toString()}</td>
               <td>{portRequest.completionDate}</td>
               <td>
               <button className="btn btn-primary" onClick={() => fetchPortRequest(portRequest.requestId)}>View</button>
@@ -138,7 +138,7 @@ const PortRequestManagement = () => {
           <p>Customer ID : {selectedPortRequest.customer.customerId}</p>
           <p>Approval Status : {selectedPortRequest.approvalStatus}</p>
           <p>Request Date : {selectedPortRequest.requestDate}</p>
-          <p>Compliance Checked : {selectedPortRequest.complianceChecked}</p>
+          <p>Compliance Checked : {selectedPortRequest.complianceChecked.toString()}</p>
           <p>Completion Date : {selectedPortRequest.completionDate}</p>
         </div>
      )}
