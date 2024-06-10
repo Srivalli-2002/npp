@@ -1660,3 +1660,650 @@ Unconditional classes:
 2024-06-10T12:25:08.794+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.c.ComplianceOfficerController      : Get log
 2024-06-10T12:25:08.798+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.service.ComplianceLogsServiceImpl  : Log found
 2024-06-10T12:25:08.799+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.c.ComplianceOfficerController      : Log found
+2024-06-10T12:37:50.025+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.project.npp.controller.AuthController  : signin
+2024-06-10T12:37:50.034+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T12:37:51.296+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T12:37:51.299+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T12:37:51.308+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T12:37:51.308+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T13:44:09.476+05:30  WARN 8120 --- [npp] [HikariPool-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=1h1m46s661ms388µs400ns).
+2024-06-10T13:57:06.245+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T13:57:06.253+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T13:57:06.268+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T13:57:06.268+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T13:57:16.782+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T13:57:16.784+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T13:57:16.796+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T13:57:16.796+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T13:57:26.936+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T13:57:26.940+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.project.npp.service.RoleServiceImpl    : Role found
+2024-06-10T13:57:26.956+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : Role updated successfully!
+2024-06-10T13:57:26.956+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Role updated successfully!
+2024-06-10T13:57:26.996+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T13:57:26.996+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T13:57:27.017+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T13:57:27.017+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T14:29:51.547+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.project.npp.controller.AuthController  : signin
+2024-06-10T14:29:51.558+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T14:29:51.670+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.project.npp.service.RoleServiceImpl    : Role found
+2024-06-10T14:29:51.671+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T14:29:51.704+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User added successfully !!
+2024-06-10T14:29:51.704+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.project.npp.controller.AuthController  : User registered successfully!
+2024-06-10T14:30:48.187+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.project.npp.controller.AuthController  : signin
+2024-06-10T14:30:48.197+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T14:37:37.921+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.project.npp.controller.AuthController  : signin
+2024-06-10T14:37:37.947+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T14:37:55.741+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T14:37:55.741+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.c.CustomerServiceController        : Get all customers
+2024-06-10T14:37:55.762+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-06-10T14:37:55.762+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.c.CustomerServiceController        : Customer found
+2024-06-10T14:49:32.981+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.project.npp.controller.AuthController  : signin
+2024-06-10T14:49:32.993+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T14:58:30.977+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T14:58:30.979+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T14:58:30.993+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T14:58:30.993+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T14:58:44.606+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T14:58:44.607+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T14:58:44.619+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T14:58:44.619+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:01:20.782+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:01:20.785+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:01:20.796+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:01:20.796+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:01:25.115+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:01:25.116+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:01:25.121+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:01:25.122+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:01:32.399+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:01:32.403+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get operatorby ID
+2024-06-10T15:01:32.408+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:01:32.408+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Operator found
+2024-06-10T15:01:37.849+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:01:37.857+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Delete operator by ID
+2024-06-10T15:01:37.911+05:30  WARN 8120 --- [npp] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2024-06-10T15:01:37.911+05:30 ERROR 8120 --- [npp] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`nppdb`.`customer`, CONSTRAINT `FK2ro66f5ywoovhgcnrg5mgiq3q` FOREIGN KEY (`new_operator_operator_id`) REFERENCES `operators` (`operator_id`))
+2024-06-10T15:01:37.932+05:30 ERROR 8120 --- [npp] [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`nppdb`.`customer`, CONSTRAINT `FK2ro66f5ywoovhgcnrg5mgiq3q` FOREIGN KEY (`new_operator_operator_id`) REFERENCES `operators` (`operator_id`))] [delete from operators where operator_id=?]; SQL [delete from operators where operator_id=?]; constraint [null]] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`nppdb`.`customer`, CONSTRAINT `FK2ro66f5ywoovhgcnrg5mgiq3q` FOREIGN KEY (`new_operator_operator_id`) REFERENCES `operators` (`operator_id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1054) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.doStaticDelete(AbstractDeleteCoordinator.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.delete(AbstractDeleteCoordinator.java:87) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:131) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:371) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:487) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1981) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:676) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:426) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.0.jar:3.3.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.8.jar:6.1.8]
+	at jdk.proxy7/jdk.proxy7.$Proxy165.deleteById(Unknown Source) ~[na:na]
+	at com.project.npp.service.OperatorServiceImpl.deleteOperator(OperatorServiceImpl.java:60) ~[classes/:na]
+	at com.project.npp.controller.SystemAdminController.deleteOperator(SystemAdminController.java:147) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.24.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.24.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at com.project.npp.security.jwt.AuthTokenFilter.doFilterInternal(AuthTokenFilter.java:51) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-06-10T15:01:42.206+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:01:42.209+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Delete operator by ID
+2024-06-10T15:01:42.220+05:30  WARN 8120 --- [npp] [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1451, SQLState: 23000
+2024-06-10T15:01:42.224+05:30 ERROR 8120 --- [npp] [http-nio-8080-exec-7] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot delete or update a parent row: a foreign key constraint fails (`nppdb`.`customer`, CONSTRAINT `FK2ro66f5ywoovhgcnrg5mgiq3q` FOREIGN KEY (`new_operator_operator_id`) REFERENCES `operators` (`operator_id`))
+2024-06-10T15:01:42.245+05:30 ERROR 8120 --- [npp] [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Cannot delete or update a parent row: a foreign key constraint fails (`nppdb`.`customer`, CONSTRAINT `FK2ro66f5ywoovhgcnrg5mgiq3q` FOREIGN KEY (`new_operator_operator_id`) REFERENCES `operators` (`operator_id`))] [delete from operators where operator_id=?]; SQL [delete from operators where operator_id=?]; constraint [null]] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`nppdb`.`customer`, CONSTRAINT `FK2ro66f5ywoovhgcnrg5mgiq3q` FOREIGN KEY (`new_operator_operator_id`) REFERENCES `operators` (`operator_id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:912) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1054) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1003) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1312) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:988) ~[mysql-connector-j-8.3.0.jar:8.3.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.doStaticDelete(AbstractDeleteCoordinator.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.AbstractDeleteCoordinator.delete(AbstractDeleteCoordinator.java:87) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:131) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:371) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:487) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1981) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:676) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:426) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.1.8.jar:6.1.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.0.jar:3.3.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.8.jar:6.1.8]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.8.jar:6.1.8]
+	at jdk.proxy7/jdk.proxy7.$Proxy165.deleteById(Unknown Source) ~[na:na]
+	at com.project.npp.service.OperatorServiceImpl.deleteOperator(OperatorServiceImpl.java:60) ~[classes/:na]
+	at com.project.npp.controller.SystemAdminController.deleteOperator(SystemAdminController.java:147) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.24.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.24.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at com.project.npp.security.jwt.AuthTokenFilter.doFilterInternal(AuthTokenFilter.java:51) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.0.jar:6.3.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-06-10T15:01:47.705+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:01:47.707+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get operatorby ID
+2024-06-10T15:01:47.711+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:01:47.711+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Operator found
+2024-06-10T15:01:54.008+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:01:54.014+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:01:54.019+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:01:54.019+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:03:52.432+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:03:52.434+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:03:52.448+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:03:52.449+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:04:32.409+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:04:32.412+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:04:32.416+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:04:32.416+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:06:23.876+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:06:23.878+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:06:23.887+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:06:23.887+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:06:37.650+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:06:37.653+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:06:37.663+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:06:37.663+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:13:40.829+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:13:40.845+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:13:40.845+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:13:40.845+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:13:57.083+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:13:57.083+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.project.npp.service.RoleServiceImpl    : Role found
+2024-06-10T15:13:57.102+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : Role updated successfully!
+2024-06-10T15:13:57.102+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Role updated successfully!
+2024-06-10T15:13:57.135+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:13:57.138+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:13:57.156+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:13:57.156+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:14:00.792+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:14:00.795+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:14:00.800+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:14:00.800+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:14:13.187+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:14:13.187+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.project.npp.service.RoleServiceImpl    : Role found
+2024-06-10T15:14:13.206+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : Role updated successfully!
+2024-06-10T15:14:13.206+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Role updated successfully!
+2024-06-10T15:14:13.230+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:14:13.237+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:14:13.248+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:14:13.248+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:16:59.536+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:16:59.536+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:16:59.549+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:16:59.549+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:17:23.012+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:17:23.019+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.project.npp.service.RoleServiceImpl    : Role found
+2024-06-10T15:17:23.025+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : Role updated successfully!
+2024-06-10T15:17:23.025+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Role updated successfully!
+2024-06-10T15:17:23.053+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:17:23.053+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:17:23.072+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:17:23.072+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:18:09.546+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:18:09.546+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:18:09.563+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:18:09.563+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:18:18.947+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:18:18.958+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.project.npp.service.RoleServiceImpl    : Role found
+2024-06-10T15:18:18.974+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : Role updated successfully!
+2024-06-10T15:18:18.974+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Role updated successfully!
+2024-06-10T15:18:19.002+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:18:19.003+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:18:19.018+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:18:19.018+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:19:52.543+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:19:52.543+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:19:52.562+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:19:52.562+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:20:18.495+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:20:18.495+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:20:18.527+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:20:18.529+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:21:37.528+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:21:37.538+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:21:37.549+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:21:37.549+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:21:42.543+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:21:42.543+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:21:42.557+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:21:42.557+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:21:48.531+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:21:48.533+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:21:48.543+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:21:48.543+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:22:26.531+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:22:26.531+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:22:26.545+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:22:26.545+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:22:28.536+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:22:28.540+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:22:28.554+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:22:28.554+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:25:35.532+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:25:35.532+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:25:35.547+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:25:35.549+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:25:52.596+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:25:52.596+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:25:52.638+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:25:52.638+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:26:05.030+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:26:05.037+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:26:05.042+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:26:05.042+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:26:17.842+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:26:17.842+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:26:17.848+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:26:17.848+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:26:24.146+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:26:24.146+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:26:24.155+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:26:24.155+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:27:05.289+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.project.npp.controller.AuthController  : signin
+2024-06-10T15:27:05.303+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:27:12.444+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:27:12.444+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:27:12.464+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:27:12.464+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:27:15.662+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:27:15.664+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:27:15.668+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:27:15.668+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:27:48.382+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:27:48.386+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:27:48.392+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:27:48.392+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:28:24.022+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:28:24.024+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:28:24.027+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:28:24.027+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:29:03.477+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:29:03.477+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:29:03.487+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:29:03.487+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:29:14.529+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:29:14.530+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:29:14.534+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:29:14.534+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:29:23.021+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:29:23.021+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:29:23.021+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:29:23.021+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:29:27.538+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:29:27.539+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:29:27.544+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:29:27.544+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:29:37.344+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:29:37.354+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:29:37.363+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:29:37.363+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:29:41.326+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:29:41.342+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:29:41.342+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:29:41.342+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:29:52.519+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:29:52.530+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:29:52.534+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:29:52.534+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:31:05.016+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:31:05.019+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:31:05.026+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:31:05.026+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:33:28.936+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:33:28.946+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:33:28.950+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:33:28.950+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:34:31.550+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:34:31.557+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:34:31.562+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:34:31.562+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:35:08.534+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:35:08.538+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:35:08.545+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:35:08.546+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:35:17.542+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:35:17.545+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:35:17.554+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:35:17.554+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:35:22.532+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:35:22.535+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:35:22.537+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:35:22.539+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:35:32.543+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:35:32.545+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:35:32.549+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:35:32.549+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:35:46.525+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:35:46.525+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:35:46.534+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:35:46.534+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:35:53.146+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:35:53.153+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:35:53.160+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:35:53.162+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:35:56.951+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:35:56.955+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:35:56.957+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:35:56.957+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:36:04.084+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:36:04.094+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:36:04.095+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:36:04.101+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:36:05.617+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:36:05.620+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:36:05.625+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:36:05.625+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:36:09.263+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:36:09.273+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:36:09.279+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:36:09.279+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:36:12.408+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:36:12.408+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:36:12.422+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:36:12.422+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:37:00.522+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:37:00.527+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:37:00.528+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:37:00.528+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:37:07.525+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:37:07.529+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:37:07.529+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:37:07.529+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:37:31.338+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:37:31.338+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:37:31.355+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:37:31.355+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:37:35.033+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:37:35.035+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:37:35.039+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:37:35.039+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:37:36.076+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:37:36.076+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:37:36.126+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:37:36.126+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:38:12.060+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:38:12.064+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:38:12.068+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:38:12.068+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:38:17.904+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:38:17.917+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:38:17.921+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:38:17.921+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:38:19.121+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:38:19.137+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-10T15:38:19.141+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-10T15:38:19.141+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-10T15:38:31.300+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:38:31.301+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:38:31.304+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:38:31.304+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:50:44.531+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:50:44.534+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:50:44.542+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:50:44.543+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:50:49.143+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:50:49.145+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:50:49.152+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:50:49.152+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T15:59:38.598+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T15:59:38.598+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T15:59:38.612+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T15:59:38.612+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : User found
+2024-06-10T16:01:27.535+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-10T16:01:27.539+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-10T16:01:27.546+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-10T16:01:27.546+05:30  INFO 8120 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : User found

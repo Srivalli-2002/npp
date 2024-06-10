@@ -68,8 +68,8 @@ const Login = () => {
   };
 
   return (
-    <div className="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
-      <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%' }}>
+    <div className="container-fluid vh-100 d-flex align-items-center justify-content-center" style={{ color: 'white' }}>
+      <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%', backgroundColor: 'white', color: '#001f3f' }}>
         <div className="card-body">
           <h3 className="card-title text-center mb-4">Sign In</h3>
           <img
@@ -89,6 +89,7 @@ const Login = () => {
                 value={username}
                 onChange={onChangeUsername}
                 validations={[required]}
+                style={{ backgroundColor: '#f0f0f0', color: '#001f3f' }}
               />
             </div>
 
@@ -101,11 +102,12 @@ const Login = () => {
                 value={password}
                 onChange={onChangePassword}
                 validations={[required]}
+                style={{ backgroundColor: '#f0f0f0', color: '#001f3f' }}
               />
             </div>
 
             <div className="d-grid mb-3">
-              <button className="btn btn-primary btn-block rounded-pill" disabled={loading}>
+              <button className="btn btn-primary btn-block rounded-pill" disabled={loading} style={{ backgroundColor: '#0074D9', borderColor: '#0074D9' }}>
                 {loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}

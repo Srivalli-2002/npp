@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
+import { Link } from 'react-router-dom';
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import { Link } from 'react-router-dom';
 
 import AuthService from "../services/auth.service";
 
@@ -91,8 +91,8 @@ const Register = () => {
   };
 
   return (
-    <div className="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
-      <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%' }}>
+    <div className="container-fluid vh-100 d-flex align-items-center justify-content-center" style={{ color: 'white' }}>
+      <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%', backgroundColor: 'white', color: '#001f3f' }}>
         <div className="card-body">
           <h3 className="card-title text-center mb-4">Sign Up</h3>
           <img
@@ -142,7 +142,7 @@ const Register = () => {
                 </div>
                 
                 <div className="d-grid mb-3">
-                  <button className="btn btn-primary btn-block rounded-pill">Sign Up</button>
+                  <button className="btn btn-primary btn-block rounded-pill" style={{ backgroundColor: '#0074D9', borderColor: '#0074D9' }}>Sign Up</button>
                 </div>
                 <div className="card-footer text-center">
                 <div className="small">
