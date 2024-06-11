@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import SystemAdminService from '../services/SystemAdminService';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './OperatorManagement.css';
 
 const OperatorManagement = () => {
   const [newOperator, setNewOperator] = useState({ operatorName: '', contactInfo: '' });
@@ -74,9 +75,9 @@ const OperatorManagement = () => {
   };
 
   return (
-    <div className="container mt-5 pt-3"> {/* Reduced top padding from pt-5 to pt-3 */}
-      <h2 className="mb-5 pt-5">ADD OPERATOR</h2>
-      <div className="card card-container p-3"> {/* Removed top padding from p-5 to p-3 */}
+    <div className="container mt-5 pt-3">
+      <h2 className="pb-3">ADD OPERATOR</h2>
+      <div className="card card-container mt-3 p-3">
         <form onSubmit={handleSubmit} ref={form}>
           <div className="mb-3">
             <label htmlFor="operatorName" className="form-label">Operator Name:</label>
@@ -102,14 +103,14 @@ const OperatorManagement = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary" disabled={loading}>
-            {loading ? 'Adding...' : 'Add Operator'}
+          <button type="submit" className="btn btn-default" disabled={loading}>
+            {loading ? 'Adding...' : 'ADD OPERATOR'}
           </button>
         </form>
       </div>
 
       <table className="table table-striped table-bordered">
-        <thead className="thead-dark">
+        <thead>
           <tr>
             <th className="text-center">Operator ID</th>
             <th>Operator Name</th>
@@ -124,9 +125,9 @@ const OperatorManagement = () => {
               <td>{operator.operatorName}</td>
               <td>{operator.contactInfo}</td>
               <td className="d-flex justify-content-center">
-                <button className="btn btn-primary btn-sm mx-1" onClick={() => fetchOperator(operator.operatorId)}>View</button>
-                <button className="btn btn-danger btn-sm mx-1" onClick={() => deleteOperator(operator.operatorId)}>Delete</button>
-                <Link to={`/update-operator/${operator.operatorId}`} className="btn btn-secondary btn-sm mx-1">Update</Link>
+                <button className="btn btn-default btn-sm mx-1" onClick={() => fetchOperator(operator.operatorId)}>View</button>
+                <Link to={`/update-operator/${operator.operatorId}`} className="btn btn-default btn-sm mx-1">Update</Link>
+                <button className="btn btn-default btn-sm mx-1" onClick={() => deleteOperator(operator.operatorId)}>Delete</button>
               </td>
             </tr>
           ))}
@@ -135,9 +136,10 @@ const OperatorManagement = () => {
 
       {selectedOperator && (
         <div className="mt-4">
-          <h3>Operator Details:</h3>
-          <p>Operator Name: {selectedOperator.operatorName}</p>
-          <p>Contact Info: {selectedOperator.contactInfo}</p>
+          <h3>OPERATOR DETAILS :</h3>
+          <p>Operator ID : {selectedOperator.operatorId}</p>
+          <p>Operator Name : {selectedOperator.operatorName}</p>
+          <p>Contact Info : {selectedOperator.contactInfo}</p>
         </div>
       )}
     </div>

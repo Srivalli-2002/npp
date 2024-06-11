@@ -142,7 +142,7 @@ const Register = () => {
                 </div>
                 
                 <div className="d-grid mb-3">
-                  <button className="btn btn-primary btn-block rounded-pill" style={{ backgroundColor: '#488b8f', borderColor: '#0074D9', fontFamily: 'Georgia' }}>Sign Up</button>
+                  <button className="btn btn-primary btn-block rounded-pill" style={{ backgroundColor: '#488b8f', borderColor: '#0074D9', fontFamily: 'Georgia' , color: '#faf9f9'}}>Sign Up</button>
                 </div>
                 <div className="card-footer text-center">
                 <div className="small"  style={{ fontFamily: 'Georgia'}}>

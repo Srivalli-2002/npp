@@ -1,0 +1,36 @@
+.table tbody tr td button {
+    margin-right: 5px;
+}
+
+.action-buttons button {
+    margin-right: 5px;
+}
+
+.action-buttons button:hover {
+    color: white;
+}
+
+.table tbody tr td button a {
+    text-decoration: none;
+    color: #5ea3a3;
+}
+
+.table tbody tr td button a:hover {
+    color: #5ea3a3;
+}
+
+.btn-default {
+    background-color: #faf9f9;
+    border-color: #5ea3a3;
+    color: #5ea3a3;
+    font-size: 0.875rem;
+}
+
+
+.btn-default:hover {
+    color: #faf9f9;
+}
+
+.btn-default:hover a {
+    color: white;
+  }

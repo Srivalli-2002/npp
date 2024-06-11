@@ -107,7 +107,7 @@ const Login = () => {
             </div>
 
             <div className="d-grid mb-3">
-              <button className="btn btn-primary btn-block rounded-pill" disabled={loading} style={{ backgroundColor: '#488b8f', borderColor: '#0074D9', fontFamily:'Georgia' }}>
+              <button className="btn btn-primary btn-block rounded-pill" disabled={loading} style={{ backgroundColor: '#488b8f', borderColor: '#0074D9', fontFamily:'Georgia', color: '#faf9f9' }}>
                 {loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}

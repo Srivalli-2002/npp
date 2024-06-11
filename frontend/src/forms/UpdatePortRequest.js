@@ -51,7 +51,7 @@ function UpdatePortRequest() {
  
   return (
     <div className="auth-container">
-      <h2>Update Port Request</h2>
+      <h2>UPDATE PORT REQUEST</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Request ID :</label>
@@ -65,7 +65,10 @@ function UpdatePortRequest() {
           <label>Request Date :</label>
           <input type="date" name="requestDate" value={portRequestData.requestDate || ''} onChange={handleInputChange} />
         </div>
-        <button type="submit">Update Port Request</button>
+        <button type="submit">UPDATE</button>
+        <div className="card-footer text-center">
+          <button className="btn btn-default" onClick={() => navigate("/handleportrequest")}>Back to User Management</button>
+        </div>
       </form>
     </div>
   );

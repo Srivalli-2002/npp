@@ -2,7 +2,7 @@ import ComplianceOfficerService from '../services/ComplianceOfficerService';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useRef, useEffect } from 'react';
- 
+import './LogManagement.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
  
 const LogManagement = () => {
@@ -75,7 +75,7 @@ const LogManagement = () => {
  
   return (
     <div className="container">
-      <h2>Add Log</h2>
+      <h2>ADD LOG</h2>
       <div className="card card-container">
         <form onSubmit={handleSubmit} ref={form}>
           <div className="mb-3">
@@ -94,7 +94,7 @@ const LogManagement = () => {
             <label htmlFor="checkDate" className="form-label">Check Date : </label>
             <input type="date" className="form-control" id="checkDate" name="checkDate" value={newLog.checkDate} onChange={handleInputChange} required />
           </div>
-          <button type="submit" className="btn btn-primary" disabled={loading}>Add Log</button>
+          <button type="submit" className="btn btn-primary" disabled={loading}>ADD LOG</button>
         </form>
       </div>
  
@@ -118,8 +118,8 @@ const LogManagement = () => {
               <td>{log.notes}</td>
               <td>{log.checkDate}</td>
               <td>
-              <button className="btn btn-primary" onClick={() => fetchLog(log.logId)}>View</button>
-                <button><Link to={`/update-log/${log.logId}`}> Update Log </Link></button>
+              <button className="btn btn-default" onClick={() => fetchLog(log.logId)}>View</button>
+                <button className="btn btn-default"><Link to={`/update-log/${log.logId}`}>Update</Link></button>
               </td>
             </tr>
           ))}

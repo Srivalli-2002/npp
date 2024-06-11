@@ -85,7 +85,7 @@ const PortRequestManagement = () => {
  
   return (
     <div className="container">
-      <h2>Submit Port Request</h2>
+      <h2>SUBMIT PORT REQUEST</h2>
       <div className="card card-container">
         <form onSubmit={handleSubmit} ref={form}>
           <div className="mb-3">
@@ -97,7 +97,7 @@ const PortRequestManagement = () => {
             <input type="date" className="form-control" id="requestDate" name="requestDate" value={newPortRequest.requestDate} onChange={handleInputChange} required />
           </div>
           
-          <button type="submit" className="btn btn-primary" disabled={loading}>Submit Port Request</button>
+          <button type="submit" className="btn btn-primary" disabled={loading}>SUBMIT</button>
         </form>
       </div>
  
@@ -123,9 +123,9 @@ const PortRequestManagement = () => {
               <td>{portRequest.complianceChecked.toString()}</td>
               <td>{portRequest.completionDate}</td>
               <td>
-              <button className="btn btn-primary" onClick={() => fetchPortRequest(portRequest.requestId)}>View</button>
-                <button className="btn btn-danger" onClick={() => deletePortRequest(portRequest.requestId)}>Delete</button>
-                <button><Link to={`/update-portrequest/${portRequest.requestId}`}>Update</Link></button>
+              <button className="btn btn-default" onClick={() => fetchPortRequest(portRequest.requestId)}>View</button>
+              <button className="btn btn-default"><Link to={`/update-portrequest/${portRequest.requestId}`}>Update</Link></button>
+              <button className="btn btn-default" onClick={() => deletePortRequest(portRequest.requestId)}>Delete</button>
               </td>
             </tr>
           ))}

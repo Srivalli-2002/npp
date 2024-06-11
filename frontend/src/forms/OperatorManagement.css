@@ -1,0 +1,99 @@
+/* OperatorManagement.css */
+
+.container {
+  margin-top: 50px;
+}
+
+h2 {
+  padding-top: 3rem;
+  font-family: 'Georgia';
+  color: #488b8f;
+}
+
+h3 {
+  font-family: 'Georgia';
+  color: #488b8f;
+}
+
+p {
+  font-family: 'Georgia';
+  color: #488b8f;
+}
+
+.card-container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia';
+}
+
+.table {
+  margin-top: 30px;
+  font-family: 'Georgia';
+}
+
+.table thead {
+  background-color: #5ea3a3;
+  color: #faf9f9;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #add2c9;
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #faf9f9;
+}
+
+.table tbody tr {
+  text-align: center;
+}
+
+.table tbody tr:nth-child(odd) .btn-default {
+  border-color: #5ea3a3;
+}
+
+.btn-default {
+  background-color: #faf9f9;
+  border-color: #5ea3a3;
+  color: #5ea3a3;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.btn-default:hover {
+  color: #faf9f9;
+}
+
+.btn-secondary,
+.btn-primary,
+.btn-danger {
+  background-color: #faf9f9;
+  border-color: #5ea3a3;
+  color: #5ea3a3;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.btn-secondary:hover,
+.btn-primary:hover,
+.btn-danger:hover {
+  color: #faf9f9;
+}
+
+.mt-4 {
+  margin-top: 1.5rem ;
+}
+
+.mx-1 {
+  margin-left: 0.25rem ;
+  margin-right: 0.25rem ;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}

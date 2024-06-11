@@ -52,7 +52,7 @@ function UpdateLog() {
  
   return (
     <div className="auth-container">
-      <h2>Update Log</h2>
+      <h2>UPDATE LOG</h2>
       <form onSubmit={handleSubmit}>
       <div className="form-group">
           <label>Log ID :</label>
@@ -75,7 +75,11 @@ function UpdateLog() {
           <input type="date" name="checkDate" value={logData.checkDate || ''} onChange={handleInputChange} />
         </div>
         
-        <button type="submit">Update</button>
+        <button type="submit">UPDATE</button>
+
+        <div className="card-footer text-center">
+          <button className="btn btn-default" onClick={() => navigate("/compliancelogs")}>Back to User Management</button>
+        </div>
       </form>
     </div>
   );

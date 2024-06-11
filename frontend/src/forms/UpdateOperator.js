@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import SystemAdminService from '../services/SystemAdminService';
+import './UpdateOperator.css';
+
  
 function UpdateOperator() {
   const navigate = useNavigate();
@@ -49,8 +51,8 @@ function UpdateOperator() {
   };
  
   return (
-    <div className="auth-container">
-      <h2>Update Operator</h2>
+    <div className="auth-container mt-5 pt-5">
+      <h2>UPDATE OPERATOR</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Operator Name :</label>
@@ -61,7 +63,11 @@ function UpdateOperator() {
           <input type="email" name="contactInfo" value={operatorData.contactInfo || ''} onChange={handleInputChange} />
         </div>
         
-        <button type="submit">Update</button>
+        <button type="submit">UPDATE</button>
+
+        <div className="card-footer text-center">
+          <button className="btn btn-default" onClick={() => navigate("/operatormanagement")}>Back to User Management</button>
+        </div>
       </form>
     </div>
   );

@@ -2,7 +2,7 @@ import CustomerService from '../services/CustomerService';
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useRef, useEffect } from 'react';
- 
+import './CustomerServiceManagement.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
  
 const CustomerServiceManagement = () => {
@@ -90,7 +90,7 @@ const CustomerServiceManagement = () => {
  
   return (
     <div className="container">
-      <h2> Add Customer</h2>
+      <h2> ADD CUSTOMER </h2>
       <div className="card card-container">
         <form onSubmit={handleSubmit} ref={form}>
           <div className="mb-3">
@@ -114,7 +114,7 @@ const CustomerServiceManagement = () => {
             <input type="number" className="form-control" id="newOperatorId" name="newOperatorId" value={newCustomer.newOperatorId} onChange={handleInputChange} required />
           </div>
           
-          <button type="submit" className="btn btn-primary" disabled={loading}>Add Customer</button>
+          <button type="submit" className="btn btn-primary" disabled={loading}>ADD CUSTOMER</button>
         </form>
       </div>
  
@@ -142,9 +142,9 @@ const CustomerServiceManagement = () => {
               <td>{customer.currentOperator.operatorId}</td>
               <td>{customer.newOperator.operatorId}</td>
               <td>
-              <button className="btn btn-primary" onClick={() => fetchCustomer(customer.customerId)}>View</button>
-                <button className="btn btn-danger" onClick={() => deleteCustomer(customer.customerId)}>Delete</button>
-                <button><Link to={`/update-customer/${customer.customerId}`}> Update Customer </Link></button>
+              <button className="btn btn-default" onClick={() => fetchCustomer(customer.customerId)}>View</button>
+              <button className="btn btn-default"><Link to={`/update-customer/${customer.customerId}`}>Update</Link></button>
+              <button className="btn btn-default" onClick={() => deleteCustomer(customer.customerId)}>Delete</button>
               </td>
             </tr>
           ))}

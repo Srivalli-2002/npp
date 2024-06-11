@@ -53,7 +53,7 @@ function UpdateCustomer() {
  
   return (
     <div className="auth-container">
-      <h2>Update Customer</h2>
+      <h2>UPDATE CUSTOMER</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Customer Name :</label>
@@ -75,7 +75,10 @@ function UpdateCustomer() {
           <label>New Operator ID :</label>
           <input type="number" name="newOperatorId" value={customerData.newOperatorId || ''} onChange={handleInputChange} />
         </div>
-        <button type="submit">Update</button>
+        <button type="submit">UPDATE</button>
+        <div className="card-footer text-center">
+          <button className="btn btn-default" onClick={() => navigate("/customermanagement")}>Back to User Management</button>
+        </div>
       </form>
     </div>
   );
