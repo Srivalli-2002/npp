@@ -10,7 +10,7 @@ const Profile = () => {
         <div className="col-md-6">
           <div className="card shadow">
             <div className="card-body">
-            <h3 className="card-title mb-4 text-center" style={{ backgroundColor: '#004F98', color: 'white', padding: '10px', borderRadius: '10px', height: '60px', fontFamily: 'initial' }}>USER PROFILE</h3>
+            <h3 className="card-title mb-4 text-center" style={{ backgroundColor: '#5ea3a3', color: 'white', padding: '15px', borderRadius: '10px', height: '60px', fontFamily: 'initial' }}>USER PROFILE</h3>
 
               <div className="mb-3">
                 <strong>Username:</strong> {currentUser.username}
@@ -20,10 +20,6 @@ const Profile = () => {
               </div>
               <div className="mb-3">
                 <strong>Authorities:</strong> {currentUser.role}
-              </div>
-              <div className="mb-3">
-                <strong>Token:</strong>{" "}
-                {`${currentUser.accessToken.substring(0, 20)} ... ${currentUser.accessToken.substr(currentUser.accessToken.length - 20)}`}
               </div>
             </div>
           </div>

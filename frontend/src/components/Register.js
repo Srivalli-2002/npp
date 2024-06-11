@@ -94,7 +94,7 @@ const Register = () => {
     <div className="container-fluid vh-100 d-flex align-items-center justify-content-center" style={{ color: 'white' }}>
       <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%', backgroundColor: 'white', color: '#001f3f' }}>
         <div className="card-body">
-          <h3 className="card-title text-center mb-4">Sign Up</h3>
+          <h3 className="card-title text-center mb-4" style={{ fontFamily: 'Georgia'}}>Sign Up</h3>
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
@@ -106,7 +106,7 @@ const Register = () => {
             {!successful && (
               <div>
                 <div className="form-group mb-3">
-                  <label htmlFor="username" className="form-label">Username</label>
+                  <label htmlFor="username" className="form-label"  style={{ fontFamily: 'Georgia'}}>Username</label>
                   <Input
                     type="text"
                     className="form-control rounded-pill"
@@ -118,7 +118,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                  <label htmlFor="password" className="form-label">Password</label>
+                  <label htmlFor="password" className="form-label"  style={{ fontFamily: 'Georgia'}}>Password</label>
                   <Input
                     type="password"
                     className="form-control rounded-pill"
@@ -130,7 +130,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                  <label htmlFor="operatorId" className="form-label">Operator Id</label>
+                  <label htmlFor="operatorId" className="form-label"  style={{ fontFamily: 'Georgia'}}>Operator Id</label>
                   <Input
                     type="text"
                     className="form-control rounded-pill"
@@ -142,11 +142,11 @@ const Register = () => {
                 </div>
                 
                 <div className="d-grid mb-3">
-                  <button className="btn btn-primary btn-block rounded-pill" style={{ backgroundColor: '#0074D9', borderColor: '#0074D9' }}>Sign Up</button>
+                  <button className="btn btn-primary btn-block rounded-pill" style={{ backgroundColor: '#488b8f', borderColor: '#0074D9', fontFamily: 'Georgia' }}>Sign Up</button>
                 </div>
                 <div className="card-footer text-center">
-                <div className="small">
-                Already have an account? <Link to="/login" className="link-primary">Sign in</Link>
+                <div className="small"  style={{ fontFamily: 'Georgia'}}>
+                Already have an account? <Link to="/login" className="#" style={{color: '#488b8f', fontFamily: 'Georgia'}}>Sign in</Link>
                 </div>
               </div>
               </div>

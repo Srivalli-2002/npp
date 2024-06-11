@@ -1,0 +1,36 @@
+  h2 {
+    padding-top: 3rem;
+    font-family: 'Georgia'; 
+    color:#488b8f; 
+  }
+  
+  .table thead {
+    background-color:#5ea3a3;
+    color: #faf9f9;
+    font-family: 'Georgia';
+    text-align: center;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #add2c9;
+    font-family: 'Georgia';
+    text-align: center;
+  }
+  
+  .table tbody tr:nth-child(odd) {
+    background-color:  #faf9f9;
+    font-family: 'Georgia';
+    text-align: center;
+  }
+  
+  .btn-default {
+    background-color: #faf9f9;
+    border-color: #faf9f9;
+    color: #5ea3a3;
+    font-family: 'Georgia';
+  }
+
+  .btn-default:hover{
+    color: #5ea3a3
+  }
+  

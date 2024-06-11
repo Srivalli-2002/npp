@@ -60,7 +60,7 @@ const App = () => {
 
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand navbar-dark bg-dark">
+      <nav className="navbar fixed-top navbar-expand custom-navbar">
         <Link to={"/"} className="navbar-brand">
         NUMBER PORTABILITY PORTAL
         </Link>

@@ -2,6 +2,7 @@ import SystemAdminService from '../services/SystemAdminService';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './UserManagement.css'; 
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -25,9 +26,9 @@ const UserManagement = () => {
 
   return (
     <div className="container mt-5 pt-3">
-      <h2 className="mb-5 pt-5">USER MANAGEMENT</h2>
+      <h2 className="mb-5">USER MANAGEMENT</h2>
       <table className="table table-striped table-bordered">
-        <thead className="thead-dark">
+        <thead>
           <tr>
             <th>User ID</th>
             <th>Username</th>
@@ -46,7 +47,7 @@ const UserManagement = () => {
               <td>{user.operator.operatorId}</td>
               <td>{user.role.id}</td>
               <td>
-                <Link to={`/update-userrole/${user.userId}`} className="btn btn-primary btn-sm">
+                <Link to={`/update-userrole/${user.userId}`} className="btn btn-default btn-sm">
                   Update
                 </Link>
               </td>
