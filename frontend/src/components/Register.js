@@ -106,7 +106,7 @@ const Register = () => {
             {!successful && (
               <div>
                 <div className="form-group mb-3">
-                  <label htmlFor="username" className="form-label"  style={{ fontFamily: 'Georgia'}}>Username</label>
+                  <label htmlFor="username" className="form-label"  style={{ fontFamily: 'Georgia', color:'#488b8f'}}>Username</label>
                   <Input
                     type="text"
                     className="form-control rounded-pill"
@@ -118,7 +118,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                  <label htmlFor="password" className="form-label"  style={{ fontFamily: 'Georgia'}}>Password</label>
+                  <label htmlFor="password" className="form-label"  style={{ fontFamily: 'Georgia', color:'#488b8f'}}>Password</label>
                   <Input
                     type="password"
                     className="form-control rounded-pill"
@@ -130,7 +130,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                  <label htmlFor="operatorId" className="form-label"  style={{ fontFamily: 'Georgia'}}>Operator Id</label>
+                  <label htmlFor="operatorId" className="form-label"  style={{ fontFamily: 'Georgia', color:'#488b8f'}}>Operator Id</label>
                   <Input
                     type="text"
                     className="form-control rounded-pill"

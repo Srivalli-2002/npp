@@ -21,6 +21,9 @@ import PortRequestManagement from "./forms/PortRequestManagement";
 import UpdatePortRequest from "./forms/UpdatePortRequest";
 import LogManagement from "./forms/LogManagement";
 import UpdateLog from "./forms/UpdateLog";
+import HelpAndSupport from "./forms/HelpAndSupport";
+import UserGuide1 from "./forms/UserGuide1";
+import UserGuide2 from "./forms/UserGuide2";
 
 
 const App = () => {
@@ -120,6 +123,11 @@ const App = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to={"/support&assistance"} className="nav-link">
+                Support&Assistance
+              </Link>
+            </li>
+            <li className="nav-item">
               <a href="/login" className="nav-link" onClick={logOut}>
                 LogOut
               </a>
@@ -138,6 +146,7 @@ const App = () => {
                 Sign up
               </Link>
             </li>
+            
           </div>
         )}
       </nav>
@@ -149,7 +158,9 @@ const App = () => {
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/profile" element={<Profile/>} />
-          {/* <Route path="/admin" element={<SystemAdminDashboard/>} /> */}
+          <Route path="/support&assistance" element={<HelpAndSupport/>} />
+          <Route path="/support&assistance/userguide1" element={<UserGuide1/>} />
+          <Route path="/support&assistance/userguide2" element={<UserGuide2/>} />
           <Route path="/customermanagement" element={<CustomerServiceManagement/>} />
           <Route path="/handleportrequest" element={<PortRequestManagement/>} />
           <Route path="/update-customer/:customerId" element={<UpdateCustomer/>} />

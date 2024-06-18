@@ -67,7 +67,7 @@ function UpdatePortRequest() {
         </div>
         <button type="submit">UPDATE</button>
         <div className="card-footer text-center">
-          <button className="btn btn-default" onClick={() => navigate("/handleportrequest")}>Back to User Management</button>
+          <button className="btn btn-default" onClick={() => navigate("/handleportrequest")}>Back to Port Request Management</button>
         </div>
       </form>
     </div>

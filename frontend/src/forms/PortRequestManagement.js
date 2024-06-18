@@ -12,7 +12,6 @@ const PortRequestManagement = () => {
   });
   const [portRequests, setPortRequests] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [setMessage] = useState('');
   const [selectedPortRequest, setSelectedPortRequest] = useState(null);
  
   const form = useRef();
@@ -41,7 +40,6 @@ const PortRequestManagement = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setMessage('');
  
     CustomerService.submitPortRequest(newPortRequest)
       .then(() => {

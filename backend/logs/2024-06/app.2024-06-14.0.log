@@ -1,0 +1,58 @@
+2024-06-14T10:19:47.187+05:30  INFO 11168 --- [npp] [restartedMain] com.project.npp.NppApplication           : Starting NppApplication using Java 17.0.9 with PID 11168 (D:\NumberPortabilityPortalProject\npp\backend\target\classes started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-06-14T10:19:47.203+05:30  INFO 11168 --- [npp] [restartedMain] com.project.npp.NppApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T10:19:47.285+05:30  INFO 11168 --- [npp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-14T10:19:47.285+05:30  INFO 11168 --- [npp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-14T10:19:49.443+05:30  INFO 11168 --- [npp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T10:19:49.671+05:30  INFO 11168 --- [npp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 208 ms. Found 6 JPA repository interfaces.
+2024-06-14T10:19:50.285+05:30  INFO 11168 --- [npp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T10:19:50.303+05:30  INFO 11168 --- [npp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T10:19:50.303+05:30  INFO 11168 --- [npp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T10:19:50.392+05:30  INFO 11168 --- [npp] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T10:19:50.393+05:30  INFO 11168 --- [npp] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3107 ms
+2024-06-14T10:19:50.588+05:30  INFO 11168 --- [npp] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T10:19:50.663+05:30  INFO 11168 --- [npp] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T10:19:50.714+05:30  INFO 11168 --- [npp] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T10:19:51.366+05:30  INFO 11168 --- [npp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T10:19:51.445+05:30  INFO 11168 --- [npp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T10:19:52.165+05:30  INFO 11168 --- [npp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12617cad
+2024-06-14T10:19:52.169+05:30  INFO 11168 --- [npp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T10:19:52.236+05:30  WARN 11168 --- [npp] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T10:19:53.690+05:30  INFO 11168 --- [npp] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T10:19:53.848+05:30  INFO 11168 --- [npp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T10:19:54.462+05:30  INFO 11168 --- [npp] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-14T10:19:54.463+05:30  WARN 11168 --- [npp] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-14T10:19:54.667+05:30  WARN 11168 --- [npp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T10:19:55.045+05:30  INFO 11168 --- [npp] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5c28957e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3339e53f, org.springframework.security.web.context.SecurityContextHolderFilter@696fd30b, org.springframework.security.web.header.HeaderWriterFilter@71634665, org.springframework.web.filter.CorsFilter@67cd77c7, org.springframework.security.web.authentication.logout.LogoutFilter@51c24ae7, com.project.npp.security.jwt.AuthTokenFilter@3c18e187, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c4f7bcf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75b7d138, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39f82ce7, org.springframework.security.web.session.SessionManagementFilter@476b9170, org.springframework.security.web.access.ExceptionTranslationFilter@158ba6fa, org.springframework.security.web.access.intercept.AuthorizationFilter@4b948d41]
+2024-06-14T10:19:55.423+05:30  INFO 11168 --- [npp] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-14T10:19:55.503+05:30  INFO 11168 --- [npp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T10:19:55.519+05:30  INFO 11168 --- [npp] [restartedMain] com.project.npp.NppApplication           : Started NppApplication in 9.314 seconds (process running for 11.044)
+2024-06-14T10:21:08.072+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T10:21:08.072+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T10:21:08.072+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-14T10:21:29.806+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-3] c.project.npp.controller.AuthController  : signin
+2024-06-14T10:21:30.341+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-14T10:21:33.181+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-14T10:21:33.183+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Users
+2024-06-14T10:21:33.246+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-06-14T10:21:33.246+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : User found
+2024-06-14T10:21:36.472+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-14T10:21:36.474+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-06-14T10:21:36.483+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-14T10:21:36.483+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Opertor found
+2024-06-14T10:21:39.825+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-14T10:21:39.839+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Get operatorby ID
+2024-06-14T10:21:39.854+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.OperatorServiceImpl      : Opertor found
+2024-06-14T10:21:39.854+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Operator found
+2024-06-14T10:23:21.421+05:30  WARN 11168 --- [npp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59s119ms149µs100ns).
+2024-06-14T11:26:35.316+05:30  WARN 11168 --- [npp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m43s10ms654µs).
+2024-06-14T12:54:59.410+05:30  WARN 11168 --- [npp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m23s98ms803µs600ns).
+2024-06-14T13:27:09.457+05:30  WARN 11168 --- [npp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m9s715ms556µs500ns).
+2024-06-14T13:36:02.169+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-3] c.project.npp.controller.AuthController  : signin
+2024-06-14T13:36:02.210+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-14T13:36:27.629+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-4] c.project.npp.controller.AuthController  : signin
+2024-06-14T13:36:27.648+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-14T13:36:52.045+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-6] c.project.npp.controller.AuthController  : signin
+2024-06-14T13:36:52.060+05:30  INFO 11168 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-06-14T14:27:32.142+05:30  WARN 11168 --- [npp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m22s573ms168µs300ns).
+2024-06-14T15:38:23.001+05:30  WARN 11168 --- [npp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m49s907ms713µs300ns).
+2024-06-14T16:56:53.017+05:30  WARN 11168 --- [npp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52m29s600ms142µs900ns).

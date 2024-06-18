@@ -66,7 +66,7 @@ function UpdateOperator() {
         <button type="submit">UPDATE</button>
 
         <div className="card-footer text-center">
-          <button className="btn btn-default" onClick={() => navigate("/operatormanagement")}>Back to User Management</button>
+          <button className="btn btn-default" onClick={() => navigate("/operatormanagement")}>Back to Operator Management</button>
         </div>
       </form>
     </div>

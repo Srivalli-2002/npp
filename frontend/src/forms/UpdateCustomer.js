@@ -77,7 +77,7 @@ function UpdateCustomer() {
         </div>
         <button type="submit">UPDATE</button>
         <div className="card-footer text-center">
-          <button className="btn btn-default" onClick={() => navigate("/customermanagement")}>Back to User Management</button>
+          <button className="btn btn-default" onClick={() => navigate("/customermanagement")}>Back to Customer Management</button>
         </div>
       </form>
     </div>

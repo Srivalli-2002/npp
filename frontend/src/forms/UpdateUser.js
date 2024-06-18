@@ -43,8 +43,10 @@ function UpdateUser() {
       await SystemAdminService.updateUserRole(userData);
       navigate("/usermanagement");
     } catch (error) {
+      
       console.error('Error updating user : ', error);
       alert(error.message || 'An error occurred while updating user.');
+    
     }
   };
 

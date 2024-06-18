@@ -53,6 +53,7 @@
   
   button[type="submit"]:hover {
     background-color: #488b8f;
+    color: white;
   }
 
   .card-footer {
