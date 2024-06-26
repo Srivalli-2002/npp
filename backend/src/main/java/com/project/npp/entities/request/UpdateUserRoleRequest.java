@@ -14,6 +14,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateUserRoleRequest {
-	private Integer userId;
+	private String username;
 	private ERole role;
 }

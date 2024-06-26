@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,7 +28,7 @@ public class ComplianceLogs {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer logId;
 	
-	@ManyToOne
+	@OneToOne
 	private PortRequest portRequest;
 	
 	private boolean checkPassed;
@@ -35,4 +36,7 @@ public class ComplianceLogs {
 	private String notes;
 	
 	private LocalDate checkDate;
+	
+	@ManyToOne
+	private Customer customer;
 }

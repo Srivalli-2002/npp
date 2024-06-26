@@ -4,6 +4,11 @@
   color: #5ea3a3;
 }
 
+.table {
+  width: 100%; /* Make the table take up the full width of its container */
+  border-collapse: collapse;
+}
+
 .table thead {
   background-color:#5ea3a3;
   color: #faf9f9;

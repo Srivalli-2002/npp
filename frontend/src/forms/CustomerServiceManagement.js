@@ -10,8 +10,10 @@ const CustomerServiceManagement = () => {
     name: '',
     email: '',
     phoneNumber: '',
-    currentOperatorId: '',
-    newOperatorId: ''
+    status: '',
+    username:'',
+    currentOperatorName:'',
+    newOperatorName: ''
   });
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -52,8 +54,10 @@ const CustomerServiceManagement = () => {
           name: '',
           email: '',
           phoneNumber: '',
-          currentOperatorId: '',
-          newOperatorId: ''
+          status: '',
+          username:'',
+          currentOperatorName:'',
+          newOperatorName: ''
         });
         fetchCustomers();
       })
@@ -98,6 +102,10 @@ const CustomerServiceManagement = () => {
             <input type="text" className="form-control" id="name" name="name" value={newCustomer.name} onChange={handleInputChange} required />
           </div>
           <div className="mb-3">
+            <label htmlFor="username" className="form-label">Username : </label>
+            <input type="text" className="form-control" id="username" name="username" value={newCustomer.username} onChange={handleInputChange} required />
+          </div>
+          <div className="mb-3">
             <label htmlFor="email" className="form-label">Email : </label>
             <input type="email" className="form-control" id="email" name="email" value={newCustomer.email} onChange={handleInputChange} required />
           </div>
@@ -105,29 +113,22 @@ const CustomerServiceManagement = () => {
             <label htmlFor="phoneNumber" className="form-label">Phone Number :</label>
             <input type="number" className="form-control" id="phoneNumber" name="phoneNumber" value={newCustomer.phoneNumber} onChange={handleInputChange} required />
           </div>
-          <div className="mb-3">
-            <label htmlFor="currentOperatorId" className="form-label">Current Operator ID :</label>
-            <input type="number" className="form-control" id="currentOperatorId" name="currentOperatorId" value={newCustomer.currentOperatorId} onChange={handleInputChange} required />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="newOperatorId" className="form-label">New Operator ID :</label>
-            <input type="number" className="form-control" id="newOperatorId" name="newOperatorId" value={newCustomer.newOperatorId} onChange={handleInputChange} required />
-          </div>
           
           <button type="submit" className="btn btn-primary" disabled={loading}>ADD CUSTOMER</button>
         </form>
       </div>
  
-      <table className="table mt-4">
+      <table className="table table-striped table-bordered">
         <thead>
           <tr>
             <th>Customer ID</th>
             <th>Name</th>
+            <th>Username</th>
             <th>Email</th>
             <th>Phone Number</th>
             <th>Status</th>
-            <th>Current Operator ID</th>
-            <th>New Operator ID</th>
+            <th>Current Operator Name</th>
+            <th>New Operator Name</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -136,11 +137,12 @@ const CustomerServiceManagement = () => {
             <tr key={customer.customerId}>
               <td>{customer.customerId}</td>
               <td>{customer.name}</td>
+              <td>{customer.username}</td>
               <td>{customer.email}</td>
               <td>{customer.phoneNumber}</td>
               <td>{customer.status}</td>
-              <td>{customer.currentOperator.operatorId}</td>
-              <td>{customer.newOperator.operatorId}</td>
+              <td>{customer.currentOperator.operatorName}</td>
+              <td>{customer.newOperator.operatorName}</td>
               <td>
               <button className="btn btn-default" onClick={() => fetchCustomer(customer.customerId)}>View</button>
               <button className="btn btn-default"><Link to={`/update-customer/${customer.customerId}`}>Update</Link></button>
@@ -150,16 +152,51 @@ const CustomerServiceManagement = () => {
           ))}
         </tbody>
       </table>
-      {selectedCustomer && (
-        <div>
-          <h3>Customer Details :</h3>
-          <p>Customer Name : {selectedCustomer.name}</p>
-          <p>Customer Email : {selectedCustomer.email}</p>
-          <p>Customer Phone Number : {selectedCustomer.phoneNumber}</p>
-          <p>Customer Status : {selectedCustomer.status}</p>
-          <p>Customer Current Operator Id : {selectedCustomer.currentOperator.operatorId}</p>
-          <p>Customer New Operator Id : {selectedCustomer.newOperator.operatorId}</p>
-        </div>
+
+
+      
+      {selectedCustomer &&(
+      <div>
+      <h2> CUSTOMER DETAILS</h2>
+      <table className="table mt-4 table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Customer Form</th>
+            <th>Customer Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="left-align">Name</td>
+            <td className="left-align">{selectedCustomer.name}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Username</td>
+            <td className="left-align">{selectedCustomer.username}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Email</td>
+            <td className="left-align">{selectedCustomer.email}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Phone Number</td>
+            <td className="left-align">{selectedCustomer.phoneNumber}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Status</td>
+            <td className="left-align">{selectedCustomer.status}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Current Operator Name</td>
+            <td className="left-align">{selectedCustomer.currentOperator.operatorName}</td>
+          </tr>
+          <tr>
+            <td className="left-align">New Operator Name</td>
+            <td className="left-align">{selectedCustomer.newOperator.operatorName}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
      )}
     </div>
   );

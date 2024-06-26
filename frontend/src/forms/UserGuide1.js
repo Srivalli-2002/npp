@@ -4,8 +4,6 @@ const UserGuide1 = () => {
   return (
     <div className="container py-4">
       <h2 className="mb-4">USER GUIDE - 1 : How to Submit a Porting Request</h2>
-      <h3>INTRODUCTION</h3>
-      <p>This guide will help you understand the steps involved in submitting a porting request.</p>
      
       <div className="card mb-4">
       <div className="card-body">

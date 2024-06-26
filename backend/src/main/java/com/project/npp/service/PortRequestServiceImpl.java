@@ -8,12 +8,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.project.npp.entities.Customer;
 import com.project.npp.entities.PortRequest;
 import com.project.npp.entities.Status;
 import com.project.npp.exceptionmessages.QueryMapper;
 import com.project.npp.exceptions.CustomerNotFoundException;
+import com.project.npp.exceptions.LogNotFoundException;
 import com.project.npp.exceptions.PortRequestNotFoundException;
 import com.project.npp.repositories.PortRequestRepository;
 
@@ -56,10 +56,10 @@ public class PortRequestServiceImpl implements PortRequestService {
 	// Method to update a port request
 	@Override
 	public PortRequest updatePortRequest(PortRequest portRequest)
-			throws CustomerNotFoundException, PortRequestNotFoundException {
+			throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException {
 		Optional<PortRequest> p = repo.findById(portRequest.getRequestId());
 		if (p.isPresent()) {
-			if (portRequest.getComplianceChecked()) {
+			if (portRequest.getApprovalStatus()==Status.COMPLETED) {
 				// If compliance is checked, update status and completion date
 				portRequest.setApprovalStatus(Status.COMPLETED);
 				portRequest.setCompletionDate(LocalDate.now());
@@ -71,13 +71,31 @@ public class PortRequestServiceImpl implements PortRequestService {
 				PortRequest portReq = repo.save(portRequest);
 				loggers.info(QueryMapper.UPDATE_PORTREQUEST);
 				return portReq;
-			} else {
+				
+			} 
+			else {
+				if(portRequest.getApprovalStatus()==Status.REJECTED)
+				{
+					portRequest.setCompletionDate(LocalDate.now());
+
+					// Update customer status
+					Customer customer = customerService.getCustomerById(portRequest.getCustomer().getCustomerId());
+					customer.setStatus(Status.REJECTED);
+					customerService.updateCustomer(customer);
+					PortRequest portReq = repo.save(portRequest);
+					loggers.info(QueryMapper.UPDATE_PORTREQUEST);
+					return portReq;
+					
+				}
+				else
+				{
 				// If compliance is not checked, reset status and completion date
 				portRequest.setApprovalStatus(Status.PENDING);
 				portRequest.setCompletionDate(null);
 				PortRequest portReq = repo.save(portRequest);
 				loggers.info(QueryMapper.CANNOT_UPDATE_PORTREQUEST);
 				return portReq;
+				}
 			}
 
 		} else

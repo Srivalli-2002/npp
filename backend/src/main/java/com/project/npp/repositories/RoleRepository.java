@@ -11,5 +11,5 @@ import com.project.npp.entities.Role;
 @Repository
 public interface RoleRepository  extends CrudRepository<Role, Integer>{
 	
-	Optional<Role> findByName(ERole name);
+	public Optional<Role> findByName(ERole eRole);
 }

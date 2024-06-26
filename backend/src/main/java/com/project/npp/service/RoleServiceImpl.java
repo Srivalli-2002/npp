@@ -23,8 +23,8 @@ public class RoleServiceImpl implements RoleService {
 
 	// Method to find a role by its name
 	@Override
-	public Optional<Role> findRoleByName(ERole role) throws RoleNotFoundException {
-		Optional<Role> r = repo.findByName(role);
+	public Optional<Role> findRoleByName(ERole eRole) throws RoleNotFoundException {
+		Optional<Role> r = repo.findByName(eRole);
 		loggers.info(QueryMapper.ROLE_FOUND_BY_NAME);
 		return r;
 	}

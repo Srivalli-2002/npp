@@ -77,4 +77,15 @@ public class OperatorServiceImpl implements OperatorService {
 		throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
 	}
 
+	@Override
+	public Operator getOperatorByOperatorName(String operatorName) throws OperatorNotFoundException {
+		Optional<Operator> operator = repo.findByOperatorName(operatorName);
+		if (operator.isPresent()) {
+			loggers.info(QueryMapper.GET_OPERATOR);
+			return operator.get();
+		} else
+			loggers.error(QueryMapper.CANNOT_GET_OPERATOR);
+		throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
+	}
+
 }

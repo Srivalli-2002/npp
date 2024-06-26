@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 public class UserPortRequest {
 
-	private Integer customerId;
+	private String username;
 	
 	private LocalDate requestDate;
 }

@@ -16,7 +16,7 @@ public class UpdatePortRequest {
 	
 	private Integer requestId;
 	
-	private Integer customerId;
+	private String username;
 	
 	private LocalDate requestDate;
 }

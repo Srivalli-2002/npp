@@ -6,5 +6,7 @@ public enum Status {
 	
 	IN_REVIEW,
 	
-	COMPLETED
+	COMPLETED,
+	
+	REJECTED
 }

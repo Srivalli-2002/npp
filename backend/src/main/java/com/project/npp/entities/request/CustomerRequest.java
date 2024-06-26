@@ -15,11 +15,10 @@ public class CustomerRequest {
 	
 	private String name;
 	
+	private String username;
+	
 	private String email; 
 	
 	private Long  phoneNumber; 
 	
-	private Integer currentOperatorId;
-	
-	private Integer newOperatorId;
 }

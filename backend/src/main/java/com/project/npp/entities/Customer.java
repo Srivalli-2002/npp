@@ -27,6 +27,8 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer customerId;
 	
+	private String username;
+	
 	private String name;
 	
 	private String email;
@@ -38,6 +40,8 @@ public class Customer {
 	
 	@ManyToOne
 	private Operator newOperator;
+	
+	
 	
 	@Enumerated(EnumType.STRING)
 	private Status status;

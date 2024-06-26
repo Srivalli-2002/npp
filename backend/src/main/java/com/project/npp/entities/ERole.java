@@ -8,6 +8,8 @@ public enum ERole {
 	
 	ROLE_COMPLIANCE_OFFICER, 
 	
-	ROLE_USER
+	ROLE_USER,
+	
+	ROLE_DEFAULT
 }
 

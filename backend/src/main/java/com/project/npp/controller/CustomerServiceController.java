@@ -1,6 +1,7 @@
 package com.project.npp.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,12 +13,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.npp.entities.ComplianceLogs;
 import com.project.npp.entities.Customer;
 import com.project.npp.entities.Operator;
 import com.project.npp.entities.PortRequest;
+import com.project.npp.entities.Status;
+import com.project.npp.entities.UserEntity;
 import com.project.npp.entities.request.CustomerRequest;
 import com.project.npp.entities.request.GetCustomerRequest;
 import com.project.npp.entities.request.GetPortRequest;
@@ -26,11 +29,15 @@ import com.project.npp.entities.request.UpdatePortRequest;
 import com.project.npp.entities.request.UserPortRequest;
 import com.project.npp.exceptionmessages.QueryMapper;
 import com.project.npp.exceptions.CustomerNotFoundException;
+import com.project.npp.exceptions.LogNotFoundException;
 import com.project.npp.exceptions.OperatorNotFoundException;
 import com.project.npp.exceptions.PortRequestNotFoundException;
+import com.project.npp.exceptions.RoleNotFoundException;
+import com.project.npp.service.ComplianceLogsService;
 import com.project.npp.service.CustomerService;
 import com.project.npp.service.OperatorService;
 import com.project.npp.service.PortRequestService;
+import com.project.npp.service.UserEntityService;
 
 @RestController
 @RequestMapping("/api/customerservice")
@@ -47,11 +54,17 @@ public class CustomerServiceController {
 
 	@Autowired
 	private PortRequestService portRequestService;
+	
+	@Autowired
+	private ComplianceLogsService complianceLogsService;
+	
+	@Autowired
+	private UserEntityService userService;
 
 	// API end point to add a new customer
 	@PostMapping("/addcustomer")
 	public ResponseEntity<Customer> addCustomer(@RequestBody CustomerRequest customerRequest)
-			throws OperatorNotFoundException {
+			throws OperatorNotFoundException, RoleNotFoundException {
 		loggers.info("Add customer");
 
 		// Create a new Customer object and populate it with the request data
@@ -59,8 +72,10 @@ public class CustomerServiceController {
 		customer.setName(customerRequest.getName());
 		customer.setEmail(customerRequest.getEmail());
 		customer.setPhoneNumber(customerRequest.getPhoneNumber());
-		Operator currentOperator = operatorService.getOperatorById(customerRequest.getCurrentOperatorId());
-		Operator newOperator = operatorService.getOperatorById(customerRequest.getNewOperatorId());
+		customer.setUsername(customerRequest.getUsername());
+		Optional<UserEntity> user= userService.findByUsername(customerRequest.getUsername());
+		Operator currentOperator =user.get().getOperator();
+		Operator newOperator = operatorService.getOperatorByOperatorName("prodapt");
 		customer.setCurrentOperator(currentOperator);
 		customer.setNewOperator(newOperator);
 
@@ -69,21 +84,7 @@ public class CustomerServiceController {
 		loggers.info(QueryMapper.ADD_CUSTOMER_SUCCESSFULL);
 
 		// Return the persisted customer in the response
-		return new ResponseEntity<Customer>(cust, HttpStatus.OK);
-	}
-
-	// API end point to retrieve a customer by its ID
-	@PostMapping("/getcustomerbyid")
-	public ResponseEntity<Customer> getCustomer(@RequestParam("customerId") Integer customerId)
-			throws CustomerNotFoundException {
-		loggers.info("Get customer");
-
-		// Retrieve the customer by its ID
-		Customer customer = customerService.getCustomerById(customerId);
-		loggers.info(QueryMapper.GET_CUSTOMER_SUCCESSFULL);
-
-		// Return the customer in the response
-		return new ResponseEntity<Customer>(customer, HttpStatus.OK);
+		return new ResponseEntity<>(cust, HttpStatus.OK);
 	}
 	
 	// API end point to retrieve a customer by its ID	
@@ -96,7 +97,7 @@ public class CustomerServiceController {
 		loggers.info(QueryMapper.GET_CUSTOMER_SUCCESSFULL);
 
 		// Return the customer in the response
-		return new ResponseEntity<Customer>(customer,HttpStatus.OK);
+		return new ResponseEntity<>(customer,HttpStatus.OK);
 	}
 	
 	// API end point to update a customer
@@ -109,34 +110,20 @@ public class CustomerServiceController {
 		Customer customer = new Customer();
 		customer.setCustomerId(updateCustomerRequest.getCustomerId());
 		customer.setName(updateCustomerRequest.getName());
+		customer.setUsername(updateCustomerRequest.getUsername());
 		customer.setEmail(updateCustomerRequest.getEmail());
 		customer.setPhoneNumber(updateCustomerRequest.getPhoneNumber());
-		Operator currentOperator = operatorService.getOperatorById(updateCustomerRequest.getCurrentOperatorId());
-		Operator newOperator = operatorService.getOperatorById(updateCustomerRequest.getNewOperatorId());
+		Operator currentOperator = operatorService.getOperatorByOperatorName(updateCustomerRequest.getCurrentOperatorName());
 		customer.setCurrentOperator(currentOperator);
-		customer.setNewOperator(newOperator);
 		customer.setStatus(updateCustomerRequest.getStatus());
-
+		Operator newOperator = operatorService.getOperatorByOperatorName("prodapt");
+		customer.setNewOperator(newOperator);
 		// Update the customer and retrieve the updated object
 		Customer cust = customerService.updateCustomer(customer);
 		loggers.info(QueryMapper.UPDATE_CUSTOMER_SUCCESSFULL);
 
 		// Return the updated customer in the response
-		return new ResponseEntity<Customer>(cust, HttpStatus.OK);
-	}
-
-	// API end point to delete a customer by its ID
-	@PostMapping("/deletecustomerbyid")
-	public ResponseEntity<String> deleteCustomer(@RequestParam("customerId") Integer customerId)
-			throws CustomerNotFoundException {
-		loggers.info("Delete customer");
-
-		// Delete the customer and retrieve the deletion message
-		String message = customerService.deleteCustomerById(customerId);
-		loggers.info(QueryMapper.DELETE_CUSTOMER_SUCCESSFULL);
-
-		// Return the deletion message in the response
-		return new ResponseEntity<String>(message, HttpStatus.OK);
+		return new ResponseEntity<>(cust, HttpStatus.OK);
 	}
 	
 	// API end point to delete a customer by its ID
@@ -149,7 +136,7 @@ public class CustomerServiceController {
 		loggers.info(QueryMapper.DELETE_CUSTOMER_SUCCESSFULL);
 
 		// Return the deletion message in the response
-		return new ResponseEntity<String>(message,HttpStatus.OK);
+		return new ResponseEntity<>(message,HttpStatus.OK);
 	}
 
 	// API end point to get all customers
@@ -159,43 +146,36 @@ public class CustomerServiceController {
 		List<Customer> customers = customerService.getAllCustomers();
 
 		loggers.info(QueryMapper.GET_CUSTOMER);
-		return new ResponseEntity<List<Customer>>(customers, HttpStatus.OK);
+		return new ResponseEntity<>(customers, HttpStatus.OK);
 	}
+	
+	//****************************************************************************************************
 
 	// API end point to submit a port request
 	@PostMapping("/submitportrequest")
 	public ResponseEntity<PortRequest> submitPortRequest(@RequestBody UserPortRequest userPortRequest)
-			throws CustomerNotFoundException {
+			throws CustomerNotFoundException, PortRequestNotFoundException {
 		loggers.info("Submit port request");
 
 		// Create a new PortRequest object and populate it with the request data
 		PortRequest portRequest = new PortRequest();
 		portRequest.setRequestDate(userPortRequest.getRequestDate());
-		Customer customer = customerService.getCustomerById(userPortRequest.getCustomerId());
+		Customer customer = customerService.getCustomerByUserName(userPortRequest.getUsername());
 		portRequest.setCustomer(customer);
 
 		// Add the port request and retrieve the persisted object
 		PortRequest portReq = portRequestService.addPortRequest(portRequest);
 		loggers.info(QueryMapper.ADD_PORTREQUEST_SUCCESSFULL);
-
+		
+		ComplianceLogs complianceLogs= new ComplianceLogs();
+		complianceLogs.setCustomer(customer);
+		complianceLogs.setPortRequest(portReq);
+		complianceLogsService.addLog(complianceLogs);
+		loggers.info(QueryMapper.ADD_LOG_SUCCESSFULL);
 		// Return the persisted port request in the response
-		return new ResponseEntity<PortRequest>(portReq, HttpStatus.OK);
+		return new ResponseEntity<>(portReq, HttpStatus.OK);
 	}
 
-	// API end point to retrieve a port request by its ID
-	@PostMapping("/getportrequestbyid")
-	public ResponseEntity<PortRequest> getPortRequest(@RequestParam("requestId") Integer requestId)
-			throws PortRequestNotFoundException {
-		loggers.info("Get port request");
-
-		// Retrieve the port request by its ID
-		PortRequest portRequest = portRequestService.getPortRequest(requestId);
-		loggers.info(QueryMapper.GET_PORTREQUEST_SUCCESSFULL);
-
-		// Return the port request in the response
-		return new ResponseEntity<PortRequest>(portRequest, HttpStatus.OK);
-	}
-	
 	// API end point to retrieve a port request by its ID
 	@PostMapping("/getportrequest")
 	public ResponseEntity<PortRequest> getPortRequest(@RequestBody GetPortRequest getPortRequest) throws PortRequestNotFoundException {
@@ -206,45 +186,31 @@ public class CustomerServiceController {
 		loggers.info(QueryMapper.GET_PORTREQUEST_SUCCESSFULL);
 
 		// Return the port request in the response
-		return new ResponseEntity<PortRequest>(portRequest,HttpStatus.OK);
+		return new ResponseEntity<>(portRequest,HttpStatus.OK);
 	}
 
 	// API end point to update a port request
 	@PostMapping("/updateportrequest")
 	public ResponseEntity<PortRequest> updatePortRequest(@RequestBody UpdatePortRequest updatePortRequest)
-			throws CustomerNotFoundException, PortRequestNotFoundException {
+			throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException {
 		loggers.info("Update port request");
 
 		// Create a new PortRequest object and populate it with the updated data
 		PortRequest portRequest = new PortRequest();
 		portRequest.setRequestId(updatePortRequest.getRequestId());
 		portRequest.setRequestDate(updatePortRequest.getRequestDate());
-		Customer customer = customerService.getCustomerById(updatePortRequest.getCustomerId());
+		Customer customer = customerService.getCustomerByUserName(updatePortRequest.getUsername());
 		portRequest.setComplianceChecked(false);
 		portRequest.setCustomer(customer);
-
+		portRequest.setApprovalStatus(Status.PENDING);
 		// Update the port request and retrieve the updated object
 		PortRequest portReq = portRequestService.updatePortRequest(portRequest);
 		loggers.info(QueryMapper.UPDATE_PORTREQUEST_SUCCESSFULL);
 
 		// Return the updated port request in the response
-		return new ResponseEntity<PortRequest>(portReq, HttpStatus.OK);
+		return new ResponseEntity<>(portReq, HttpStatus.OK);
 	}
 
-	// API end point to delete a port request by its ID
-	@PostMapping("/deleteportrequestbyid")
-	public ResponseEntity<String> deletePortRequest(@RequestParam("requestId") Integer requestId)
-			throws PortRequestNotFoundException {
-		loggers.info("Delete port request");
-
-		// Delete the port request and retrieve the deletion message
-		String message = portRequestService.deletePortRequest(requestId);
-		loggers.info(QueryMapper.DELETE_PORTREQUEST_SUCCESSFULL);
-
-		// Return the deletion message in the response
-		return new ResponseEntity<String>(message, HttpStatus.OK);
-	}
-	
 	// API end point to delete a port request by its ID
 	@PostMapping("/deleteportrequest")
 	public ResponseEntity<String> deletePortRequest(@RequestBody GetPortRequest getPortRequest) throws PortRequestNotFoundException {
@@ -255,7 +221,7 @@ public class CustomerServiceController {
 		loggers.info(QueryMapper.DELETE_PORTREQUEST_SUCCESSFULL);
 
 		// Return the deletion message in the response
-		return new ResponseEntity<String>(message,HttpStatus.OK);
+		return new ResponseEntity<>(message,HttpStatus.OK);
 	}
 
 	// API end point to get all port requests
@@ -265,7 +231,7 @@ public class CustomerServiceController {
 		List<PortRequest> portRequests = portRequestService.getAllPortRequest();
 		loggers.info(QueryMapper.GET_PORTREQUEST_SUCCESSFULL);
 		// Return all the port requests in the response
-		return new ResponseEntity<List<PortRequest>>(portRequests, HttpStatus.OK);
+		return new ResponseEntity<>(portRequests, HttpStatus.OK);
 	}
 
 }

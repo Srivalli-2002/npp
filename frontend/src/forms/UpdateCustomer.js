@@ -10,8 +10,7 @@ function UpdateCustomer() {
     name: '',
     email: '',
     phoneNumber: '',
-    currentOperatorId: '',
-    newOperatorId: ''
+    currentOperatorName: ''
   });
  
   useEffect(() => {
@@ -68,12 +67,8 @@ function UpdateCustomer() {
           <input type="number" name="phoneNumber" value={customerData.phoneNumber || ''} onChange={handleInputChange} />
         </div>
         <div className="form-group">
-          <label>Current Operator ID :</label>
-          <input type="number" name="currentOperatorId" value={customerData.currentOperatorId || ''} onChange={handleInputChange} />
-        </div>
-        <div className="form-group">
-          <label>New Operator ID :</label>
-          <input type="number" name="newOperatorId" value={customerData.newOperatorId || ''} onChange={handleInputChange} />
+          <label>Current Operator :</label>
+          <input type="text" name="currentOperatorName" value={customerData.currentOperatorName || ''} onChange={handleInputChange} />
         </div>
         <button type="submit">UPDATE</button>
         <div className="card-footer text-center">

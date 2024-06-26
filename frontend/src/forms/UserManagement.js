@@ -1,14 +1,11 @@
 import SystemAdminService from '../services/SystemAdminService';
 import { Link } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './UserManagement.css'; 
-import { CloseButton } from 'react-bootstrap';
+import './UserManagement.css';
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
-
-  const form = useRef();
 
   useEffect(() => {
     fetchUsers();
@@ -33,9 +30,8 @@ const UserManagement = () => {
           <tr>
             <th>User ID</th>
             <th>Username</th>
-            <th>Password Hash</th>
-            <th>Operator ID</th>
-            <th>Role ID</th>
+            <th>Operator Name</th>
+            <th>Role</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -44,9 +40,8 @@ const UserManagement = () => {
             <tr key={user.userId}>
               <td>{user.userId}</td>
               <td>{user.username}</td>
-              <td>{user.passwordHash}</td>
-              <td>{user.operator.operatorId}</td>
-              <td>{user.role.id}</td>
+              <td>{user.operator.operatorName}</td>
+              <td>{user.role.name}</td>
               <td>
                 <Link to={`/update-userrole/${user.userId}`} className="btn btn-light">
                   Update

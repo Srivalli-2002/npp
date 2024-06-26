@@ -61,7 +61,8 @@ public class WebSecurityConfig {
 						.requestMatchers("/api/test/customerservice").hasRole("CUSTOMER_SERVICE")
 						.requestMatchers("/api/admin/**").hasRole("SYSTEM_ADMIN")
 						.requestMatchers("/api/customerservice/**").hasRole("CUSTOMER_SERVICE")
-						.requestMatchers("/api/complianceofficer/**").hasRole("COMPLIANCE_OFFICER"))
+						.requestMatchers("/api/complianceofficer/**").hasRole("COMPLIANCE_OFFICER")
+						.requestMatchers("/api/customer/**").hasRole("USER"))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.authenticationProvider(authenticationProvider())
 				.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

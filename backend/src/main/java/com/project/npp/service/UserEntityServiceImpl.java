@@ -9,9 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.npp.entities.ERole;
+import com.project.npp.entities.Operator;
 import com.project.npp.entities.Role;
 import com.project.npp.entities.UserEntity;
 import com.project.npp.exceptionmessages.QueryMapper;
+import com.project.npp.exceptions.OperatorNotFoundException;
+import com.project.npp.exceptions.RoleNotFoundException;
 import com.project.npp.repositories.UserRepository;
 
 @Service
@@ -21,13 +24,27 @@ public class UserEntityServiceImpl implements UserEntityService {
 
 	@Autowired
 	private UserRepository repo;
+	
+	@Autowired
+	private RoleService roleService;
+	
+	@Autowired
+	private OperatorService operatorService;
 
 	// Method to update the role of a user
 	@Override
-	public String updateRole(Integer userId, Role role) {
-		Optional<UserEntity> user = repo.findById(userId);
+	public String updateRole(String username, Role role) throws RoleNotFoundException, OperatorNotFoundException {
+		Optional<Role> complianceRole= roleService.findRoleByName(ERole.ROLE_COMPLIANCE_OFFICER);
+		Optional<Role> customerSupportRole=roleService.findRoleByName(ERole.ROLE_CUSTOMER_SERVICE);
+		Operator operator= operatorService.getOperatorByOperatorName("prodapt");
+		Optional<UserEntity> user = repo.findByUsername(username);
 		if (user.isPresent()) {
 			user.get().setRole(role);
+			if(role==complianceRole.get() || role== customerSupportRole.get())
+			{
+				user.get().setOperator(operator);
+				repo.save(user.get());
+			}
 			repo.save(user.get());
 			loggers.info(QueryMapper.ROLE_UPDATE_SUCCESSFULL);
 			return "Role Updated Successfully!!!";

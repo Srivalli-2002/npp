@@ -12,6 +12,7 @@ public interface OperatorService {
 	
 	// Get operator
 	public Operator getOperatorById(Integer id) throws OperatorNotFoundException;
+	public Operator getOperatorByOperatorName(String operatorName) throws OperatorNotFoundException;
 	
 	// Update operator
 	public Operator updateOperator(Operator operator) throws OperatorNotFoundException;

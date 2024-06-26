@@ -1,0 +1,19 @@
+
+.custom-button {
+  background-color: #488b8f; /* Default Bootstrap primary color */
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  margin: 0;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+}
+
+.custom-button:hover {
+  background-color: #488b8f; /* Darker shade for hover */
+  color: white;
+}

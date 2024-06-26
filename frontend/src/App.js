@@ -21,15 +21,18 @@ import PortRequestManagement from "./forms/PortRequestManagement";
 import UpdatePortRequest from "./forms/UpdatePortRequest";
 import LogManagement from "./forms/LogManagement";
 import UpdateLog from "./forms/UpdateLog";
+import TrackStatus from "./forms/TrackStatus";
 import HelpAndSupport from "./forms/HelpAndSupport";
 import UserGuide1 from "./forms/UserGuide1";
 import UserGuide2 from "./forms/UserGuide2";
-
+import VerificationDetailsManagement from "./forms/VerificationDetailsManagement";
+import UpdateDetails from "./forms/UpdateDetails";
 
 const App = () => {
   const [showSystemAdmin, setShowSystemAdmin] = useState(false);
   const [showCustomerService, setShowCustomerService] = useState(false);
   const [showComplianceOfficer, setShowComplianceOfficer] = useState(false);
+  const [showUsers, setShowUsers] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
 
   useEffect(() => {
@@ -43,6 +46,9 @@ const App = () => {
       console.log(currentUser);
       setShowComplianceOfficer(user.role.includes("ROLE_COMPLIANCE_OFFICER"));
       setCurrentUser(user);
+      setShowUsers(user.role.includes("ROLE_USER"));
+      setCurrentUser(user);
+
     }
     EventBus.on("logout", () => {
       logOut();
@@ -58,6 +64,7 @@ const App = () => {
     setShowSystemAdmin(false);
     setShowCustomerService(false);
     setShowComplianceOfficer(false);
+    setShowUsers(false);
     setCurrentUser(undefined);
   };
 
@@ -109,7 +116,23 @@ const App = () => {
           {showComplianceOfficer && (
             <li className="nav-item">
               <Link to={"/compliancelogs"} className="nav-link">
-                Compliance Logs Dashboard
+                Logs Dashboard
+              </Link>
+            </li>
+          )}     
+
+          {showComplianceOfficer && (
+            <li className="nav-item">
+              <Link to={"/details"} className="nav-link">
+                Details Dashboard
+              </Link>
+            </li>
+          )}      
+
+          {showUsers && (
+            <li className="nav-item">
+              <Link to={"/trackstatus"} className="nav-link">
+                Trak Status
               </Link>
             </li>
           )}
@@ -161,16 +184,22 @@ const App = () => {
           <Route path="/support&assistance" element={<HelpAndSupport/>} />
           <Route path="/support&assistance/userguide1" element={<UserGuide1/>} />
           <Route path="/support&assistance/userguide2" element={<UserGuide2/>} />
-          <Route path="/customermanagement" element={<CustomerServiceManagement/>} />
-          <Route path="/handleportrequest" element={<PortRequestManagement/>} />
-          <Route path="/update-customer/:customerId" element={<UpdateCustomer/>} />
-          <Route path="/update-portrequest/:requestId" element={<UpdatePortRequest/>} />
+
           <Route path="/usermanagement" element={<UserManagement/>} />
           <Route path="/operatormanagement" element={<OperatorManagement/>} />
           <Route path="/update-userrole/:userId" element={<UpdateUser/>} />
           <Route path="/update-operator/:operatorId" element={<UpdateOperator/>} />
+
+          <Route path="/customermanagement" element={<CustomerServiceManagement/>} />
+          <Route path="/handleportrequest" element={<PortRequestManagement/>} />
+          <Route path="/update-customer/:customerId" element={<UpdateCustomer/>} />
+          <Route path="/update-portrequest/:requestId" element={<UpdatePortRequest/>} />
+          <Route path="/trackstatus" element={<TrackStatus/>}/>
+
           <Route path="/compliancelogs" element={<LogManagement/>} />
           <Route path="/update-log/:logId" element={<UpdateLog/>} />
+          <Route path="/details" element={<VerificationDetailsManagement/>} />
+          <Route path="/update-deatils/:phoneNumber" element={<UpdateDetails/>}/>
         </Routes>
       </div>
 

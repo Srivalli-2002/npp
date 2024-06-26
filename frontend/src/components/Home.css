@@ -1,0 +1,17 @@
+.imgcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust height as needed */
+    background-color: white; /* Optional: Add a background color */
+  }
+  
+  .image {
+    text-align: center;
+  }
+  
+  .image img {
+    width: 100vw; 
+    object-fit:none;
+  }
+  

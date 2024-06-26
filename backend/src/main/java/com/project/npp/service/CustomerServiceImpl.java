@@ -9,9 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.npp.entities.Customer;
+import com.project.npp.entities.ERole;
+import com.project.npp.entities.Role;
 import com.project.npp.entities.Status;
+import com.project.npp.entities.UserEntity;
 import com.project.npp.exceptionmessages.QueryMapper;
 import com.project.npp.exceptions.CustomerNotFoundException;
+import com.project.npp.exceptions.OperatorNotFoundException;
+import com.project.npp.exceptions.RoleNotFoundException;
 import com.project.npp.repositories.CustomerRepository;
 
 @Service
@@ -21,14 +26,22 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	private CustomerRepository repo;
+	
+	@Autowired
+	private UserEntityService userEntityService;
+	
+	@Autowired
+	private RoleService roleService;
 
 	// Method to add a new customer
 	@Override
-	public Customer addCustomer(Customer customer) {
+	public Customer addCustomer(Customer customer) throws RoleNotFoundException, OperatorNotFoundException {
 
 		// Set status to PENDING by default
 		customer.setStatus(Status.PENDING);
-
+		Optional<UserEntity> user= userEntityService.findByUsername(customer.getUsername());
+		Optional<Role> role= roleService.findRoleByName(ERole.ROLE_USER);
+		userEntityService.updateRole(user.get().getUsername(), role.get());
 		// Save customer to the repository
 		Customer cust = repo.save(customer);
 		loggers.info(QueryMapper.ADD_CUSTOMER);
@@ -83,6 +96,28 @@ public class CustomerServiceImpl implements CustomerService {
 			// Get all customers from the repository
 			loggers.info(QueryMapper.GET_CUSTOMER);
 			return customers;
+		} else
+			loggers.error(QueryMapper.CANNOT_GET_CUSTOMER);
+		throw new CustomerNotFoundException(QueryMapper.CANNOT_GET_CUSTOMER);
+	}
+
+	@Override
+	public Customer getCustomerByUserName(String username) throws CustomerNotFoundException {
+		Optional<Customer> cust = repo.findByUsername(username);
+		if (cust.isPresent()) {
+			loggers.info(QueryMapper.GET_CUSTOMER);
+			return cust.get();
+		} else
+			loggers.error(QueryMapper.CANNOT_GET_CUSTOMER);
+		throw new CustomerNotFoundException(QueryMapper.CANNOT_GET_CUSTOMER);
+	}
+
+	@Override
+	public Customer getCustomerByPhoneNumber(Long phoneNumber) throws CustomerNotFoundException {
+		Optional<Customer> cust = repo.findByPhoneNumber(phoneNumber);
+		if (cust.isPresent()) {
+			loggers.info(QueryMapper.GET_CUSTOMER);
+			return cust.get();
 		} else
 			loggers.error(QueryMapper.CANNOT_GET_CUSTOMER);
 		throw new CustomerNotFoundException(QueryMapper.CANNOT_GET_CUSTOMER);

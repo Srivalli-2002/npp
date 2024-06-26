@@ -54,12 +54,8 @@ function UpdatePortRequest() {
       <h2>UPDATE PORT REQUEST</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Request ID :</label>
-          <input type="number" name="requestId" value={portRequestData.requestId || ''} onChange={handleInputChange} />
-        </div>
-        <div className="form-group">
-          <label>Customer ID :</label>
-          <input type="number" name="customerId" value={portRequestData.customerId || ''} onChange={handleInputChange} />
+          <label>Username :</label>
+          <input type="text" name="username" value={portRequestData.username || ''} onChange={handleInputChange} />
         </div>
         <div className="form-group">
           <label>Request Date :</label>

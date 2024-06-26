@@ -5,8 +5,6 @@ const UserGuide2 = () => {
   return (
     <div className="container py-4">
       <h2 className="mb-4">USER GUIDE - 2: Troubleshooting Common Issues</h2>
-      <h3>INTRODUCTION</h3>
-      <p>This guide will help you troubleshoot and resolve common issues.</p>
      
       <div className="card mb-4">
         <div className="card-body">

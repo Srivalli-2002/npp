@@ -1,23 +1,21 @@
+/* General Styles */
 label {
   display: block;
   margin-top: 10px;
 }
 
 .card-container.card {
-  max-width: 350px !important;
-  padding: 40px 40px;
+  max-width: 100%;
+  padding: 40px 20px; /* Adjust padding for better responsiveness */
+  margin: 0 auto;
 }
 
 .card {
   background-color: #f7f7f7;
-  padding: 20px 25px 30px;
+  padding: 20px 15px 25px;
   margin: 0 auto 25px;
   margin-top: 50px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
   border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -26,23 +24,22 @@ label {
   height: 96px;
   margin: 0 auto 10px;
   display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
   border-radius: 50%;
 }
 
-.navbar {
-  background-color: #488b8f;
-}
+/* Navbar Styles */
+.navbar,
 .custom-navbar {
   background-color: #488b8f;
 }
-.navbar-brand{
+
+.navbar-brand {
   color: #faf9f9;
   font-family: Georgia;
   font-size: 30px;
 }
-.nav-link{
+
+.nav-link {
   color: #faf9f9;
   font-family: Georgia;
   font-size: large;
@@ -52,3 +49,4 @@ label {
 .nav-link:hover {
   color: #faf9f9; /* Change to your desired hover color */
 }
+

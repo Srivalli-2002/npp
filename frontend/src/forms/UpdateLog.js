@@ -1,88 +1,85 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ComplianceOfficerService from '../services/ComplianceOfficerService';
- 
+
 function UpdateLog() {
   const navigate = useNavigate();
   const { logId } = useParams();
- 
-  const [logData, setLogData] = useState({
-    portRequestId: '',
-    checkPassed: '',
-    notes: '',
-    checkDate: ''
+
+  const [detailsData, setDetailsData] = useState({
+    phoneNumber: '',
+    customerIdentityVerified: '',
+    noOutstandingPayments: '',
+    timeSinceLastPort: '',
+    numberStatus: '',
+    contractualObligationsMet: '',
+    notificationToCurrentOperator: ''
   });
- 
+
   useEffect(() => {
-    fetchLogDataById(logId);
+    fetchDetailsDataById(logId);
   }, [logId]);
- 
-  const fetchLogDataById = async (logId) => {
+
+  const fetchDetailsDataById = async (logId) => {
     try {
-       
-      const response = await ComplianceOfficerService.getLog(logId);
+      const response = await ComplianceOfficerService.getVerificationDetailsByLog(logId);
       if (response) {
-        setLogData(response);
+        setDetailsData(response);
       } else {
-        console.error('Error: Log data is undefined.');
+        console.error('Error: Details are undefined.');
       }
     } catch (error) {
-      console.error('Error fetching log data : ', error);
+      console.error('Error fetching details: ', error);
     }
   };
- 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setLogData((prevLogData) => ({
-      ...prevLogData,
-      [name]: value
-    }));
-  };
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await ComplianceOfficerService.updateLog(logData);
+      await ComplianceOfficerService.updateLog(logId);
       navigate("/compliancelogs");
     } catch (error) {
-      console.error('Error updating log : ', error);
+      console.error('Error updating log: ', error);
       alert(error.message || 'An error occurred while updating log.');
     }
   };
- 
-  return (
-    <div className="auth-container">
-      <h2>UPDATE LOG</h2>
-      <form onSubmit={handleSubmit}>
-      <div className="form-group">
-          <label>Log ID :</label>
-          <input type="number" name="logId" value={logData.logId || ''} onChange={handleInputChange} />
-        </div>
-        <div className="form-group">
-          <label>Port Request ID :</label>
-          <input type="number" name="portRequestId" value={logData.portRequestId || ''} onChange={handleInputChange} />
-        </div>
-        <div className="form-group">
-          <label>Check Passed :</label>
-          <input type="text" name="checkPassed" value={logData.checkPassed || ''} onChange={handleInputChange} />
-        </div>
-        <div className="form-group">
-          <label>Notes :</label>
-          <input type="text" name="notes" value={logData.notes || ''} onChange={handleInputChange} />
-        </div>
-        <div className="form-group">
-          <label>Check Date :</label>
-          <input type="date" name="checkDate" value={logData.checkDate || ''} onChange={handleInputChange} />
-        </div>
-        
-        <button type="submit">UPDATE</button>
 
-        <div className="card-footer text-center">
-          <button className="btn btn-default" onClick={() => navigate("/compliancelogs")}>Back to Log Management</button>
-        </div>
+  return (
+    <div className='container pt-4'>
+      <h2>VERIFICATION DETAILS</h2>
+      <form onSubmit={handleSubmit}>
+        <table className="table mt-4 table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Phone Number</th>
+              <th>Customer Identity Verified</th>
+              <th>No Outstanding Payments</th>
+              <th>Time Since Last Port</th>
+              <th>Contractual Obligations Met</th>
+              <th>Number Status</th>
+              <th>Notification To Operator</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr key={detailsData.phoneNumber}>
+              <td>{detailsData.phoneNumber}</td>
+              <td>{detailsData.customerIdentityVerified.toString()}</td>
+              <td>{detailsData.noOutstandingPayments.toString()}</td>
+              <td>{detailsData.timeSinceLastPort}</td>
+              <td>{detailsData.contractualObligationsMet}</td>
+              <td>{detailsData.numberStatus}</td>
+              <td>{detailsData.notificationToCurrentOperator.toString()}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit">UPDATE</button>
       </form>
+
+      <div className="card-footer text-center">
+        <button className="btn btn-default" onClick={() => navigate("/compliancelogs")}>Back to Log Management</button>
+      </div>
     </div>
   );
 }
- 
+
 export default UpdateLog;

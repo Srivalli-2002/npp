@@ -42,7 +42,6 @@ const Register = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [operatorId, setOperatorId] = useState("");
   const [successful, setSuccessful] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -56,11 +55,6 @@ const Register = () => {
     setPassword(password);
   };
 
-  const onChangeOperatorId = (e) => {
-    const operatorId = e.target.value;
-    setOperatorId(operatorId);
-  };
-
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -70,7 +64,7 @@ const Register = () => {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      AuthService.register(username, password, operatorId).then(
+      AuthService.register(username, password).then(
         (response) => {
           setMessage(response.data.message);
           setSuccessful(true);
@@ -126,18 +120,6 @@ const Register = () => {
                     value={password}
                     onChange={onChangePassword}
                     validations={[required, vpassword]}
-                  />
-                </div>
-
-                <div className="form-group mb-3">
-                  <label htmlFor="operatorId" className="form-label"  style={{ fontFamily: 'Georgia', color:'#488b8f'}}>Operator Id</label>
-                  <Input
-                    type="text"
-                    className="form-control rounded-pill"
-                    name="operatorId"
-                    value={operatorId}
-                    onChange={onChangeOperatorId}
-                    validations={[required]}
                   />
                 </div>
                 

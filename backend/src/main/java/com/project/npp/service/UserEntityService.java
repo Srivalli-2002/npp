@@ -6,6 +6,8 @@ import java.util.Optional;
 import com.project.npp.entities.ERole;
 import com.project.npp.entities.Role;
 import com.project.npp.entities.UserEntity;
+import com.project.npp.exceptions.OperatorNotFoundException;
+import com.project.npp.exceptions.RoleNotFoundException;
 
 public interface UserEntityService {
 
@@ -13,7 +15,7 @@ public interface UserEntityService {
 	public UserEntity addUserEntity(UserEntity user);
 
 	// Update role
-	public String updateRole(Integer userId, Role role);
+	public String updateRole(String username, Role role ) throws RoleNotFoundException,OperatorNotFoundException;
 
 	// Find by username
 	public Optional<UserEntity> findByUsername(String username);

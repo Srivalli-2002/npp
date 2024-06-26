@@ -7,11 +7,17 @@ const HelpAndSupport = () => {
         <div className='guide-container mt-5 pt-5'>
             <h1 className='heading'>NUMBER PORTABILITY PORTAL HELP & SUPPORT GUIDE</h1>
  
+            <div className="card">
+            <div className="card-body">
             <section>
                 <h2 className='subheading'>INTRODUCTION</h2>
                 <p>Welcome to the Number Portability Portal Help and Support Guide. This document is designed to assist users in navigating and troubleshooting the Number Portability Portal effectively.</p>
             </section>
+            </div>
+            </div>
  
+            <div className="card">
+            <div className="card-body">
             <section>
                 <h2 className='subheading'>ACCESSING THE PORTAL</h2>
                 <p>To access the Number Portability Portal:</p>
@@ -21,7 +27,11 @@ const HelpAndSupport = () => {
                     <li>If you do not have an account, follow the registration process by clicking on "Sign Up" and providing the necessary information.</li>
                 </ul>
             </section>
+            </div>
+            </div>
  
+            <div className="card">
+            <div className="card-body">
             <section>
                 <h2 className='subheading'>COMMON ISSUES AND SOLUTIONS</h2>
                 <div>
@@ -49,7 +59,11 @@ const HelpAndSupport = () => {
                     </ul>
                 </div>
             </section>
+            </div>
+            </div>
  
+            <div className="card">
+            <div className="card-body">
             <section>
                 <h2 className='subheading'>USER GUIDES</h2>
                 <ul>
@@ -65,7 +79,11 @@ const HelpAndSupport = () => {
               </li>
                 </ul>
             </section>
+            </div>
+            </div>
  
+            <div className="card">
+            <div className="card-body">
             <section>
                 <h2 className='subheading'>FREQUENTLY ASKED QUESTIONS (FAQs)</h2>
                 <div>
@@ -81,7 +99,11 @@ const HelpAndSupport = () => {
                     <p>A: Some service providers may charge a fee for porting your number. Check with your current and new providers for details.</p>
                 </div>
             </section>
+            </div>
+            </div>
  
+            <div className="card">
+            <div className="card-body">
             <section>
                 <h2 className='subheading'>CONTACT SUPPORT</h2>
                 <p>If you need further assistance, please contact our support team:</p>
@@ -91,6 +113,8 @@ const HelpAndSupport = () => {
                     <li><strong>Live Chat</strong>: Available on the portal from 9 AM to 5 PM (EST), Monday to Friday.</li>
                 </ul>
             </section>
+            </div>
+            </div>
         </div>
     );
 };

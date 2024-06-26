@@ -5,20 +5,20 @@ import './UpdateUser.css'; // Import the custom CSS file
 
 function UpdateUser() {
   const navigate = useNavigate();
-  const { userId } = useParams();
+  const { username } = useParams();
 
   const [userData, setUserData] = useState({
-    userId: '',
+    username: '',
     role: ''
   });
 
   useEffect(() => {
-    fetchUserDataById(userId);
-  }, [userId]);
+    fetchUserDataByName(username);
+  }, [username]);
 
-  const fetchUserDataById = async (userId) => {
+  const fetchUserDataByName = async (username) => {
     try {
-      const response = await SystemAdminService.getUser(userId);
+      const response = await SystemAdminService.getUser(username);
       if (response) {
         setUserData(response);
       } else {
@@ -55,11 +55,11 @@ function UpdateUser() {
       <h2>UPDATE ROLE</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>User ID :</label>
+          <label>Username :</label>
           <input
-            type="number"
-            name="userId"
-            value={userData.userId || ''}
+            type="text"
+            name="username"
+            value={userData.username || ''}
             onChange={handleInputChange}
             required
           />
@@ -74,9 +74,10 @@ function UpdateUser() {
           >
             <option value="">Select Role</option>
             <option value="ROLE_SYSTEM_ADMIN">ROLE_SYSTEM_ADMIN</option>
-            <option value="ROLE_COMPLIANCE_OFFICER">ROLE_COMPLIANCE_OFFICER</option>
             <option value="ROLE_CUSTOMER_SERVICE">ROLE_CUSTOMER_SERVICE</option>
-            <option value="ROLE_USER">ROLE_USER</option>
+            <option value="ROLE_COMPLIANCE_OFFICER">ROLE_COMPLIANCE_OFFICER</option>
+            <option value="ROLE_CUSTOMER">ROLE_CUSTOMER</option>
+            <option value="ROLE_DEFAULT">ROLE_DEFAULT</option>
           </select>
         </div>
         <button type="submit" className="btn btn-default w-100">UPDATE</button>

@@ -17,14 +17,14 @@ public class QueryMapper {
 	public static final String UPDATE_CUSTOMER = "Customer found";
 	public static final String DELETE_CUSTOMER = "Customer found";
 	
-	public static final String CANNOT_GET_OPERATOR = "Opertor not found";
-	public static final String CANNOT_UPDATE_OPERATOR = "Opertor not found";
-	public static final String CANNOT_DELETE_OPERATOR = "Opertor not found";
+	public static final String CANNOT_GET_OPERATOR = "Operator not found";
+	public static final String CANNOT_UPDATE_OPERATOR = "Operator not found";
+	public static final String CANNOT_DELETE_OPERATOR = "Operator not found";
 	
-	public static final String ADD_OPERATOR = "Opertor added successfully!!";
-	public static final String GET_OPERATOR = "Opertor found";
-	public static final String UPDATE_OPERATOR = "Opertor found";
-	public static final String DELETE_OPERATOR = "Opertor found";
+	public static final String ADD_OPERATOR = "Operator added successfully!!";
+	public static final String GET_OPERATOR = "Operator found";
+	public static final String UPDATE_OPERATOR = "Operator found";
+	public static final String DELETE_OPERATOR = "Operator found";
 	
 	public static final String CANNOT_GET_PORTREQUEST = "Port request not found";
 	public static final String CANNOT_UPDATE_PORTREQUEST = "Port request not found";
@@ -69,4 +69,12 @@ public class QueryMapper {
 	public static final String GET_USER = "User found";
 	public static final String FIND_BY_USERNAME = "User found";
 	public static final String EXIST_BY_USERNAME = "User found";
+	
+	public static final String LOG_UPDATE_SUCCESSFUL = "Log updated successfully !!";
+	
+	public static final String VERIFICATION = "Customer verification sucessful";
+	public static final String CUSTOMER_IDENTITY = "Customer details are mismatched";
+	public static final String OUTSTANDING_BILL = "Pending bill";
+	public static final String NUMBER_STATUS = "Number status is not active";
+	public static final String TIME_SINCE_LAST_PORT = "Eligibility criteria not met to change the port";
 }

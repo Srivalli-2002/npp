@@ -2,6 +2,8 @@ package com.project.npp.entities.request;
 
 import com.project.npp.entities.Status;
 
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,15 +19,17 @@ public class UpdateCustomerRequest {
 	
 	private Integer customerId;
 	
+	private String username;
+	
 	private String name;
 	
 	private String email;
 	
 	private Long  phoneNumber;
 	
-	private Integer currentOperatorId;
+	private String currentOperatorName;
 	
-	private Integer newOperatorId;
-	
+	@Enumerated(EnumType.STRING)
 	private Status status;
+
 }

@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
  
 const PortRequestManagement = () => {
   const [newPortRequest, setNewPortRequest] = useState({
-    customerId: '',
+    username: '',
     requestDate: ''
   });
   const [portRequests, setPortRequests] = useState([]);
@@ -45,7 +45,7 @@ const PortRequestManagement = () => {
       .then(() => {
         alert('PortRequest added successfully');
         setNewPortRequest({
-          customerId: '',
+          username: '',
           requestDate: ''
         });
         fetchPortRequests();
@@ -87,8 +87,8 @@ const PortRequestManagement = () => {
       <div className="card card-container">
         <form onSubmit={handleSubmit} ref={form}>
           <div className="mb-3">
-            <label htmlFor="customerId" className="form-label">Customer ID : </label>
-            <input type="number" className="form-control" id="customerId" name="customerId" value={newPortRequest.customerId} onChange={handleInputChange} required />
+            <label htmlFor="username" className="form-label">Username : </label>
+            <input type="text" className="form-control" id="username" name="username" value={newPortRequest.username} onChange={handleInputChange} required />
           </div>
           <div className="mb-3">
             <label htmlFor="requestDate" className="form-label">Request Date : </label>
@@ -103,7 +103,7 @@ const PortRequestManagement = () => {
         <thead>
           <tr>
             <th>Request ID</th>
-            <th>Customer ID</th>
+            <th>Username</th>
             <th>Approval Status</th>
             <th>Request Date</th>
             <th>Compliance Check</th>
@@ -115,7 +115,7 @@ const PortRequestManagement = () => {
           {portRequests.map(portRequest => (
             <tr key={portRequest.requestId}>
               <td>{portRequest.requestId}</td>
-              <td>{portRequest.customer.customerId}</td>
+              <td>{portRequest.customer.username}</td>
               <td>{portRequest.approvalStatus}</td>
               <td>{portRequest.requestDate}</td>
               <td>{portRequest.complianceChecked.toString()}</td>
@@ -129,17 +129,43 @@ const PortRequestManagement = () => {
           ))}
         </tbody>
       </table>
+
       {selectedPortRequest && (
-        <div>
-          <h3>Port Request details :</h3>
-          <p>Request ID : {selectedPortRequest.requestId}</p>
-          <p>Customer ID : {selectedPortRequest.customer.customerId}</p>
-          <p>Approval Status : {selectedPortRequest.approvalStatus}</p>
-          <p>Request Date : {selectedPortRequest.requestDate}</p>
-          <p>Compliance Checked : {selectedPortRequest.complianceChecked.toString()}</p>
-          <p>Completion Date : {selectedPortRequest.completionDate}</p>
-        </div>
+      <div>
+      <h2>PORT REQUEST DETAILS</h2>
+        <table className="table mt-4 table-striped table-bordered ">
+        <thead>
+          <tr>
+            <th>Customer Form</th>
+            <th>Customer Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="left-align">Username</td>
+            <td className="left-align">{selectedPortRequest.customer.username}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Approval Status</td>
+            <td className="left-align">{selectedPortRequest.approvalStatus}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Request Date</td>
+            <td className="left-align">{selectedPortRequest.requestDate}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Compliance Check</td>
+            <td className="left-align">{selectedPortRequest.complianceChecked.toString()}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Completion Date</td>
+            <td className="left-align">{selectedPortRequest.completionDate}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
      )}
+     
     </div>
   );
 };

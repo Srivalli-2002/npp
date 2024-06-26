@@ -106,13 +106,14 @@ public class AuthController {
 		user.setPasswordHash(passwordEncoder.encode(signUpRequest.getPassword()));
 
 		// Find user role by name and assign it
-		Optional<Role> role = Optional.of(roleService.findRoleByName(ERole.ROLE_USER).get());
+		Optional<Role> role = Optional.of(roleService.findRoleByName(ERole.ROLE_DEFAULT).get());
 		if (role.isPresent()) {
 			user.setRole(role.get());
 		}
 
 		// Find operator by ID and assign it to the user
-		Operator operator = operatorService.getOperatorById(signUpRequest.getOperatorId());
+		String operatorName=signUpRequest.getOperatorName();
+		Operator operator = operatorService.getOperatorByOperatorName(operatorName);
 		user.setOperator(operator);
 
 		// Save the user entity

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserService from "../services/user.service";
+import npp1 from "./npp1.jpg"; // Import the image
+import "./Home.css";
 
 const Home = () => {
   const [content, setContent] = useState("");
@@ -21,9 +23,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container">
-      <header className="jumbotron">
-        <h3>{content}</h3>
+    <div className="imgcontainer">
+      <header className="image">
+        <img src={npp1} alt="My Desktop Image" /> {/* Display the image */}
       </header>
     </div>
   );

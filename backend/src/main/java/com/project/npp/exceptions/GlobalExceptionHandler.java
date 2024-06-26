@@ -61,4 +61,11 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<String> handleRoleNotFoundException(Exception ex) {
 		return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
 	}
+	
+	
+	
+	@ExceptionHandler(VerificationDetailsNotFoundException.class)
+	public ResponseEntity<String> handleVerificationDetailsNotFoundException(Exception ex) {
+		return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+	}
 }

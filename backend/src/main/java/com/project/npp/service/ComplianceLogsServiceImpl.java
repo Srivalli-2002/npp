@@ -1,5 +1,6 @@
 package com.project.npp.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,11 +9,17 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.project.npp.repositories.ComplianceLogsRepository;
+import com.project.npp.utilities.VerificationDetailsService;
 import com.project.npp.entities.ComplianceLogs;
+import com.project.npp.entities.Customer;
+import com.project.npp.entities.NumberStatus;
 import com.project.npp.entities.PortRequest;
+import com.project.npp.entities.Status;
+import com.project.npp.entities.VerificationDetails;
 import com.project.npp.exceptions.CustomerNotFoundException;
 import com.project.npp.exceptions.LogNotFoundException;
 import com.project.npp.exceptions.PortRequestNotFoundException;
+import com.project.npp.exceptions.VerificationDetailsNotFoundException;
 import com.project.npp.exceptionmessages.QueryMapper;
 
 @Service
@@ -25,28 +32,21 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 
 	@Autowired
 	private PortRequestService portRequestService;
+	
+	
+	
+	@Autowired
+	private VerificationDetailsService verificationDetailsService;
 
 	// Method to add a compliance log
 	@Override
 	public ComplianceLogs addLog(ComplianceLogs complianceLogs)
 			throws PortRequestNotFoundException, CustomerNotFoundException {
-
-		// Check if the compliance check is passed
-		if (complianceLogs.isCheckPassed()) {
-			PortRequest portRequest = portRequestService.getPortRequest(complianceLogs.getPortRequest().getRequestId());
-			portRequest.setComplianceChecked(true);
-			PortRequest portReq = portRequestService.updatePortRequest(portRequest);
-			complianceLogs.setPortRequest(portReq);
-			ComplianceLogs complianceLog = repo.save(complianceLogs);
-			loggers.info(QueryMapper.LOG_CHECK_SUCCESSFULL);
-			return complianceLog;
-		} else {
-			PortRequest portRequest = portRequestService.getPortRequest(complianceLogs.getPortRequest().getRequestId());
-			complianceLogs.setPortRequest(portRequest);
-			ComplianceLogs complianceLog = repo.save(complianceLogs);
-			loggers.error(QueryMapper.LOG_CHECK_UNSUCCESSFULL);
-			return complianceLog;
-		}
+		complianceLogs.setCheckDate(null);
+		complianceLogs.setCheckPassed(false);
+		complianceLogs.setNotes(null);
+		ComplianceLogs c= repo.save(complianceLogs);
+		return c;
 	}
 
 	// Method to get a compliance log by its ID
@@ -100,6 +100,92 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 			loggers.error(QueryMapper.CANNOT_GET_LOG);
 			throw new LogNotFoundException(QueryMapper.CANNOT_GET_LOG);
 		}
+	}
+
+	@Override
+	public String VerifyAndUpdateLog(Integer logId)
+			throws LogNotFoundException, PortRequestNotFoundException, CustomerNotFoundException, VerificationDetailsNotFoundException {
+		Optional<ComplianceLogs> log= repo.findById(logId);
+		Long phoneNumber= log.get().getCustomer().getPhoneNumber();
+		if(log.isPresent())
+		{
+			VerificationDetails details= verificationDetailsService.getByPhoneNumber(phoneNumber);
+			if(details.getCustomerIdentityVerified()&& details.getNoOutstandingPayments()&&details.getNumberStatus()==NumberStatus.ACTIVE&&details.getTimeSinceLastPort()>details.getContractualObligationsMet())
+			{
+				log.get().setCheckPassed(true);
+				log.get().setCheckDate(LocalDate.now());
+				log.get().setNotes(QueryMapper.VERIFICATION);
+				repo.save(log.get());
+				PortRequest portRequest= log.get().getPortRequest();
+				portRequest.setComplianceChecked(true);
+				portRequest.setApprovalStatus(Status.COMPLETED);
+				portRequestService.updatePortRequest(portRequest);
+				return QueryMapper.LOG_UPDATE_SUCCESSFUL;
+			}
+			else {
+				if(!details.getCustomerIdentityVerified()) 
+				{
+					log.get().setCheckPassed(false);
+					log.get().setCheckDate(LocalDate.now());
+					log.get().setNotes(QueryMapper.CUSTOMER_IDENTITY);
+					repo.save(log.get());
+					PortRequest portRequest= log.get().getPortRequest();
+					portRequest.setComplianceChecked(true);
+					portRequest.setApprovalStatus(Status.REJECTED);
+					portRequestService.updatePortRequest(portRequest);
+					return QueryMapper.CUSTOMER_IDENTITY;
+				}
+				else if(details.getNumberStatus()!=NumberStatus.ACTIVE)
+					{
+					log.get().setCheckPassed(false);
+					log.get().setCheckDate(LocalDate.now());
+					log.get().setNotes(QueryMapper.NUMBER_STATUS);
+					repo.save(log.get());
+					PortRequest portRequest= log.get().getPortRequest();
+					portRequest.setComplianceChecked(true);
+					portRequest.setApprovalStatus(Status.REJECTED);
+					portRequestService.updatePortRequest(portRequest);
+					return QueryMapper.NUMBER_STATUS;
+					}
+					
+				else if(details.getContractualObligationsMet()>=details.getTimeSinceLastPort())
+					{
+					log.get().setCheckPassed(false);
+					log.get().setCheckDate(LocalDate.now());
+					log.get().setNotes(QueryMapper.TIME_SINCE_LAST_PORT);
+					repo.save(log.get());
+					PortRequest portRequest= log.get().getPortRequest();
+					portRequest.setComplianceChecked(true);
+					portRequest.setApprovalStatus(Status.REJECTED);
+					portRequestService.updatePortRequest(portRequest);
+					return QueryMapper.TIME_SINCE_LAST_PORT;
+					}
+				else
+					{
+					log.get().setCheckPassed(false);
+					log.get().setCheckDate(LocalDate.now());
+					log.get().setNotes(QueryMapper.OUTSTANDING_BILL);
+					repo.save(log.get());
+					PortRequest portRequest= log.get().getPortRequest();
+					portRequest.setComplianceChecked(true);
+					portRequest.setApprovalStatus(Status.REJECTED);
+					portRequestService.updatePortRequest(portRequest);
+					return QueryMapper.OUTSTANDING_BILL;		
+					}
+			}
+		}
+		else throw new LogNotFoundException(QueryMapper.CANNOT_GET_LOG);
+		
+	}
+
+	@Override
+	public ComplianceLogs getLogByCustomer(Customer customer) throws LogNotFoundException {
+		Optional<ComplianceLogs> log= repo.findByCustomer(customer);
+		if(log.isPresent()) 
+		{
+			return log.get();
+		}
+		else throw new LogNotFoundException(QueryMapper.CANNOT_GET_LOG);
 	}
 
 }

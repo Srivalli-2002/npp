@@ -134,14 +134,31 @@ const OperatorManagement = () => {
         </tbody>
       </table>
 
+      
       {selectedOperator && (
-        <div className="mt-4">
-          <h3>OPERATOR DETAILS :</h3>
-          <p>Operator ID : {selectedOperator.operatorId}</p>
-          <p>Operator Name : {selectedOperator.operatorName}</p>
-          <p>Contact Info : {selectedOperator.contactInfo}</p>
-        </div>
-      )}
+        <div>
+          <h2>OPERATOR DETAILS</h2>
+        <table className="table mt-4 table-striped table-bordered ">
+        <thead>
+          <tr>
+            <th>Operator Form</th>
+            <th>Operator Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="left-align">Operator Name</td>
+            <td className="left-align">{selectedOperator.operatorName}</td>
+          </tr>
+          <tr>
+            <td className="left-align">Contact Information</td>
+            <td className="left-align">{selectedOperator.contactInfo}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+     )}
+
     </div>
   );
 };
