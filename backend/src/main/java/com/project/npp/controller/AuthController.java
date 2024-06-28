@@ -112,7 +112,7 @@ public class AuthController {
 		}
 
 		// Find operator by ID and assign it to the user
-		String operatorName=signUpRequest.getOperatorName();
+		String operatorName = signUpRequest.getOperatorName();
 		Operator operator = operatorService.getOperatorByOperatorName(operatorName);
 		user.setOperator(operator);
 

@@ -41,8 +41,6 @@ public class Customer {
 	@ManyToOne
 	private Operator newOperator;
 	
-	
-	
 	@Enumerated(EnumType.STRING)
 	private Status status;
 }

@@ -72,6 +72,13 @@ public class QueryMapper {
 	
 	public static final String LOG_UPDATE_SUCCESSFUL = "Log updated successfully !!";
 	
+	public static final String TRACK_STATUS = "Customer track status";
+	
+	public static final String VERIFICATION_DETAILS = "Verification details added successfully !!";
+	public static final String NO_VERIFICATION_DETAILS = "No Verification Details Found";
+	public static final String UPDATE_VERIFICATION_DETAILS = "Verification details updated successfully !!";
+	public static final String GET_VERIFICATION_DETAILS = "Verification details";
+	
 	public static final String VERIFICATION = "Customer verification sucessful";
 	public static final String CUSTOMER_IDENTITY = "Customer details are mismatched";
 	public static final String OUTSTANDING_BILL = "Pending bill";

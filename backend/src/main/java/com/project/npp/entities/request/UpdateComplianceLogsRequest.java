@@ -14,6 +14,5 @@ import lombok.ToString;
 @ToString
 public class UpdateComplianceLogsRequest {
 	
-	private Integer logId;
-	
+	private Integer logId;	
 }

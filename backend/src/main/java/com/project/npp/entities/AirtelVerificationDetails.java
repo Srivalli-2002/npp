@@ -1,19 +1,25 @@
 package com.project.npp.entities;
- 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
- 
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-public class VerificationDetails {
+@Entity
+@Table(name = "airtel_number_porting_compliance ")
+public class AirtelVerificationDetails {
 	
-	private Long phoneNumber ;
+	@Id
+	private Long phoneNumber; 
 	
 	private Boolean customerIdentityVerified;
 	
@@ -25,5 +31,5 @@ public class VerificationDetails {
 	
 	private Integer contractualObligationsMet;
 	
-	private Boolean notificationToCurrentOperator; 
+	private Boolean notificationToCurrentOperator;
 }

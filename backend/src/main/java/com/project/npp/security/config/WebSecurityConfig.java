@@ -62,6 +62,8 @@ public class WebSecurityConfig {
 						.requestMatchers("/api/admin/**").hasRole("SYSTEM_ADMIN")
 						.requestMatchers("/api/customerservice/**").hasRole("CUSTOMER_SERVICE")
 						.requestMatchers("/api/complianceofficer/**").hasRole("COMPLIANCE_OFFICER")
+						.requestMatchers("/api/airtelcomplianceofficer/**").hasRole("AIRTEL_COMPLIANCE_OFFICER")
+						.requestMatchers("/api/jiocomplianceofficer/**").hasRole("JIO_COMPLIANCE_OFFICER")
 						.requestMatchers("/api/customer/**").hasRole("USER"))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.authenticationProvider(authenticationProvider())

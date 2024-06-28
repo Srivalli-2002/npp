@@ -36,13 +36,10 @@ public class CustomerServiceImpl implements CustomerService {
 	// Method to add a new customer
 	@Override
 	public Customer addCustomer(Customer customer) throws RoleNotFoundException, OperatorNotFoundException {
-
-		// Set status to PENDING by default
 		customer.setStatus(Status.PENDING);
-		Optional<UserEntity> user= userEntityService.findByUsername(customer.getUsername());
-		Optional<Role> role= roleService.findRoleByName(ERole.ROLE_USER);
+		Optional<UserEntity> user = userEntityService.findByUsername(customer.getUsername());
+		Optional<Role> role = roleService.findRoleByName(ERole.ROLE_USER);
 		userEntityService.updateRole(user.get().getUsername(), role.get());
-		// Save customer to the repository
 		Customer cust = repo.save(customer);
 		loggers.info(QueryMapper.ADD_CUSTOMER);
 		return cust;
@@ -79,7 +76,6 @@ public class CustomerServiceImpl implements CustomerService {
 	public String deleteCustomerById(Integer id) throws CustomerNotFoundException {
 		Optional<Customer> cust = repo.findById(id);
 		if (cust.isPresent()) {
-			// Delete the customer from the repository
 			repo.deleteById(id);
 			loggers.info(QueryMapper.DELETE_CUSTOMER);
 			return "Deleted Successfully!!";
@@ -93,7 +89,6 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<Customer> getAllCustomers() throws CustomerNotFoundException {
 		List<Customer> customers = (List<Customer>) repo.findAll();
 		if (!customers.isEmpty()) {
-			// Get all customers from the repository
 			loggers.info(QueryMapper.GET_CUSTOMER);
 			return customers;
 		} else
@@ -101,6 +96,7 @@ public class CustomerServiceImpl implements CustomerService {
 		throw new CustomerNotFoundException(QueryMapper.CANNOT_GET_CUSTOMER);
 	}
 
+	// Method to get customer by username
 	@Override
 	public Customer getCustomerByUserName(String username) throws CustomerNotFoundException {
 		Optional<Customer> cust = repo.findByUsername(username);
@@ -112,6 +108,7 @@ public class CustomerServiceImpl implements CustomerService {
 		throw new CustomerNotFoundException(QueryMapper.CANNOT_GET_CUSTOMER);
 	}
 
+	// Method to get customer by phone number
 	@Override
 	public Customer getCustomerByPhoneNumber(Long phoneNumber) throws CustomerNotFoundException {
 		Optional<Customer> cust = repo.findByPhoneNumber(phoneNumber);

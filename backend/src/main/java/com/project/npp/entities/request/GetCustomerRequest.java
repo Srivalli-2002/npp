@@ -12,5 +12,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetCustomerRequest {
+	
 	private Integer customerId;
 }

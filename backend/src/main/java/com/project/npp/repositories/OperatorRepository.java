@@ -9,5 +9,6 @@ import com.project.npp.entities.Operator;
 
 @Repository
 public interface OperatorRepository  extends CrudRepository<Operator, Integer>{
-  public Optional<Operator> findByOperatorName(String operatorName);
+	
+	public Optional<Operator> findByOperatorName(String operatorName);
 }

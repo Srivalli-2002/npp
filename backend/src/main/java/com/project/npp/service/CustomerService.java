@@ -12,17 +12,21 @@ public interface CustomerService {
 	// Add customer
 	public Customer addCustomer(Customer customer) throws RoleNotFoundException, OperatorNotFoundException;
 
-	// Get customer
+	// Get customer by id
 	public Customer getCustomerById(Integer id) throws CustomerNotFoundException;
+
+	// Get customer by username
 	public Customer getCustomerByUserName(String username) throws CustomerNotFoundException;
-	public Customer getCustomerByPhoneNumber(Long  phoneNumber) throws CustomerNotFoundException;
-	
+
+	// Get customer by phone number
+	public Customer getCustomerByPhoneNumber(Long phoneNumber) throws CustomerNotFoundException;
+
 	// Update customer
 	public Customer updateCustomer(Customer customer) throws CustomerNotFoundException;
-	
+
 	// Delete customer
-	public String deleteCustomerById(Integer id) throws CustomerNotFoundException; 
-	
+	public String deleteCustomerById(Integer id) throws CustomerNotFoundException;
+
 	// Get all customers
 	public List<Customer> getAllCustomers() throws CustomerNotFoundException;
 }

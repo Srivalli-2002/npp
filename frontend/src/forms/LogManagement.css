@@ -2,7 +2,11 @@
     color: white;
 }
 
-.btn-secondary:hover a{
+.btn-secondary:hover a {
     color: white;
+}
+
+.btn-secondary:hover {
+    border-color: white;
     background-color: #5ea3a3;
 }

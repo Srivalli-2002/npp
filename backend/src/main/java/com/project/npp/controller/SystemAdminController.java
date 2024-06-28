@@ -48,11 +48,7 @@ public class SystemAdminController {
 	@PostMapping("/updateuserrole")
 	public ResponseEntity<String> updateUserRole(@RequestBody UpdateUserRoleRequest updateUserRoleRequest)
 			throws RoleNotFoundException, OperatorNotFoundException {
-
-		// Find the role by name
 		Optional<Role> r = roleService.findRoleByName(updateUserRoleRequest.getRole());
-
-		// Update the user role
 		String message = userService.updateRole(updateUserRoleRequest.getUsername(), r.get());
 		loggers.info(QueryMapper.ROLE_UPDATE_SUCCESSFULL);
 		return new ResponseEntity<>(message, HttpStatus.OK);
@@ -62,26 +58,18 @@ public class SystemAdminController {
 	@GetMapping("/getallusers")
 	public ResponseEntity<List<UserEntity>> getAllUserEntities() {
 		loggers.info("Get all Users");
-
-		// Get list of all users
 		List<UserEntity> allUsers = userService.getAllUserEntities();
 		loggers.info(QueryMapper.GET_USER);
 		return new ResponseEntity<>(allUsers, HttpStatus.OK);
 	}
 
-	// ***************************************************************************************************
-
 	// API end point to add a new operator
 	@PostMapping("/addoperator")
 	public ResponseEntity<Operator> addOperator(@RequestBody OperatorRequest operatorRequest) {
 		loggers.info("Add operator");
-
-		// Create a new Operator object and populate it with the request data
 		Operator operator = new Operator();
 		operator.setOperatorName(operatorRequest.getOperatorName());
 		operator.setContactInfo(operatorRequest.getContactInfo());
-
-		// Add the operator and retrieve the persisted object
 		Operator op = operatorService.addOperator(operator);
 		loggers.info(QueryMapper.ADD_OPERATOR_SUCCESSFULL);
 		return new ResponseEntity<>(op, HttpStatus.OK);
@@ -92,8 +80,6 @@ public class SystemAdminController {
 	public ResponseEntity<Operator> getOperator(@RequestBody GetOperatorRequest getOperatorRequest)
 			throws OperatorNotFoundException {
 		loggers.info("Get operatorby ID");
-
-		// Retrieve the operator by its ID
 		Operator operator = operatorService.getOperatorById(getOperatorRequest.getOperatorId());
 		loggers.info(QueryMapper.GET_OPERATOR_SUCCESSFULL);
 		return new ResponseEntity<>(operator, HttpStatus.OK);
@@ -103,8 +89,6 @@ public class SystemAdminController {
 	@PostMapping("/updateoperator")
 	public ResponseEntity<Operator> updateOperator(@RequestBody Operator operator) throws OperatorNotFoundException {
 		loggers.info("Update operator");
-
-		// Update the operator and retrieve the updated object
 		Operator op = operatorService.updateOperator(operator);
 		loggers.info(QueryMapper.UPDATE_OPERATOR_SUCCESSFULL);
 		return new ResponseEntity<>(op, HttpStatus.OK);
@@ -115,8 +99,6 @@ public class SystemAdminController {
 	public ResponseEntity<String> deleteOperator(@RequestBody GetOperatorRequest getOperatorRequest)
 			throws OperatorNotFoundException {
 		loggers.info("Delete operator by ID");
-
-		// Delete the operator and retrieve the deletion message
 		String message = operatorService.deleteOperator(getOperatorRequest.getOperatorId());
 		loggers.info(QueryMapper.DELETE_OPERATOR_SUCCESSFULL);
 		return new ResponseEntity<>(message, HttpStatus.OK);
@@ -126,8 +108,6 @@ public class SystemAdminController {
 	@GetMapping("/getalloperators")
 	public ResponseEntity<List<Operator>> getAllOperators() throws OperatorNotFoundException {
 		loggers.info("Get all Operators");
-
-		// Get list of all operators
 		List<Operator> allOperators = operatorService.getAllOperators();
 		loggers.info(QueryMapper.GET_OPERATOR);
 		return new ResponseEntity<>(allOperators, HttpStatus.OK);

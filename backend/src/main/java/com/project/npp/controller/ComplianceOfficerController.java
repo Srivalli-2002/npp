@@ -1,7 +1,5 @@
 package com.project.npp.controller;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -16,20 +14,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.npp.entities.AirtelVerificationDetails;
 import com.project.npp.entities.ComplianceLogs;
+import com.project.npp.entities.Customer;
+import com.project.npp.entities.JioVerificationDetails;
+import com.project.npp.entities.Operator;
 import com.project.npp.entities.VerificationDetails;
 import com.project.npp.entities.request.GetLogRequest;
 import com.project.npp.entities.request.GetVerificationDetails;
 import com.project.npp.entities.request.GetVerificationDetailsByPhn;
 import com.project.npp.entities.request.UpdateComplianceLogsRequest;
-import com.project.npp.entities.request.UpdateVerificationDetails;
 import com.project.npp.exceptionmessages.QueryMapper;
 import com.project.npp.exceptions.CustomerNotFoundException;
 import com.project.npp.exceptions.LogNotFoundException;
+import com.project.npp.exceptions.OperatorNotFoundException;
 import com.project.npp.exceptions.PortRequestNotFoundException;
 import com.project.npp.exceptions.VerificationDetailsNotFoundException;
 import com.project.npp.service.ComplianceLogsService;
-import com.project.npp.utilities.VerificationDetailsService;
+import com.project.npp.service.CustomerService;
+import com.project.npp.service.OperatorService;
+import com.project.npp.utilities.AirtelVerificationDetailsService;
+import com.project.npp.utilities.JioVerificationDetailsService;
+import com.project.npp.utilities.VerificationDetailsConversion;
 
 @RestController
 @RequestMapping("/api/complianceofficer")
@@ -42,19 +48,28 @@ public class ComplianceOfficerController {
 	private ComplianceLogsService complianceLogsService;
 
 	@Autowired
-	private VerificationDetailsService verificationDetailsService;
+	private JioVerificationDetailsService jioVerificationDetailsService;
+	
+	@Autowired
+	private AirtelVerificationDetailsService airtelVerificationDetailsService;
+
+	@Autowired
+	private OperatorService operatorService;
+	
+	@Autowired
+	private VerificationDetailsConversion convert;
+	
+	@Autowired
+	private CustomerService customerService;
 
 	// API end point to retrieve a compliance log by its ID
 	@PostMapping("/updatelog")
-	public ResponseEntity<String> updateLog(@RequestBody UpdateComplianceLogsRequest req) throws LogNotFoundException,
-			PortRequestNotFoundException, CustomerNotFoundException, VerificationDetailsNotFoundException {
+	public ResponseEntity<String> updateLog(@RequestBody UpdateComplianceLogsRequest req)
+			throws LogNotFoundException, PortRequestNotFoundException, CustomerNotFoundException,
+			VerificationDetailsNotFoundException, OperatorNotFoundException {
 		loggers.info("Update log");
-
-		// Update the compliance log by its ID
 		String message = complianceLogsService.VerifyAndUpdateLog(req.getLogId());
 		loggers.info(QueryMapper.GET_LOG_SUCCESSFULL);
-
-		// Return the compliance log in the response
 		return new ResponseEntity<String>(message, HttpStatus.OK);
 	}
 
@@ -62,69 +77,65 @@ public class ComplianceOfficerController {
 	@PostMapping("/getlog")
 	public ResponseEntity<ComplianceLogs> getLog(@RequestBody GetLogRequest getLogRequest) throws LogNotFoundException {
 		loggers.info("Get log");
-
-		// Retrieve the compliance log by its ID
 		ComplianceLogs complianceLog = complianceLogsService.getLog(getLogRequest.getLogId());
 		loggers.info(QueryMapper.GET_LOG_SUCCESSFULL);
-
-		// Return the compliance log in the response
 		return new ResponseEntity<ComplianceLogs>(complianceLog, HttpStatus.OK);
 	}
 
 	// API end point to get all compliance logs
 	@GetMapping("/getalllogs")
 	public ResponseEntity<List<ComplianceLogs>> getAllComplianceLogs() throws LogNotFoundException {
-
-		// Retrive list of compliance logs
 		List<ComplianceLogs> complianceLogs = complianceLogsService.getAllComplianceLogs();
 		loggers.info(QueryMapper.GET_LOG_SUCCESSFULL);
-
-		// Return the list of compliance logs in the response
 		return new ResponseEntity<List<ComplianceLogs>>(complianceLogs, HttpStatus.OK);
 
 	}
-	// *************************************************************************************************
 
-	@GetMapping("/addverificationdetails")
-	public ResponseEntity<String> addVerificationDetails() throws FileNotFoundException, IOException {
-		String message = verificationDetailsService.fetchVerificationDetails();
-		return new ResponseEntity<>(message, HttpStatus.OK);
-	}
-
-	@PostMapping("/updateverificationdetails")
-	public ResponseEntity<VerificationDetails> updateVerificationDetails(@RequestBody UpdateVerificationDetails details)
-			throws VerificationDetailsNotFoundException {
-		VerificationDetails vDetails = new VerificationDetails();
-		vDetails.setContractualObligationsMet(details.getContractualObligationsMet());
-		vDetails.setCustomerIdentityVerified(details.getCustomerIdentityVerified());
-		vDetails.setNoOutstandingPayments(details.getNoOutstandingPayments());
-		vDetails.setNotificationToCurrentOperator(details.getNotificationToCurrentOperator());
-		vDetails.setNumberStatus(details.getNumberStatus());
-		vDetails.setPhoneNumber(details.getPhoneNumber());
-		vDetails.setTimeSinceLastPort(details.getTimeSinceLastPort());
-		VerificationDetails updatedDetails = verificationDetailsService.updateVerificationDetails(vDetails);
-		return new ResponseEntity<>(updatedDetails, HttpStatus.OK);
-	}
-
+	// API end point to get all verification details by log id
+	@SuppressWarnings("static-access")
 	@PostMapping("/getverificationdetailsbylogid")
 	public ResponseEntity<VerificationDetails> getVerificationDetails(@RequestBody GetVerificationDetails details)
-			throws VerificationDetailsNotFoundException, LogNotFoundException {
+			throws VerificationDetailsNotFoundException, LogNotFoundException, OperatorNotFoundException {
 		ComplianceLogs complianceLog = complianceLogsService.getLog(details.getLogId());
-		Long phoneNumber= complianceLog.getCustomer().getPhoneNumber();
-		VerificationDetails vDetails = verificationDetailsService.getByPhoneNumber(phoneNumber);
-		return new ResponseEntity<>(vDetails, HttpStatus.OK);
+		Long phoneNumber = complianceLog.getCustomer().getPhoneNumber();
+		Operator operatorJio = operatorService.getOperatorByOperatorName("jio");
+		Operator operatorAirtel = operatorService.getOperatorByOperatorName("airtel");
+		if (complianceLog.getCustomer().getCurrentOperator().equals(operatorAirtel)) {
+			AirtelVerificationDetails vDetails = airtelVerificationDetailsService.getByPhoneNumber(phoneNumber);
+			VerificationDetails result = convert.convertToVerificationDetails(vDetails);
+			loggers.info(QueryMapper.GET_VERIFICATION_DETAILS);
+			return new ResponseEntity<>(result, HttpStatus.OK);
+		}
+		if (complianceLog.getCustomer().getCurrentOperator().equals(operatorJio)) {
+			JioVerificationDetails vDetails = jioVerificationDetailsService.getByPhoneNumber(phoneNumber);
+			VerificationDetails result = convert.convertToVerificationDetails(vDetails);
+			loggers.info(QueryMapper.GET_VERIFICATION_DETAILS);
+			return new ResponseEntity<>(result, HttpStatus.OK);
+		} else
+			return null;
 	}
-	
-	@GetMapping("/getallverificationdetails")
-	public ResponseEntity<List<VerificationDetails>> getAllVerificationDetails() throws VerificationDetailsNotFoundException
-	{
-		List<VerificationDetails> details= verificationDetailsService.getAll();
-		return new ResponseEntity<>(details, HttpStatus.OK);
-	}
+
+	// API end point to get all verification details by phone number
+	@SuppressWarnings("static-access")
 	@PostMapping("/getverificationdetailsbyphn")
-	public ResponseEntity<VerificationDetails> getVerificationDetailsByPhn(@RequestBody GetVerificationDetailsByPhn details)
-			throws VerificationDetailsNotFoundException, LogNotFoundException {
-		VerificationDetails vDetails = verificationDetailsService.getByPhoneNumber(details.getPhoneNumber());
-		return new ResponseEntity<>(vDetails, HttpStatus.OK);
+	public ResponseEntity<VerificationDetails> getVerificationDetailsByPhn(@RequestBody GetVerificationDetailsByPhn details) throws VerificationDetailsNotFoundException,LogNotFoundException, OperatorNotFoundException, CustomerNotFoundException {
+		Customer customer = customerService.getCustomerByPhoneNumber(details.getPhoneNumber());
+		Operator operatorJio = operatorService.getOperatorByOperatorName("jio");
+		Operator operatorAirtel = operatorService.getOperatorByOperatorName("airtel");
+		if (customer.getCurrentOperator().equals(operatorAirtel)) {
+			AirtelVerificationDetails vDetails = airtelVerificationDetailsService
+					.getByPhoneNumber(details.getPhoneNumber());
+			VerificationDetails result = convert.convertToVerificationDetails(vDetails);
+			loggers.info(QueryMapper.GET_VERIFICATION_DETAILS);
+			return new ResponseEntity<>(result, HttpStatus.OK);
+		}
+		if (customer.getCurrentOperator().equals(operatorJio)) {
+			JioVerificationDetails vDetails = jioVerificationDetailsService.getByPhoneNumber(details.getPhoneNumber());
+			VerificationDetails result = convert.convertToVerificationDetails(vDetails);
+			loggers.info(QueryMapper.GET_VERIFICATION_DETAILS);
+			return new ResponseEntity<>(result, HttpStatus.OK);
+		} else
+			return null;
 	}
+
 }

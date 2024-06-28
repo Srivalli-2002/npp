@@ -1,5 +1,8 @@
 package com.project.npp.entities;
  
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,8 +14,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class VerificationDetails {
+@Entity
+@Table(name = "jio_number_porting_compliance ")
+public class JioVerificationDetails {
 	
+	@Id
 	private Long phoneNumber ;
 	
 	private Boolean customerIdentityVerified;
@@ -25,5 +31,5 @@ public class VerificationDetails {
 	
 	private Integer contractualObligationsMet;
 	
-	private Boolean notificationToCurrentOperator; 
+	private Boolean notificationToCurrentOperator;
 }

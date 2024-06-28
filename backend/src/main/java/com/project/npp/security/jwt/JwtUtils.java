@@ -40,16 +40,11 @@ public class JwtUtils {
 	}
 
 	public String getUserNameFromJwtToken(String token) {
-		// 0.9.0// return
-		// Jwts.parser().setSigningKey(getSignInKey()).parseClaimsJws(token).getBody().getSubject();
-		// 0.11.5 //return
-		// Jwts.parserBuilder().setSigningKey(getSignInKey()).build().parseClaimsJws(token).getBody().getSubject();
 		return Jwts.parserBuilder().setSigningKey(getSignInKey()).build().parseClaimsJws(token).getBody().getSubject();
 	}
 
 	public boolean validateJwtToken(String authToken) throws SignatureException {
 		try {
-			// Jwts.parser().setSigningKey(getSignInKey()).parseClaimsJws(authToken);
 			Jwts.parserBuilder().setSigningKey(getSignInKey()).build().parseClaimsJws(authToken);
 			return true;
 		} catch (MalformedJwtException e) {

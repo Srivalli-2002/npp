@@ -68,12 +68,12 @@ const HelpAndSupport = () => {
                 <h2 className='subheading'>USER GUIDES</h2>
                 <ul>
                     <li>
-                <button button className="btn btn"><Link to={"/support&assistance/userguide1"}>
+                <button button className="btn btn"><Link to={"/helpdesk/userguide1"}>
                 User Guide 1 : How to Submit a Porting Request
               </Link></button>
               </li>
               <li>
-              <button button className="btn btn"><Link to={"/support&assistance/userguide2"}>
+              <button button className="btn btn"><Link to={"/helpdesk/userguide2"}>
               User Guide 2 : Troubleshooting Common Issues
               </Link></button>
               </li>

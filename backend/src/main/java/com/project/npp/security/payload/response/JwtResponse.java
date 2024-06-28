@@ -14,19 +14,25 @@ import lombok.ToString.Exclude;
 @Setter
 @ToString
 public class JwtResponse {
-	
+
 	private String accessToken;
+
 	private String tokenType = "Bearer";
+
 	private Integer id;
+
 	private String username;
+
 	private Operator operator;
+
 	@Exclude
 	private String role;
-	public JwtResponse(String accessToken, Integer id, String username, String role,Operator operator) {
+
+	public JwtResponse(String accessToken, Integer id, String username, String role, Operator operator) {
 		this.accessToken = accessToken;
 		this.id = id;
 		this.username = username;
 		this.role = role;
-		this.operator=operator;
+		this.operator = operator;
 	}
 }

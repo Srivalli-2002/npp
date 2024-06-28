@@ -15,7 +15,7 @@ import lombok.ToString;
 @ToString
 public class UpdateVerificationDetails {
 	
-private Long phoneNumber ;
+	private Long phoneNumber ;
 	
 	private Boolean customerIdentityVerified;
 	
@@ -28,5 +28,4 @@ private Long phoneNumber ;
 	private Integer contractualObligationsMet;
 	
 	private Boolean notificationToCurrentOperator;
-
 }

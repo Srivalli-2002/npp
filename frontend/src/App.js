@@ -132,7 +132,7 @@ const App = () => {
           {showUsers && (
             <li className="nav-item">
               <Link to={"/trackstatus"} className="nav-link">
-                Trak Status
+                Track Status
               </Link>
             </li>
           )}
@@ -146,13 +146,13 @@ const App = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/support&assistance"} className="nav-link">
-                Support&Assistance
+              <Link to={"/helpdesk"} className="nav-link">
+                Help Desk
               </Link>
             </li>
             <li className="nav-item">
               <a href="/login" className="nav-link" onClick={logOut}>
-                LogOut
+                Logout
               </a>
             </li>
           </div>
@@ -181,9 +181,9 @@ const App = () => {
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/profile" element={<Profile/>} />
-          <Route path="/support&assistance" element={<HelpAndSupport/>} />
-          <Route path="/support&assistance/userguide1" element={<UserGuide1/>} />
-          <Route path="/support&assistance/userguide2" element={<UserGuide2/>} />
+          <Route path="/helpdesk" element={<HelpAndSupport/>} />
+          <Route path="/helpdesk/userguide1" element={<UserGuide1/>} />
+          <Route path="/helpdesk/userguide2" element={<UserGuide2/>} />
 
           <Route path="/usermanagement" element={<UserManagement/>} />
           <Route path="/operatormanagement" element={<OperatorManagement/>} />

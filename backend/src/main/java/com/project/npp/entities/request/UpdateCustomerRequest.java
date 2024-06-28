@@ -31,5 +31,4 @@ public class UpdateCustomerRequest {
 	
 	@Enumerated(EnumType.STRING)
 	private Status status;
-
 }

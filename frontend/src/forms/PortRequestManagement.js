@@ -99,7 +99,7 @@ const PortRequestManagement = () => {
         </form>
       </div>
  
-      <table className="table mt-4">
+      <table className="table table-striped table-bordered">
         <thead>
           <tr>
             <th>Request ID</th>

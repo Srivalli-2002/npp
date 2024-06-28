@@ -9,17 +9,19 @@ public interface OperatorService {
 	
 	// Add operator
 	public Operator addOperator(Operator operator);
-	
+
 	// Get operator
 	public Operator getOperatorById(Integer id) throws OperatorNotFoundException;
+
+	// Get operator by name
 	public Operator getOperatorByOperatorName(String operatorName) throws OperatorNotFoundException;
-	
+
 	// Update operator
 	public Operator updateOperator(Operator operator) throws OperatorNotFoundException;
-	
+
 	// Delete operator
 	public String deleteOperator(Integer id) throws OperatorNotFoundException;
-	
+
 	// Get all operators
-	public List<Operator> getAllOperators() throws OperatorNotFoundException ;
+	public List<Operator> getAllOperators() throws OperatorNotFoundException;
 }

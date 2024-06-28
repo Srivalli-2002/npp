@@ -13,6 +13,4 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer>{
 	public Optional<Customer> findByUsername(String username);
 	
 	public Optional<Customer> findByPhoneNumber(Long phoneNumber);
-	
-	
 }

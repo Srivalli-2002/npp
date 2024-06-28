@@ -15,7 +15,7 @@ public interface UserEntityService {
 	public UserEntity addUserEntity(UserEntity user);
 
 	// Update role
-	public String updateRole(String username, Role role ) throws RoleNotFoundException,OperatorNotFoundException;
+	public String updateRole(String username, Role role) throws RoleNotFoundException, OperatorNotFoundException;
 
 	// Find by username
 	public Optional<UserEntity> findByUsername(String username);

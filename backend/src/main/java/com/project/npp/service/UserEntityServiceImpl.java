@@ -34,14 +34,13 @@ public class UserEntityServiceImpl implements UserEntityService {
 	// Method to update the role of a user
 	@Override
 	public String updateRole(String username, Role role) throws RoleNotFoundException, OperatorNotFoundException {
-		Optional<Role> complianceRole= roleService.findRoleByName(ERole.ROLE_COMPLIANCE_OFFICER);
-		Optional<Role> customerSupportRole=roleService.findRoleByName(ERole.ROLE_CUSTOMER_SERVICE);
-		Operator operator= operatorService.getOperatorByOperatorName("prodapt");
+		Optional<Role> complianceRole = roleService.findRoleByName(ERole.ROLE_COMPLIANCE_OFFICER);
+		Optional<Role> customerSupportRole = roleService.findRoleByName(ERole.ROLE_CUSTOMER_SERVICE);
+		Operator operator = operatorService.getOperatorByOperatorName("prodapt");
 		Optional<UserEntity> user = repo.findByUsername(username);
 		if (user.isPresent()) {
 			user.get().setRole(role);
-			if(role==complianceRole.get() || role== customerSupportRole.get())
-			{
+			if (role == complianceRole.get() || role == customerSupportRole.get()) {
 				user.get().setOperator(operator);
 				repo.save(user.get());
 			}

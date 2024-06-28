@@ -59,7 +59,7 @@ public class PortRequestServiceImpl implements PortRequestService {
 			throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException {
 		Optional<PortRequest> p = repo.findById(portRequest.getRequestId());
 		if (p.isPresent()) {
-			if (portRequest.getApprovalStatus()==Status.COMPLETED) {
+			if (portRequest.getApprovalStatus() == Status.COMPLETED) {
 				// If compliance is checked, update status and completion date
 				portRequest.setApprovalStatus(Status.COMPLETED);
 				portRequest.setCompletionDate(LocalDate.now());
@@ -71,11 +71,8 @@ public class PortRequestServiceImpl implements PortRequestService {
 				PortRequest portReq = repo.save(portRequest);
 				loggers.info(QueryMapper.UPDATE_PORTREQUEST);
 				return portReq;
-				
-			} 
-			else {
-				if(portRequest.getApprovalStatus()==Status.REJECTED)
-				{
+			} else {
+				if (portRequest.getApprovalStatus() == Status.REJECTED) {
 					portRequest.setCompletionDate(LocalDate.now());
 
 					// Update customer status
@@ -85,16 +82,13 @@ public class PortRequestServiceImpl implements PortRequestService {
 					PortRequest portReq = repo.save(portRequest);
 					loggers.info(QueryMapper.UPDATE_PORTREQUEST);
 					return portReq;
-					
-				}
-				else
-				{
-				// If compliance is not checked, reset status and completion date
-				portRequest.setApprovalStatus(Status.PENDING);
-				portRequest.setCompletionDate(null);
-				PortRequest portReq = repo.save(portRequest);
-				loggers.info(QueryMapper.CANNOT_UPDATE_PORTREQUEST);
-				return portReq;
+				} else {
+					// If compliance is not checked, reset status and completion date
+					portRequest.setApprovalStatus(Status.PENDING);
+					portRequest.setCompletionDate(null);
+					PortRequest portReq = repo.save(portRequest);
+					loggers.info(QueryMapper.CANNOT_UPDATE_PORTREQUEST);
+					return portReq;
 				}
 			}
 

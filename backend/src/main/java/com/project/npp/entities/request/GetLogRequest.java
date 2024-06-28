@@ -12,5 +12,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetLogRequest {
+	
 	private Integer logId;
 }

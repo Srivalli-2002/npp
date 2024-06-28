@@ -18,7 +18,4 @@ public class SignupRequest {
 	private String password;
 	
 	private String operatorName;
-
-	
-
 }

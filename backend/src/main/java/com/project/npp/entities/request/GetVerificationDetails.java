@@ -12,6 +12,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class GetVerificationDetails {
+	
 	private Integer logId;
-
 }

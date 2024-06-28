@@ -11,16 +11,17 @@ public interface PortRequestService {
 	
 	// Add port request
 	public PortRequest addPortRequest(PortRequest portRequest);
-	
+
 	// Get port request
 	public PortRequest getPortRequest(Integer portRequestId) throws PortRequestNotFoundException;
-	
+
 	// Update port request
-	public PortRequest updatePortRequest(PortRequest portRequest)throws CustomerNotFoundException,PortRequestNotFoundException, LogNotFoundException;
+	public PortRequest updatePortRequest(PortRequest portRequest)
+			throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException;
 
 	// Delete port request
 	public String deletePortRequest(Integer portRequestId) throws PortRequestNotFoundException;
-	
+
 	// Get all post requests
 	public List<PortRequest> getAllPortRequest() throws PortRequestNotFoundException;
 }
