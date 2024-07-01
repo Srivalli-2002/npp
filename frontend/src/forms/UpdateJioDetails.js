@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import ComplianceOfficerService from '../services/ComplianceOfficerService';
+import JioCOService from '../services/JioCOService';
  
-function UpdateDetails() {
+function UpdateJioDetails() {
   const navigate = useNavigate();
   const { phoneNumber } = useParams();
  
@@ -23,7 +23,7 @@ function UpdateDetails() {
   const fetchDetailsByPhn = async (phoneNumber) => {
     try {
        
-      const response = await ComplianceOfficerService.getVerificationDetailsByPhn(phoneNumber);
+      const response = await JioCOService.getVerificationDetailsByPhn(phoneNumber);
       if (response) {
         setDetailsData(response);
       } else {
@@ -45,7 +45,7 @@ function UpdateDetails() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await ComplianceOfficerService.updateVerificationDetails(detailsData);
+      await JioCOService.updateVerificationDetails(detailsData);
       navigate("/details");
     } catch (error) {
       console.error('Error updating details:', error);
@@ -55,7 +55,7 @@ function UpdateDetails() {
  
   return (
     <div className="auth-container">
-      <h2>UPDATE VERIFICATION DETAILS</h2>
+      <h2>UPDATE DETAILS</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Customer Identity Verified :</label>
@@ -90,4 +90,4 @@ function UpdateDetails() {
   );
 }
  
-export default UpdateDetails;
+export default UpdateJioDetails;

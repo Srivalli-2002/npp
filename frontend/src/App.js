@@ -25,13 +25,17 @@ import TrackStatus from "./forms/TrackStatus";
 import HelpAndSupport from "./forms/HelpAndSupport";
 import UserGuide1 from "./forms/UserGuide1";
 import UserGuide2 from "./forms/UserGuide2";
-import VerificationDetailsManagement from "./forms/VerificationDetailsManagement";
-import UpdateDetails from "./forms/UpdateDetails";
+import AirtelVerificationDetailsManagement from "./forms/AirtelVerificationDetailsManagement";
+import UpdateAirtelDetails from "./forms/UpdateAirtelDetails";
+import JioVerificationDetailsManagement from "./forms/JioVerificationDetailsManagement";
+import UpdateJioDetails from "./forms/UpdateJioDetails";
 
 const App = () => {
   const [showSystemAdmin, setShowSystemAdmin] = useState(false);
   const [showCustomerService, setShowCustomerService] = useState(false);
   const [showComplianceOfficer, setShowComplianceOfficer] = useState(false);
+  const [showAirtelComplianceOfficer, setShowAirtelComplianceOfficer] = useState(false);
+  const [showJioComplianceOfficer, setShowJioComplianceOfficer] = useState(false);
   const [showUsers, setShowUsers] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
 
@@ -45,6 +49,10 @@ const App = () => {
       setCurrentUser(user);
       console.log(currentUser);
       setShowComplianceOfficer(user.role.includes("ROLE_COMPLIANCE_OFFICER"));
+      setCurrentUser(user);
+      setShowAirtelComplianceOfficer(user.role.includes("ROLE_AIRTEL_COMPLIANCE_OFFICER"));
+      setCurrentUser(user);
+      setShowJioComplianceOfficer(user.role.includes("ROLE_JIO_COMPLIANCE_OFFICER"));
       setCurrentUser(user);
       setShowUsers(user.role.includes("ROLE_USER"));
       setCurrentUser(user);
@@ -64,6 +72,8 @@ const App = () => {
     setShowSystemAdmin(false);
     setShowCustomerService(false);
     setShowComplianceOfficer(false);
+    setShowJioComplianceOfficer(false);
+    setShowAirtelComplianceOfficer(false);
     setShowUsers(false);
     setCurrentUser(undefined);
   };
@@ -121,13 +131,21 @@ const App = () => {
             </li>
           )}     
 
-          {showComplianceOfficer && (
+          {showAirtelComplianceOfficer && (
             <li className="nav-item">
-              <Link to={"/details"} className="nav-link">
+              <Link to={"/airteldetails"} className="nav-link">
                 Details Dashboard
               </Link>
             </li>
           )}      
+
+          {showJioComplianceOfficer && (
+            <li className="nav-item">
+              <Link to={"/jiodetails"} className="nav-link">
+                Details Dashboard
+              </Link>
+            </li>
+          )}     
 
           {showUsers && (
             <li className="nav-item">
@@ -198,8 +216,10 @@ const App = () => {
 
           <Route path="/compliancelogs" element={<LogManagement/>} />
           <Route path="/update-log/:logId" element={<UpdateLog/>} />
-          <Route path="/details" element={<VerificationDetailsManagement/>} />
-          <Route path="/update-deatils/:phoneNumber" element={<UpdateDetails/>}/>
+          <Route path="/airteldetails" element={<AirtelVerificationDetailsManagement/>} />
+          <Route path="/update-airtel-deatils/:phoneNumber" element={<UpdateAirtelDetails/>}/>
+          <Route path="/jiodetails" element={<JioVerificationDetailsManagement/>} />
+          <Route path="/update-jio-deatils/:phoneNumber" element={<UpdateJioDetails/>}/>
         </Routes>
       </div>
 

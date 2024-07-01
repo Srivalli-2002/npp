@@ -50,54 +50,6 @@ const viewLogs = async () => {
  
 };
  
-const addVerificationDetails = async () => {
-  try {
-    const response = await axios.get(`${BASE_URL}/addverificationdetails`, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...authHeader(),
-        'Access-Control-Allow-Origin': '*'
-      }
-    });
-    return response.data;
-   
-  } catch (err) {
-    throw err;
-  }
- 
-};
- 
-const updateVerificationDetails = async (detailsData) => {
-  try {
-    const response = await axios.post(`${BASE_URL}/updateverificationdetails`, detailsData, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...authHeader(),
-        'Access-Control-Allow-Origin': '*'
-      }
-    });
-    return response.data;
-  } catch (err) {
-    throw err;
-  }
-};
- 
-const viewVerificationDetails = async () => {
-  try {
-    const response = await axios.get(`${BASE_URL}/getallverificationdetails`, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...authHeader(),
-        'Access-Control-Allow-Origin': '*'
-      }
-    });
-    return response.data;
-   
-  } catch (err) {
-    throw err;
-  }
-};
- 
 const getVerificationDetailsByLog = async (logId) => {
   try {
     const response = await axios.post(`${BASE_URL}/getverificationdetailsbylogid`, logId, {
@@ -132,9 +84,6 @@ const ComplianceOfficerService = {
     getLog,
     updateLog,
     viewLogs,
-    addVerificationDetails,
-    updateVerificationDetails,
-    viewVerificationDetails,
     getVerificationDetailsByLog,
     getVerificationDetailsByPhn
 };

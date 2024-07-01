@@ -76,6 +76,8 @@ function UpdateUser() {
             <option value="ROLE_SYSTEM_ADMIN">ROLE_SYSTEM_ADMIN</option>
             <option value="ROLE_CUSTOMER_SERVICE">ROLE_CUSTOMER_SERVICE</option>
             <option value="ROLE_COMPLIANCE_OFFICER">ROLE_COMPLIANCE_OFFICER</option>
+            <option value="ROLE_JIO_COMPLIANCE_OFFICER">ROLE_JIO_COMPLIANCE_OFFICER</option>
+            <option value="ROLE_AIRTEL_COMPLIANCE_OFFICER">ROLE_AIRTEL_COMPLIANCE_OFFICER</option>
             <option value="ROLE_USER">ROLE_USER</option>
             <option value="ROLE_DEFAULT">ROLE_DEFAULT</option>
           </select>

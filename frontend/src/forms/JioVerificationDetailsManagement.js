@@ -1,10 +1,10 @@
-import ComplianceOfficerService from '../services/ComplianceOfficerService';
+import JioCOService from '../services/JioCOService';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
  
-const VerificationDetailsManagement = () => {
+const JioVerificationDetailsManagement = () => {
   const [details, setDetails] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
  
@@ -20,7 +20,7 @@ const VerificationDetailsManagement = () => {
     String(detail.phoneNumber).includes(searchQuery)
   );
   const fetchDetails = () => {
-    ComplianceOfficerService.viewVerificationDetails()
+    JioCOService.viewVerificationDetails()
       .then(response => {
         setDetails(response);
         console.log(response);
@@ -32,7 +32,7 @@ const VerificationDetailsManagement = () => {
  
   return (
     <div className="container mt-5 pt-5">
-      <h2 className="mb-5 pt-3">VERIFICATION DETAILS</h2>
+      <h2 className="mb-5 pt-3">JIO VERIFICATION DETAILS</h2>
       <div className="mb-4">
         <div className="input-group">
           <div className="input-group-prepend">
@@ -73,7 +73,7 @@ const VerificationDetailsManagement = () => {
               <td>{detail.numberStatus}</td>
               <td>{detail.notificationToCurrentOperator.toString()}</td>
               <td>
-                <Link to={`/update-deatils/${detail.phoneNumber}`} className="btn btn-light">
+                <Link to={`/update-jio-deatils/${detail.phoneNumber}`} className="btn btn-light">
                   Update
                 </Link>
               </td>
@@ -85,4 +85,4 @@ const VerificationDetailsManagement = () => {
   );
 };
  
-export default VerificationDetailsManagement;
+export default JioVerificationDetailsManagement;
