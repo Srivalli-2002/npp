@@ -69,9 +69,9 @@ const Login = () => {
 
   return (
     <div className="container-fluid vh-100 d-flex align-items-center justify-content-center" style={{ color: 'white' }}>
-      <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%', backgroundColor: 'white', color: '#001f3f', fontFamily: 'Georgia' }}>
+      <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%', backgroundColor: 'white', color: '#488b8f', fontFamily: 'Georgia' }}>
         <div className="card-body">
-          <h3 className="card-title text-center mb-4">Sign In</h3>
+          <h3 className="card-title text-center mb-4" style={{color: '#488b8f'}}>Sign In</h3>
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
@@ -107,7 +107,7 @@ const Login = () => {
             </div>
 
             <div className="d-grid mb-3">
-              <button className="btn btn-primary btn-block rounded-pill" disabled={loading} style={{ backgroundColor: '#488b8f', borderColor: '#0074D9', fontFamily:'Georgia', color: '#faf9f9' }}>
+              <button className="btn btn-default btn-block rounded-pill" disabled={loading} style={{ backgroundColor: '#488b8f', borderColor: '#488b8f', fontFamily:'Georgia', color: '#ffffff' }}>
                 {loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}

@@ -46,7 +46,7 @@ function UpdateJioDetails() {
     e.preventDefault();
     try {
       await JioCOService.updateVerificationDetails(detailsData);
-      navigate("/details");
+      navigate("/jiodetails");
     } catch (error) {
       console.error('Error updating details:', error);
       alert(error.message || 'An error occurred while updating details.');

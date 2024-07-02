@@ -18,7 +18,6 @@ import com.project.npp.entities.NumberStatus;
 import com.project.npp.exceptionmessages.QueryMapper;
 import com.project.npp.exceptions.VerificationDetailsNotFoundException;
 import com.project.npp.repositories.AirtelVerificationDetailsRepository;
-import com.project.npp.service.UserEntityServiceImpl;
 
 @Service
 public class AirtelVerificationDetailsService {
@@ -64,9 +63,12 @@ public class AirtelVerificationDetailsService {
 		if (details.isPresent()) {
 			loggers.info(QueryMapper.VERIFICATION_DETAILS);
 			return details.get();
-		} else
+		}
+		else
+		{
 			loggers.error(QueryMapper.NO_VERIFICATION_DETAILS);
 			throw new VerificationDetailsNotFoundException(QueryMapper.NO_VERIFICATION_DETAILS);
+		}
 	}
 
 	// Method to update airtel verification details
@@ -91,6 +93,19 @@ public class AirtelVerificationDetailsService {
 		} else
 			loggers.error(QueryMapper.NO_VERIFICATION_DETAILS);
 			throw new VerificationDetailsNotFoundException(QueryMapper.NO_VERIFICATION_DETAILS);
+	}
+	
+	public String delete(Long phoneNumber) throws VerificationDetailsNotFoundException
+	{
+		Optional<AirtelVerificationDetails> Vdetails = repo.findById(phoneNumber);
+		if (Vdetails.isPresent()) {
+			repo.deleteById(phoneNumber);
+			return "Deleted Successfull";
+		} else
+		{
+			loggers.error(QueryMapper.NO_VERIFICATION_DETAILS);
+			throw new VerificationDetailsNotFoundException("Airtel Verification Details Not Found");
+		}
 	}
 
 }

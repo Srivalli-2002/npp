@@ -95,11 +95,11 @@ const PortRequestManagement = () => {
             <input type="date" className="form-control" id="requestDate" name="requestDate" value={newPortRequest.requestDate} onChange={handleInputChange} required />
           </div>
           
-          <button type="submit" className="btn btn-primary" disabled={loading}>SUBMIT</button>
+          <button type="submit" className="btn btn-default" disabled={loading}>SUBMIT</button>
         </form>
       </div>
  
-      <table className="table table-striped table-bordered">
+      <table className="table mt-4">
         <thead>
           <tr>
             <th>Request ID</th>

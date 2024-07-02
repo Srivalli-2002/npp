@@ -33,6 +33,7 @@ import com.project.npp.exceptions.LogNotFoundException;
 import com.project.npp.exceptions.OperatorNotFoundException;
 import com.project.npp.exceptions.PortRequestNotFoundException;
 import com.project.npp.exceptions.RoleNotFoundException;
+import com.project.npp.exceptions.VerificationDetailsNotFoundException;
 import com.project.npp.service.ComplianceLogsService;
 import com.project.npp.service.CustomerService;
 import com.project.npp.service.OperatorService;
@@ -165,7 +166,7 @@ public class CustomerServiceController {
 	// API end point to update a port request
 	@PostMapping("/updateportrequest")
 	public ResponseEntity<PortRequest> updatePortRequest(@RequestBody UpdatePortRequest updatePortRequest)
-			throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException {
+			throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException, OperatorNotFoundException, VerificationDetailsNotFoundException {
 		loggers.info("Update port request");
 		PortRequest portRequest = new PortRequest();
 		portRequest.setRequestId(updatePortRequest.getRequestId());

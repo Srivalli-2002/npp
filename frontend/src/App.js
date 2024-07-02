@@ -2,15 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
+ 
 import AuthService from "./services/auth.service";
-
+ 
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
-
+ 
 import EventBus from "./common/EventBus";
+
 import UserManagement from "./forms/UserManagement";
 import UpdateUser from "./forms/UpdateUser";
 import OperatorManagement from "./forms/OperatorManagement";
@@ -29,7 +30,7 @@ import AirtelVerificationDetailsManagement from "./forms/AirtelVerificationDetai
 import UpdateAirtelDetails from "./forms/UpdateAirtelDetails";
 import JioVerificationDetailsManagement from "./forms/JioVerificationDetailsManagement";
 import UpdateJioDetails from "./forms/UpdateJioDetails";
-
+ 
 const App = () => {
   const [showSystemAdmin, setShowSystemAdmin] = useState(false);
   const [showCustomerService, setShowCustomerService] = useState(false);
@@ -38,10 +39,10 @@ const App = () => {
   const [showJioComplianceOfficer, setShowJioComplianceOfficer] = useState(false);
   const [showUsers, setShowUsers] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
-
+ 
   useEffect(() => {
     const user = AuthService.getCurrentUser();
-
+ 
     if (user) {
       setShowSystemAdmin(user.role.includes("ROLE_SYSTEM_ADMIN"));
       setCurrentUser(user);
@@ -56,17 +57,17 @@ const App = () => {
       setCurrentUser(user);
       setShowUsers(user.role.includes("ROLE_USER"));
       setCurrentUser(user);
-
+ 
     }
     EventBus.on("logout", () => {
       logOut();
     });
-
+ 
     return () => {
       EventBus.remove("logout");
     };
   }, []);
-
+ 
   const logOut = () => {
     AuthService.logout();
     setShowSystemAdmin(false);
@@ -77,7 +78,7 @@ const App = () => {
     setShowUsers(false);
     setCurrentUser(undefined);
   };
-
+ 
   return (
     <div>
       <nav className="navbar fixed-top navbar-expand custom-navbar">
@@ -90,7 +91,7 @@ const App = () => {
               Home
             </Link>
           </li>
-
+ 
           {showSystemAdmin && (
             <li className="nav-item">
               <Link to={"/usermanagement"} className="nav-link">
@@ -98,7 +99,7 @@ const App = () => {
               </Link>
             </li>
           )}
-
+ 
           {showSystemAdmin && (
             <li className="nav-item">
               <Link to={"/operatormanagement"} className="nav-link">
@@ -106,7 +107,7 @@ const App = () => {
               </Link>
             </li>
           )}
-
+ 
           {showCustomerService && (
             <li className="nav-item">
               <Link to={"/customermanagement"} className="nav-link">
@@ -114,7 +115,7 @@ const App = () => {
               </Link>
             </li>
           )}
-
+ 
           {showCustomerService && (
             <li className="nav-item">
               <Link to={"/handleportrequest"} className="nav-link">
@@ -122,15 +123,15 @@ const App = () => {
               </Link>
             </li>
           )}
-
+ 
           {showComplianceOfficer && (
             <li className="nav-item">
               <Link to={"/compliancelogs"} className="nav-link">
                 Logs Dashboard
               </Link>
             </li>
-          )}     
-
+          )}    
+ 
           {showAirtelComplianceOfficer && (
             <li className="nav-item">
               <Link to={"/airteldetails"} className="nav-link">
@@ -138,15 +139,15 @@ const App = () => {
               </Link>
             </li>
           )}      
-
+ 
           {showJioComplianceOfficer && (
             <li className="nav-item">
               <Link to={"/jiodetails"} className="nav-link">
                 Details Dashboard
               </Link>
             </li>
-          )}     
-
+          )}    
+ 
           {showUsers && (
             <li className="nav-item">
               <Link to={"/trackstatus"} className="nav-link">
@@ -155,7 +156,7 @@ const App = () => {
             </li>
           )}
         </div>
-
+ 
         {currentUser ? (
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
@@ -181,17 +182,17 @@ const App = () => {
                 Sign in
               </Link>
             </li>
-
+ 
             <li className="nav-item">
               <Link to={"/register"} className="nav-link">
                 Sign up
               </Link>
             </li>
-            
+           
           </div>
         )}
       </nav>
-
+ 
       <div className="container mt-3">
         <Routes>
           <Route path="/" element={<Home/>} />
@@ -202,18 +203,18 @@ const App = () => {
           <Route path="/helpdesk" element={<HelpAndSupport/>} />
           <Route path="/helpdesk/userguide1" element={<UserGuide1/>} />
           <Route path="/helpdesk/userguide2" element={<UserGuide2/>} />
-
+ 
           <Route path="/usermanagement" element={<UserManagement/>} />
           <Route path="/operatormanagement" element={<OperatorManagement/>} />
           <Route path="/update-userrole/:userId" element={<UpdateUser/>} />
           <Route path="/update-operator/:operatorId" element={<UpdateOperator/>} />
-
+ 
           <Route path="/customermanagement" element={<CustomerServiceManagement/>} />
           <Route path="/handleportrequest" element={<PortRequestManagement/>} />
           <Route path="/update-customer/:customerId" element={<UpdateCustomer/>} />
           <Route path="/update-portrequest/:requestId" element={<UpdatePortRequest/>} />
           <Route path="/trackstatus" element={<TrackStatus/>}/>
-
+ 
           <Route path="/compliancelogs" element={<LogManagement/>} />
           <Route path="/update-log/:logId" element={<UpdateLog/>} />
           <Route path="/airteldetails" element={<AirtelVerificationDetailsManagement/>} />
@@ -222,9 +223,9 @@ const App = () => {
           <Route path="/update-jio-deatils/:phoneNumber" element={<UpdateJioDetails/>}/>
         </Routes>
       </div>
-
+ 
     </div>
   );
 };
-
+ 
 export default App;

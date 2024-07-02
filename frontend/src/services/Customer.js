@@ -1,5 +1,5 @@
 import axios from "axios";
-import authHeader from "../services/auth-header";
+import authHeader from "./auth-header";
  
 const BASE_URL = "http://localhost:8080/api/customer";
  
@@ -17,8 +17,8 @@ const getStatus = async (customerData) => {
     throw err;
   }
 };
- 
- 
+
+
 const Customer = {
   getStatus
 };

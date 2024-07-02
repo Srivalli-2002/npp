@@ -23,7 +23,7 @@ public interface ComplianceLogsService {
 
 	// Update log
 	public ComplianceLogs UpdateLog(ComplianceLogs complianceLogs)
-			throws LogNotFoundException, PortRequestNotFoundException, CustomerNotFoundException;
+			throws LogNotFoundException, PortRequestNotFoundException, CustomerNotFoundException, OperatorNotFoundException, VerificationDetailsNotFoundException;
 
 	// Get all logs
 	public List<ComplianceLogs> getAllComplianceLogs() throws LogNotFoundException;

@@ -10,7 +10,7 @@ const Profile = () => {
         <div className="col-md-6">
           <div className="card shadow">
             <div className="card-body">
-            <h3 className="card-title mb-4 text-center" style={{ backgroundColor: '#5ea3a3', color: 'white', padding: '15px', borderRadius: '10px', height: '60px', fontFamily: 'Georgia' }}>USER PROFILE</h3>
+            <h3 className="card-title mb-4 text-center" style={{ backgroundColor: '#488b8f', color: 'white', padding: '15px', borderRadius: '10px', height: '60px', fontFamily: 'Georgia' }}>USER PROFILE</h3>
 
               <div className="mb-3"style={{fontFamily: 'Georgia' }}>
                 <strong>Username : </strong> {currentUser.username}

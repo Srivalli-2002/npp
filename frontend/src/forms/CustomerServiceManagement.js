@@ -114,7 +114,7 @@ const CustomerServiceManagement = () => {
             <input type="number" className="form-control" id="phoneNumber" name="phoneNumber" value={newCustomer.phoneNumber} onChange={handleInputChange} required />
           </div>
           
-          <button type="submit" className="btn btn-primary" disabled={loading}>ADD CUSTOMER</button>
+          <button type="submit" className="btn btn-default" disabled={loading}>ADD CUSTOMER</button>
         </form>
       </div>
  

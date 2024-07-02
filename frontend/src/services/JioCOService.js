@@ -2,7 +2,7 @@ import axios from "axios";
 import authHeader from "../services/auth-header";
  
 const BASE_URL = "http://localhost:8080/api/jiocomplianceofficer";
-
+ 
 const addVerificationDetails = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/addverificationdetails`, {
@@ -65,12 +65,12 @@ const addVerificationDetails = async () => {
       throw err;
     }
   };
-
-  const AirtelCOService = {
+ 
+  const JioCOService = {
     addVerificationDetails,
     updateVerificationDetails,
     viewVerificationDetails,
     getVerificationDetailsByPhn
 };
-
-export default AirtelCOService;
+ 
+export default JioCOService;

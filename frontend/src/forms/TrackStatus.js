@@ -36,21 +36,19 @@ const TrackStatus = () => {
         </form>
       </div>
       {status && (
-      <div className="status-container mt-4">
-        <div className="card mx-auto" style={{ maxWidth: "800px", padding: "30px" }}>
-          <div className="card-header text-center">
-            <h3>STATUS DETAILS</h3>
-          </div>
-          <div className="card-body">
-            <p><strong>Status:</strong> {status.status}</p>
-            <p><strong>Last Updated:</strong> {status.lastUpdated}</p>
-            <p><strong>Notes:</strong> {status.notes}</p>
+        <div className="status-container mt-4">
+          <div className="card mx-auto" style={{ maxWidth: "400px" }}>
+            <div className="card-header text-center">
+              <h5>Status Details</h5>
+            </div>
+            <div className="card-body">
+              <p><strong>Status:</strong> {status.status}</p>
+              <p><strong>Last Updated:</strong> {status.lastUpdated}</p>
+              <p><strong>Notes:</strong> {status.notes}</p>
+            </div>
           </div>
         </div>
-      </div>
-    )}
-
-
+      )}
       {error && (
         <div className="alert alert-danger mt-4 text-center">
           {error}

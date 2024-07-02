@@ -77,7 +77,7 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 	// Method to update a compliance log
 	@Override
 	public ComplianceLogs UpdateLog(ComplianceLogs complianceLogs)
-			throws LogNotFoundException, PortRequestNotFoundException, CustomerNotFoundException {
+			throws LogNotFoundException, PortRequestNotFoundException, CustomerNotFoundException, OperatorNotFoundException, VerificationDetailsNotFoundException {
 		Optional<ComplianceLogs> complianceLog = repo.findById(complianceLogs.getLogId());
 		if (complianceLog.isPresent()) {
 
@@ -247,7 +247,7 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 					}
 				}
 			} else
-				return null;
+				throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
 		} else
 			throw new LogNotFoundException(QueryMapper.CANNOT_GET_LOG);
 

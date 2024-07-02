@@ -46,7 +46,7 @@ function UpdateAirtelDetails() {
     e.preventDefault();
     try {
       await AirtelCOService.updateVerificationDetails(detailsData);
-      navigate("/details");
+      navigate("/airteldetails");
     } catch (error) {
       console.error('Error updating details:', error);
       alert(error.message || 'An error occurred while updating details.');

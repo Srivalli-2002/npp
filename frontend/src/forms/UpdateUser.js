@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import SystemAdminService from '../services/SystemAdminService';
 import './UpdateUser.css'; // Import the custom CSS file
-
+ 
 function UpdateUser() {
   const navigate = useNavigate();
   const { username } = useParams();
-
+ 
   const [userData, setUserData] = useState({
     username: '',
     role: ''
   });
-
+ 
   useEffect(() => {
     fetchUserDataByName(username);
   }, [username]);
-
+ 
   const fetchUserDataByName = async (username) => {
     try {
       const response = await SystemAdminService.getUser(username);
@@ -28,7 +28,7 @@ function UpdateUser() {
       console.error('Error fetching user data : ', error);
     }
   };
-
+ 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserData((prevUserData) => ({
@@ -36,20 +36,20 @@ function UpdateUser() {
       [name]: value
     }));
   };
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await SystemAdminService.updateUserRole(userData);
       navigate("/usermanagement");
     } catch (error) {
-      
+     
       console.error('Error updating user : ', error);
       alert(error.message || 'An error occurred while updating user.');
-    
+   
     }
   };
-
+ 
   return (
     <div className="auth-container mt-5 pt-5">
       <h2>UPDATE ROLE</h2>
@@ -90,5 +90,5 @@ function UpdateUser() {
     </div>
   );
 }
-
+ 
 export default UpdateUser;

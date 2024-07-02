@@ -63,9 +63,12 @@ public class JioVerificationDetailsService {
 		if (details.isPresent()) {
 			loggers.info(QueryMapper.VERIFICATION_DETAILS);
 			return details.get();
-		} else
+		} 
+		else
+		{
 			loggers.error(QueryMapper.NO_VERIFICATION_DETAILS);
 			throw new VerificationDetailsNotFoundException(QueryMapper.NO_VERIFICATION_DETAILS);
+		}
 	}
 
 	// Method to update jio verification details
@@ -90,6 +93,19 @@ public class JioVerificationDetailsService {
 		} else
 			loggers.error(QueryMapper.NO_VERIFICATION_DETAILS);
 			throw new VerificationDetailsNotFoundException(QueryMapper.NO_VERIFICATION_DETAILS);
+	}
+	
+	public String delete(Long phoneNumber) throws VerificationDetailsNotFoundException
+	{
+		Optional<JioVerificationDetails> Vdetails = repo.findById(phoneNumber);
+		if (Vdetails.isPresent()) {
+			repo.deleteById(phoneNumber);
+			return "Deleted Successfull";
+		} else
+		{
+			loggers.error(QueryMapper.NO_VERIFICATION_DETAILS);
+			throw new VerificationDetailsNotFoundException("Jio Verification Details Not Found");
+		}
 	}
 
 }

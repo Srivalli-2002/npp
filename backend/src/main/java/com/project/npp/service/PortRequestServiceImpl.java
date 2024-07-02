@@ -9,13 +9,18 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.project.npp.entities.Customer;
+import com.project.npp.entities.Operator;
 import com.project.npp.entities.PortRequest;
 import com.project.npp.entities.Status;
 import com.project.npp.exceptionmessages.QueryMapper;
 import com.project.npp.exceptions.CustomerNotFoundException;
 import com.project.npp.exceptions.LogNotFoundException;
+import com.project.npp.exceptions.OperatorNotFoundException;
 import com.project.npp.exceptions.PortRequestNotFoundException;
+import com.project.npp.exceptions.VerificationDetailsNotFoundException;
 import com.project.npp.repositories.PortRequestRepository;
+import com.project.npp.utilities.AirtelVerificationDetailsService;
+import com.project.npp.utilities.JioVerificationDetailsService;
 
 @Service
 public class PortRequestServiceImpl implements PortRequestService {
@@ -27,6 +32,15 @@ public class PortRequestServiceImpl implements PortRequestService {
 
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	private AirtelVerificationDetailsService airtelService;
+	
+	@Autowired
+	private JioVerificationDetailsService jioService;
+	
+	@Autowired
+	private OperatorService operatorService;
 
 	// Method to add a new port request
 	@Override
@@ -56,7 +70,7 @@ public class PortRequestServiceImpl implements PortRequestService {
 	// Method to update a port request
 	@Override
 	public PortRequest updatePortRequest(PortRequest portRequest)
-			throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException {
+			throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException, OperatorNotFoundException, VerificationDetailsNotFoundException {
 		Optional<PortRequest> p = repo.findById(portRequest.getRequestId());
 		if (p.isPresent()) {
 			if (portRequest.getApprovalStatus() == Status.COMPLETED) {
@@ -70,8 +84,22 @@ public class PortRequestServiceImpl implements PortRequestService {
 				customerService.updateCustomer(customer);
 				PortRequest portReq = repo.save(portRequest);
 				loggers.info(QueryMapper.UPDATE_PORTREQUEST);
-				return portReq;
-			} else {
+				Operator operatorJio = operatorService.getOperatorByOperatorName("jio");
+				Operator operatorAirtel = operatorService.getOperatorByOperatorName("airtel");
+				if(customer.getCurrentOperator().equals(operatorJio))
+				{
+					jioService.delete(customer.getPhoneNumber());
+					return portReq;
+				}
+				if(customer.getCurrentOperator().equals(operatorAirtel))
+				{
+					airtelService.delete(customer.getPhoneNumber());
+					return portReq;
+				}
+				else throw new OperatorNotFoundException(QueryMapper.CANNOT_GET_OPERATOR);
+				
+			} 
+			else {
 				if (portRequest.getApprovalStatus() == Status.REJECTED) {
 					portRequest.setCompletionDate(LocalDate.now());
 
@@ -92,7 +120,8 @@ public class PortRequestServiceImpl implements PortRequestService {
 				}
 			}
 
-		} else
+		} 
+		else
 			loggers.error(QueryMapper.CANNOT_UPDATE_PORTREQUEST);
 		throw new PortRequestNotFoundException(QueryMapper.CANNOT_UPDATE_PORTREQUEST);
 	}

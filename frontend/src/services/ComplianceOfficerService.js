@@ -17,7 +17,7 @@ const getLog = async (logId) => {
     throw err;
   }
 };
- 
+
 const updateLog = async (logId) => {
   try {
     const response = await axios.post(`${BASE_URL}/updatelog`, logId, {
@@ -32,7 +32,7 @@ const updateLog = async (logId) => {
     throw err;
   }
 };
- 
+
 const viewLogs = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/getalllogs`, {
@@ -47,9 +47,58 @@ const viewLogs = async () => {
   } catch (err) {
     throw err;
   }
- 
+  
 };
- 
+
+const addVerificationDetails = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/addverificationdetails`, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...authHeader(),
+        'Access-Control-Allow-Origin': '*'
+      }
+    });
+    return response.data;
+   
+  } catch (err) {
+    throw err;
+  }
+  
+};
+
+const updateVerificationDetails = async (detailsData) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/updateverificationdetails`, detailsData, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...authHeader(),
+        'Access-Control-Allow-Origin': '*'
+      }
+    });
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+const viewVerificationDetails = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/getallverificationdetails`, {
+      headers: {
+        'Content-Type': 'application/json',
+        ...authHeader(),
+        'Access-Control-Allow-Origin': '*'
+      }
+    });
+    return response.data;
+   
+  } catch (err) {
+    throw err;
+  }
+  
+};
+
 const getVerificationDetailsByLog = async (logId) => {
   try {
     const response = await axios.post(`${BASE_URL}/getverificationdetailsbylogid`, logId, {
@@ -64,7 +113,7 @@ const getVerificationDetailsByLog = async (logId) => {
     throw err;
   }
 };
- 
+
 const getVerificationDetailsByPhn = async (phoneNumber) => {
   try {
     const response = await axios.post(`${BASE_URL}/getverificationdetailsbyphn`, phoneNumber, {
@@ -79,13 +128,18 @@ const getVerificationDetailsByPhn = async (phoneNumber) => {
     throw err;
   }
 };
- 
+
 const ComplianceOfficerService = {
+    
     getLog,
     updateLog,
     viewLogs,
+    addVerificationDetails,
+    updateVerificationDetails,
+    viewVerificationDetails,
     getVerificationDetailsByLog,
     getVerificationDetailsByPhn
+
 };
- 
+
 export default ComplianceOfficerService;
