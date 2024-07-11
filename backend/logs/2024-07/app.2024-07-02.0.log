@@ -1,0 +1,327 @@
+2024-07-02T13:48:06.474+05:30  INFO 24956 --- [npp] [restartedMain] com.project.npp.NppApplication           : Starting NppApplication using Java 17.0.9 with PID 24956 (D:\NumberPortabilityPortalProject\npp\backend\target\classes started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-07-02T13:48:06.494+05:30  INFO 24956 --- [npp] [restartedMain] com.project.npp.NppApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-07-02T13:48:06.611+05:30  INFO 24956 --- [npp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-02T13:48:06.612+05:30  INFO 24956 --- [npp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-02T13:48:08.374+05:30  INFO 24956 --- [npp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-02T13:48:08.499+05:30  INFO 24956 --- [npp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 8 JPA repository interfaces.
+2024-07-02T13:48:08.998+05:30  INFO 24956 --- [npp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-02T13:48:09.009+05:30  INFO 24956 --- [npp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-02T13:48:09.009+05:30  INFO 24956 --- [npp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-02T13:48:09.083+05:30  INFO 24956 --- [npp] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-02T13:48:09.084+05:30  INFO 24956 --- [npp] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2471 ms
+2024-07-02T13:48:09.264+05:30  INFO 24956 --- [npp] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-02T13:48:09.334+05:30  INFO 24956 --- [npp] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-02T13:48:09.373+05:30  INFO 24956 --- [npp] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-02T13:48:09.615+05:30  INFO 24956 --- [npp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-02T13:48:09.649+05:30  INFO 24956 --- [npp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-02T13:48:09.968+05:30  INFO 24956 --- [npp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29c0f1ce
+2024-07-02T13:48:09.970+05:30  INFO 24956 --- [npp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-02T13:48:10.024+05:30  WARN 24956 --- [npp] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-02T13:48:10.887+05:30  INFO 24956 --- [npp] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-02T13:48:11.023+05:30  INFO 24956 --- [npp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-02T13:48:11.372+05:30  INFO 24956 --- [npp] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-02T13:48:11.376+05:30  WARN 24956 --- [npp] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-02T13:48:11.527+05:30  WARN 24956 --- [npp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-02T13:48:11.777+05:30  INFO 24956 --- [npp] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3a769e86, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24ca7f6e, org.springframework.security.web.context.SecurityContextHolderFilter@1fa462db, org.springframework.security.web.header.HeaderWriterFilter@1137fdb3, org.springframework.web.filter.CorsFilter@2ddee103, org.springframework.security.web.authentication.logout.LogoutFilter@5dd1c81b, com.project.npp.security.jwt.AuthTokenFilter@533df62b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ac0ec9f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69e7c887, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ef395b3, org.springframework.security.web.session.SessionManagementFilter@3ca17f90, org.springframework.security.web.access.ExceptionTranslationFilter@7b8f6a2b, org.springframework.security.web.access.intercept.AuthorizationFilter@3085c4f2]
+2024-07-02T13:48:12.121+05:30  INFO 24956 --- [npp] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-02T13:48:12.248+05:30  INFO 24956 --- [npp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-02T13:48:12.268+05:30  INFO 24956 --- [npp] [restartedMain] com.project.npp.NppApplication           : Started NppApplication in 6.426 seconds (process running for 8.127)
+2024-07-02T13:48:29.981+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-02T13:48:29.981+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-02T13:48:29.982+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-07-02T13:50:35.739+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:50:35.929+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:50:37.930+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:50:37.932+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-02T13:50:37.952+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-02T13:50:37.952+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : User found
+2024-07-02T13:52:08.064+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:52:08.067+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-07-02T13:52:08.071+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:52:08.071+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-02T13:52:28.370+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:52:28.374+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:52:28.441+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.project.npp.service.RoleServiceImpl    : Role found
+2024-07-02T13:52:28.443+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:52:28.479+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User added successfully !!
+2024-07-02T13:52:28.479+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-02T13:52:50.079+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:52:50.083+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:52:50.149+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.project.npp.service.RoleServiceImpl    : Role found
+2024-07-02T13:52:50.151+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:52:50.158+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User added successfully !!
+2024-07-02T13:52:50.158+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-02T13:53:00.786+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:53:00.794+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:53:02.472+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:53:02.474+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-02T13:53:02.484+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-02T13:53:02.485+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : User found
+2024-07-02T13:53:14.824+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:53:14.833+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:53:16.489+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:53:16.490+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-02T13:53:16.499+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:53:16.499+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-02T13:54:01.192+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:54:01.197+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.c.CustomerServiceController        : Add customer
+2024-07-02T13:54:01.205+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:54:01.207+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:54:01.209+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:54:01.211+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.project.npp.service.RoleServiceImpl    : Role found
+2024-07-02T13:54:01.212+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.project.npp.service.RoleServiceImpl    : Role found
+2024-07-02T13:54:01.214+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.project.npp.service.RoleServiceImpl    : Role found
+2024-07-02T13:54:01.215+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:54:01.223+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : Role updated successfully!
+2024-07-02T13:54:01.239+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:54:01.239+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.c.CustomerServiceController        : Customer added successfully!
+2024-07-02T13:54:03.231+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:54:03.236+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-02T13:54:03.250+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:54:03.251+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-02T13:54:48.952+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:54:48.954+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.CustomerServiceController        : Add customer
+2024-07-02T13:54:48.957+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:54:48.958+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:54:48.960+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:54:48.961+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.project.npp.service.RoleServiceImpl    : Role found
+2024-07-02T13:54:48.962+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.project.npp.service.RoleServiceImpl    : Role found
+2024-07-02T13:54:48.963+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.project.npp.service.RoleServiceImpl    : Role found
+2024-07-02T13:54:48.964+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:54:48.983+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : Role updated successfully!
+2024-07-02T13:54:48.983+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:54:48.983+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.CustomerServiceController        : Customer added successfully!
+2024-07-02T13:54:50.591+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:54:50.592+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-02T13:54:50.601+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:54:50.602+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-02T13:55:00.526+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:55:00.526+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:01.999+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:02.001+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-02T13:55:02.017+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-02T13:55:02.017+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.controller.SystemAdminController   : User found
+2024-07-02T13:55:15.096+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:55:15.096+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:16.505+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:16.506+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-02T13:55:16.512+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:55:16.512+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-02T13:55:21.194+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:21.212+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:55:21.212+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T13:55:31.418+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:31.423+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.c.CustomerServiceController        : Submit port request
+2024-07-02T13:55:31.426+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:55:31.449+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.PortRequestServiceImpl   : Port request added successfully
+2024-07-02T13:55:31.449+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.c.CustomerServiceController        : Portrequest added successfully!
+2024-07-02T13:55:31.456+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.c.CustomerServiceController        : Log added successfully!
+2024-07-02T13:55:33.000+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:33.021+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:55:33.021+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T13:55:40.831+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:40.833+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.CustomerServiceController        : Submit port request
+2024-07-02T13:55:40.836+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:55:40.841+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.PortRequestServiceImpl   : Port request added successfully
+2024-07-02T13:55:40.841+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.CustomerServiceController        : Portrequest added successfully!
+2024-07-02T13:55:40.841+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.CustomerServiceController        : Log added successfully!
+2024-07-02T13:55:42.305+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:42.318+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:55:42.318+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T13:55:56.481+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:55:56.481+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:57.989+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:55:58.007+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T13:55:58.008+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T13:56:15.535+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:56:15.542+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T13:56:15.544+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:56:15.547+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:56:15.549+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T13:56:15.549+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.c.ComplianceOfficerController      : Verification details
+2024-07-02T13:56:22.632+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:56:22.635+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.n.c.ComplianceOfficerController      : Update log
+2024-07-02T13:56:22.641+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:56:22.644+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:56:22.646+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T13:56:22.679+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:56:22.769+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:56:22.770+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:56:22.770+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T13:56:22.790+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:56:22.870+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T13:56:22.870+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T13:56:36.754+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:56:36.760+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T13:56:36.763+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:56:36.765+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:56:36.768+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:56:36.769+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.c.ComplianceOfficerController      : Verification details
+2024-07-02T13:56:38.289+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:56:38.291+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.ComplianceOfficerController      : Update log
+2024-07-02T13:56:38.294+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:56:38.294+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:56:38.294+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:56:38.299+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:56:38.308+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:56:38.308+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:56:38.308+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T13:56:38.337+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:56:38.362+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T13:56:38.362+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T13:57:10.624+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:57:10.624+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:57:12.608+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:57:12.617+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:57:12.617+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] .p.n.c.AirtelComplianceOfficerController : Verification details
+2024-07-02T13:57:49.474+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:57:49.479+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:57:49.479+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] .p.n.c.AirtelComplianceOfficerController : Verification details
+2024-07-02T13:58:04.723+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:04.739+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:58:04.739+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] .p.n.c.AirtelComplianceOfficerController : Verification details updated successfully !!
+2024-07-02T13:58:04.761+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:04.764+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:58:04.764+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] .p.n.c.AirtelComplianceOfficerController : Verification details
+2024-07-02T13:58:17.197+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:58:17.204+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:18.749+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:18.751+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-02T13:58:18.755+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:58:18.755+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-02T13:58:28.366+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:28.380+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:58:28.380+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T13:58:35.464+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:35.470+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Submit port request
+2024-07-02T13:58:35.474+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:58:35.478+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.PortRequestServiceImpl   : Port request added successfully
+2024-07-02T13:58:35.478+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Portrequest added successfully!
+2024-07-02T13:58:35.495+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Log added successfully!
+2024-07-02T13:58:37.028+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:37.040+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:58:37.041+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T13:58:53.927+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:58:53.934+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:55.459+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:58:55.484+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T13:58:55.484+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T13:59:10.804+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:59:10.808+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T13:59:10.809+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:59:10.811+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:59:10.812+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:59:10.812+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.c.ComplianceOfficerController      : Verification details
+2024-07-02T13:59:11.945+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:59:11.947+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.c.ComplianceOfficerController      : Update log
+2024-07-02T13:59:11.950+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:59:11.952+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:59:11.953+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:59:11.963+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:59:11.970+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T13:59:11.972+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:59:11.973+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:59:11.974+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T13:59:11.986+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T13:59:12.003+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:59:12.017+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T13:59:12.018+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T13:59:29.421+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:59:29.425+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:59:31.600+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:59:31.610+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.u.AirtelVerificationDetailsService : Verification details added successfully !!
+2024-07-02T13:59:31.610+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] .p.n.c.AirtelComplianceOfficerController : Verification details
+2024-07-02T13:59:55.390+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.project.npp.controller.AuthController  : signin
+2024-07-02T13:59:55.396+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:59:57.081+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T13:59:57.090+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T13:59:57.090+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T14:00:00.531+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:00:00.532+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-02T14:00:00.538+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T14:00:00.538+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-02T14:00:11.641+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:00:11.653+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T14:00:11.654+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T14:00:20.885+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:00:20.887+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.c.CustomerServiceController        : Submit port request
+2024-07-02T14:00:20.889+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T14:00:20.900+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.PortRequestServiceImpl   : Port request added successfully
+2024-07-02T14:00:20.901+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.c.CustomerServiceController        : Portrequest added successfully!
+2024-07-02T14:00:20.966+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.c.CustomerServiceController        : Log added successfully!
+2024-07-02T14:00:22.382+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:00:22.390+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T14:00:22.390+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T14:00:33.319+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.project.npp.controller.AuthController  : signin
+2024-07-02T14:00:33.327+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:00:34.914+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:00:34.919+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T14:00:34.919+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.c.JioComplianceOfficerController   : Verification details
+2024-07-02T14:00:40.733+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:00:40.738+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T14:00:40.738+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.n.c.JioComplianceOfficerController   : Verification details
+2024-07-02T14:01:14.332+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:14.343+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T14:01:14.343+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.JioComplianceOfficerController   : Verification details updated successfully !!
+2024-07-02T14:01:14.363+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:14.370+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T14:01:14.370+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.JioComplianceOfficerController   : Verification details
+2024-07-02T14:01:30.177+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.project.npp.controller.AuthController  : signin
+2024-07-02T14:01:30.181+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:31.738+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:31.749+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T14:01:31.749+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T14:01:35.438+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:35.443+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T14:01:35.445+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T14:01:35.447+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T14:01:35.449+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T14:01:35.449+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.n.c.ComplianceOfficerController      : Verification details
+2024-07-02T14:01:36.764+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:36.766+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.c.ComplianceOfficerController      : Update log
+2024-07-02T14:01:36.769+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T14:01:36.771+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T14:01:36.772+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T14:01:36.781+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T14:01:36.783+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T14:01:36.798+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T14:01:36.798+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T14:01:36.798+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-02T14:01:36.798+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-4] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T14:01:36.826+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:36.846+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T14:01:36.846+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T14:01:54.469+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.project.npp.controller.AuthController  : signin
+2024-07-02T14:01:54.477+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:55.822+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:01:55.822+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.u.JioVerificationDetailsService    : Verification details added successfully !!
+2024-07-02T14:01:55.822+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.n.c.JioComplianceOfficerController   : Verification details
+2024-07-02T14:02:10.996+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.project.npp.controller.AuthController  : signin
+2024-07-02T14:02:10.996+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:02:12.429+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:02:12.430+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-02T14:02:12.434+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T14:02:12.434+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-7] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-02T14:02:15.103+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:02:15.110+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-02T14:02:15.110+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-02T14:02:31.135+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.project.npp.controller.AuthController  : signin
+2024-07-02T14:02:31.141+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:02:32.532+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:02:32.550+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.service.ComplianceLogsServiceImpl  : Log found
+2024-07-02T14:02:32.550+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-1] c.p.n.c.ComplianceOfficerController      : Log found
+2024-07-02T14:02:56.751+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.project.npp.controller.AuthController  : signin
+2024-07-02T14:02:56.751+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:02:59.107+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:02:59.110+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T14:02:59.116+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-6] c.p.npp.controller.CustomerController    : Customer track status
+2024-07-02T14:03:12.418+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.project.npp.controller.AuthController  : signin
+2024-07-02T14:03:12.424+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:03:16.165+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-02T14:03:16.172+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-02T14:03:16.174+05:30  INFO 24956 --- [npp] [http-nio-8080-exec-8] c.p.npp.controller.CustomerController    : Customer track status
+2024-07-02T14:31:36.681+05:30  WARN 24956 --- [npp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m26s379ms479µs100ns).
+2024-07-02T14:32:15.604+05:30  INFO 24956 --- [npp] [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-07-02T14:32:15.636+05:30  INFO 24956 --- [npp] [RMI TCP Connection(19)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-02T14:32:15.639+05:30  INFO 24956 --- [npp] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-02T14:32:15.648+05:30  INFO 24956 --- [npp] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

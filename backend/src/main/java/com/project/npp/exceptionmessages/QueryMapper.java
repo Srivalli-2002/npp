@@ -1,6 +1,7 @@
 package com.project.npp.exceptionmessages;
 
 public class QueryMapper {
+	
 	public static final String CANNOT_GET_LOG = "Log not found";
 	public static final String CANNOT_UPDATE_LOG = "Log not found";
 	
@@ -64,6 +65,7 @@ public class QueryMapper {
 	public static final String ROLE_FOUND_BY_NAME ="Role found";
 	public static final String ROLE_UPDATE_SUCCESSFULL ="Role updated successfully!";
 	public static final String ROLE_UPDATE_UNSUCCESSFULL ="Role found";
+	public static final String ROLE_NOT_FOUND = "Role not found";
 	
 	public static final String ADD_USER = "User added successfully !!";
 	public static final String GET_USER = "User found";

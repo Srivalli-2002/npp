@@ -32,25 +32,48 @@ public class UserEntityServiceImpl implements UserEntityService {
 	private OperatorService operatorService;
 
 	// Method to update the role of a user
+//	@Override
+//	public String updateRole(String username, Role role) throws RoleNotFoundException, OperatorNotFoundException {
+//		Optional<Role> complianceRole = roleService.findRoleByName(ERole.ROLE_COMPLIANCE_OFFICER);
+//		Optional<Role> customerSupportRole = roleService.findRoleByName(ERole.ROLE_CUSTOMER_SERVICE);
+//		Operator operator = operatorService.getOperatorByOperatorName("prodapt");
+//		Optional<UserEntity> user = repo.findByUsername(username);
+//		if (user.isPresent()) {
+//			user.get().setRole(role);
+//			if (role == complianceRole.get() || role == customerSupportRole.get()) {
+//				user.get().setOperator(operator);
+//				repo.save(user.get());
+//			}
+//			repo.save(user.get());
+//			loggers.info(QueryMapper.ROLE_UPDATE_SUCCESSFULL);
+//			return "Role Updated Successfully!!!";
+//		}
+//		loggers.info(QueryMapper.ROLE_UPDATE_UNSUCCESSFULL);
+//		return "Cannot Update Role !!!";
+//	}
+	
 	@Override
 	public String updateRole(String username, Role role) throws RoleNotFoundException, OperatorNotFoundException {
-		Optional<Role> complianceRole = roleService.findRoleByName(ERole.ROLE_COMPLIANCE_OFFICER);
-		Optional<Role> customerSupportRole = roleService.findRoleByName(ERole.ROLE_CUSTOMER_SERVICE);
-		Operator operator = operatorService.getOperatorByOperatorName("prodapt");
-		Optional<UserEntity> user = repo.findByUsername(username);
-		if (user.isPresent()) {
-			user.get().setRole(role);
-			if (role == complianceRole.get() || role == customerSupportRole.get()) {
-				user.get().setOperator(operator);
-				repo.save(user.get());
-			}
-			repo.save(user.get());
-			loggers.info(QueryMapper.ROLE_UPDATE_SUCCESSFULL);
-			return "Role Updated Successfully!!!";
-		}
-		loggers.info(QueryMapper.ROLE_UPDATE_UNSUCCESSFULL);
-		return "Cannot Update Role !!!";
+	    Optional<Role> complianceRole = roleService.findRoleByName(ERole.ROLE_COMPLIANCE_OFFICER);
+	    Optional<Role> customerSupportRole = roleService.findRoleByName(ERole.ROLE_CUSTOMER_SERVICE);
+	    Operator operator = operatorService.getOperatorByOperatorName("prodapt");
+	    Optional<UserEntity> user = repo.findByUsername(username);
+	    
+	    if (user.isPresent()) {
+	        UserEntity userEntity = user.get();
+	        userEntity.setRole(role);
+	        if (role.equals(complianceRole.get()) || role.equals(customerSupportRole.get())) {
+	            userEntity.setOperator(operator);
+	        }
+	        repo.save(userEntity);
+	        loggers.info(QueryMapper.ROLE_UPDATE_SUCCESSFULL);
+	        return "Role Updated Successfully!!!";
+	    }
+	    
+	    loggers.info(QueryMapper.ROLE_UPDATE_UNSUCCESSFULL);
+	    return "Cannot Update Role !!!";
 	}
+
 
 	// Method to add a user entity
 	@Override

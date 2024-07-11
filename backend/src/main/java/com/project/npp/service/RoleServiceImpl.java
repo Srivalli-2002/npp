@@ -25,6 +25,10 @@ public class RoleServiceImpl implements RoleService {
 	@Override
 	public Optional<Role> findRoleByName(ERole eRole) throws RoleNotFoundException {
 		Optional<Role> r = repo.findByName(eRole);
+		if (r.isEmpty()) {
+			loggers.error(QueryMapper.ROLE_NOT_FOUND);
+			throw new RoleNotFoundException(QueryMapper.ROLE_NOT_FOUND);
+		}
 		loggers.info(QueryMapper.ROLE_FOUND_BY_NAME);
 		return r;
 	}
@@ -33,6 +37,10 @@ public class RoleServiceImpl implements RoleService {
 	@Override
 	public Optional<Role> findRoleById(Integer id) throws RoleNotFoundException {
 		Optional<Role> role = repo.findById(id);
+		if (role.isEmpty()) {
+			loggers.error(QueryMapper.ROLE_NOT_FOUND);
+			throw new RoleNotFoundException(QueryMapper.ROLE_NOT_FOUND);
+		}
 		loggers.info(QueryMapper.ROLE_FOUND);
 		return role;
 	}

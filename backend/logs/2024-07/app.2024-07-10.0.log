@@ -1,0 +1,209 @@
+2024-07-10T21:42:09.911+05:30  INFO 6448 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Starting AuthControllerTest using Java 17.0.9 with PID 6448 (started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-07-10T21:42:09.923+05:30  INFO 6448 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-07-10T21:42:11.579+05:30  INFO 6448 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-10T21:42:11.794+05:30  INFO 6448 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 201 ms. Found 8 JPA repository interfaces.
+2024-07-10T21:42:15.325+05:30  INFO 6448 --- [npp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-10T21:42:15.470+05:30  INFO 6448 --- [npp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-10T21:42:15.569+05:30  INFO 6448 --- [npp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-10T21:42:15.875+05:30  INFO 6448 --- [npp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-10T21:42:15.940+05:30  INFO 6448 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-10T21:42:16.709+05:30  INFO 6448 --- [npp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55cb3b7
+2024-07-10T21:42:16.715+05:30  INFO 6448 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-10T21:42:16.821+05:30  WARN 6448 --- [npp] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-10T21:42:18.590+05:30  INFO 6448 --- [npp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-10T21:42:18.764+05:30  INFO 6448 --- [npp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:42:19.806+05:30  WARN 6448 --- [npp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-10T21:42:19.866+05:30  INFO 6448 --- [npp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-10T21:42:19.868+05:30  WARN 6448 --- [npp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-10T21:42:20.469+05:30  INFO 6448 --- [npp] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a120e41, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17fd9fbb, org.springframework.security.web.context.SecurityContextHolderFilter@66d0d5ee, org.springframework.security.web.header.HeaderWriterFilter@3701acee, org.springframework.web.filter.CorsFilter@7a7b6556, org.springframework.security.web.authentication.logout.LogoutFilter@65a86de0, com.project.npp.security.jwt.AuthTokenFilter@2978d342, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c524a7f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73c5b676, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c04b755, org.springframework.security.web.session.SessionManagementFilter@23644367, org.springframework.security.web.access.ExceptionTranslationFilter@794eb6e7, org.springframework.security.web.access.intercept.AuthorizationFilter@8e0b048]
+2024-07-10T21:42:21.181+05:30  INFO 6448 --- [npp] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-10T21:42:21.182+05:30  INFO 6448 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-10T21:42:21.185+05:30  INFO 6448 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-07-10T21:42:21.304+05:30  INFO 6448 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Started AuthControllerTest in 11.964 seconds (process running for 14.046)
+2024-07-10T21:42:21.671+05:30  INFO 6448 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:42:21.756+05:30  INFO 6448 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:42:21.812+05:30  INFO 6448 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:42:21.868+05:30  INFO 6448 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:42:21.888+05:30  INFO 6448 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:42:21.889+05:30 ERROR 6448 --- [npp] [main] c.project.npp.controller.AuthController  : Error: Username is already taken!
+2024-07-10T21:42:22.018+05:30  INFO 6448 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:42:22.019+05:30  INFO 6448 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:42:22.047+05:30  INFO 6448 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:42:22.085+05:30  INFO 6448 --- [npp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:42:22.096+05:30  INFO 6448 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-10T21:42:22.118+05:30  INFO 6448 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-10T21:44:16.457+05:30  INFO 2032 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Starting AuthControllerTest using Java 17.0.9 with PID 2032 (started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-07-10T21:44:16.459+05:30  INFO 2032 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-07-10T21:44:17.969+05:30  INFO 2032 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-10T21:44:18.107+05:30  INFO 2032 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118 ms. Found 8 JPA repository interfaces.
+2024-07-10T21:44:21.599+05:30  INFO 2032 --- [npp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-10T21:44:21.765+05:30  INFO 2032 --- [npp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-10T21:44:21.884+05:30  INFO 2032 --- [npp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-10T21:44:22.170+05:30  INFO 2032 --- [npp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-10T21:44:22.250+05:30  INFO 2032 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-10T21:44:22.938+05:30  INFO 2032 --- [npp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbbd98c
+2024-07-10T21:44:22.945+05:30  INFO 2032 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-10T21:44:23.047+05:30  WARN 2032 --- [npp] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-10T21:44:24.688+05:30  INFO 2032 --- [npp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-10T21:44:24.837+05:30  INFO 2032 --- [npp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:44:25.808+05:30  WARN 2032 --- [npp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-10T21:44:25.887+05:30  INFO 2032 --- [npp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-10T21:44:25.901+05:30  WARN 2032 --- [npp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-10T21:44:26.553+05:30  INFO 2032 --- [npp] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@730e663a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8e0b048, org.springframework.security.web.context.SecurityContextHolderFilter@23644367, org.springframework.security.web.header.HeaderWriterFilter@302fa67a, org.springframework.web.filter.CorsFilter@71b38b11, org.springframework.security.web.authentication.logout.LogoutFilter@73ec417b, com.project.npp.security.jwt.AuthTokenFilter@2aafd790, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c023dcb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@113b39e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a2d8488, org.springframework.security.web.session.SessionManagementFilter@3746766b, org.springframework.security.web.access.ExceptionTranslationFilter@d7ce31c, org.springframework.security.web.access.intercept.AuthorizationFilter@38682845]
+2024-07-10T21:44:27.313+05:30  INFO 2032 --- [npp] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-10T21:44:27.314+05:30  INFO 2032 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-10T21:44:27.316+05:30  INFO 2032 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-07-10T21:44:27.397+05:30  INFO 2032 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Started AuthControllerTest in 11.565 seconds (process running for 13.398)
+2024-07-10T21:44:27.746+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:44:27.752+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:44:27.960+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:44:28.020+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:44:28.047+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:44:28.068+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:44:28.069+05:30 ERROR 2032 --- [npp] [main] c.project.npp.controller.AuthController  : Error: Username is already taken!
+2024-07-10T21:44:28.089+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:44:28.090+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:44:28.110+05:30  INFO 2032 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:44:28.144+05:30  INFO 2032 --- [npp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:44:28.149+05:30  INFO 2032 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-10T21:44:28.174+05:30  INFO 2032 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-10T21:45:24.689+05:30  INFO 2160 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Starting AuthControllerTest using Java 17.0.9 with PID 2160 (started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-07-10T21:45:24.691+05:30  INFO 2160 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-07-10T21:45:26.165+05:30  INFO 2160 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-10T21:45:26.301+05:30  INFO 2160 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 8 JPA repository interfaces.
+2024-07-10T21:45:29.815+05:30  INFO 2160 --- [npp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-10T21:45:29.964+05:30  INFO 2160 --- [npp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-10T21:45:30.062+05:30  INFO 2160 --- [npp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-10T21:45:30.377+05:30  INFO 2160 --- [npp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-10T21:45:30.438+05:30  INFO 2160 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-10T21:45:31.135+05:30  INFO 2160 --- [npp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbbd98c
+2024-07-10T21:45:31.139+05:30  INFO 2160 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-10T21:45:31.244+05:30  WARN 2160 --- [npp] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-10T21:45:32.862+05:30  INFO 2160 --- [npp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-10T21:45:33.035+05:30  INFO 2160 --- [npp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:45:34.066+05:30  WARN 2160 --- [npp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-10T21:45:34.117+05:30  INFO 2160 --- [npp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-10T21:45:34.123+05:30  WARN 2160 --- [npp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-10T21:45:34.788+05:30  INFO 2160 --- [npp] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@71b38b11, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a2d8488, org.springframework.security.web.context.SecurityContextHolderFilter@1c023dcb, org.springframework.security.web.header.HeaderWriterFilter@13c0ced1, org.springframework.web.filter.CorsFilter@1a120e41, org.springframework.security.web.authentication.logout.LogoutFilter@46984524, com.project.npp.security.jwt.AuthTokenFilter@4ab8c3c0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67aedd28, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@361eed12, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17fd9fbb, org.springframework.security.web.session.SessionManagementFilter@413773e6, org.springframework.security.web.access.ExceptionTranslationFilter@302fa67a, org.springframework.security.web.access.intercept.AuthorizationFilter@730e663a]
+2024-07-10T21:45:35.505+05:30  INFO 2160 --- [npp] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-10T21:45:35.511+05:30  INFO 2160 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-10T21:45:35.514+05:30  INFO 2160 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-07-10T21:45:35.604+05:30  INFO 2160 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Started AuthControllerTest in 11.397 seconds (process running for 13.229)
+2024-07-10T21:45:35.939+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:45:35.947+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:45:36.060+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:45:36.136+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:45:36.166+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:45:36.188+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:45:36.189+05:30 ERROR 2160 --- [npp] [main] c.project.npp.controller.AuthController  : Error: Username is already taken!
+2024-07-10T21:45:36.213+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:45:36.214+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:45:36.244+05:30  INFO 2160 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:45:36.278+05:30  INFO 2160 --- [npp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:45:36.284+05:30  INFO 2160 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-10T21:45:36.306+05:30  INFO 2160 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-10T21:46:33.933+05:30  INFO 22260 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Starting AuthControllerTest using Java 17.0.9 with PID 22260 (started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-07-10T21:46:33.937+05:30  INFO 22260 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-07-10T21:46:35.435+05:30  INFO 22260 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-10T21:46:35.573+05:30  INFO 22260 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 8 JPA repository interfaces.
+2024-07-10T21:46:38.869+05:30  INFO 22260 --- [npp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-10T21:46:39.005+05:30  INFO 22260 --- [npp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-10T21:46:39.098+05:30  INFO 22260 --- [npp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-10T21:46:39.422+05:30  INFO 22260 --- [npp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-10T21:46:39.483+05:30  INFO 22260 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-10T21:46:40.162+05:30  INFO 22260 --- [npp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbbd98c
+2024-07-10T21:46:40.168+05:30  INFO 22260 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-10T21:46:40.271+05:30  WARN 22260 --- [npp] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-10T21:46:41.949+05:30  INFO 22260 --- [npp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-10T21:46:42.094+05:30  INFO 22260 --- [npp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:46:43.108+05:30  WARN 22260 --- [npp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-10T21:46:43.176+05:30  INFO 22260 --- [npp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-10T21:46:43.179+05:30  WARN 22260 --- [npp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-10T21:46:43.745+05:30  INFO 22260 --- [npp] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8e0b048, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71b38b11, org.springframework.security.web.context.SecurityContextHolderFilter@23644367, org.springframework.security.web.header.HeaderWriterFilter@302fa67a, org.springframework.web.filter.CorsFilter@1a2d8488, org.springframework.security.web.authentication.logout.LogoutFilter@73ec417b, com.project.npp.security.jwt.AuthTokenFilter@2aafd790, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c023dcb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@113b39e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a120e41, org.springframework.security.web.session.SessionManagementFilter@3746766b, org.springframework.security.web.access.ExceptionTranslationFilter@d7ce31c, org.springframework.security.web.access.intercept.AuthorizationFilter@38682845]
+2024-07-10T21:46:44.494+05:30  INFO 22260 --- [npp] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-10T21:46:44.495+05:30  INFO 22260 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-10T21:46:44.499+05:30  INFO 22260 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-07-10T21:46:44.582+05:30  INFO 22260 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Started AuthControllerTest in 11.188 seconds (process running for 13.083)
+2024-07-10T21:46:44.930+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:46:44.940+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:46:45.118+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:46:45.170+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:46:45.191+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:46:45.208+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:46:45.210+05:30 ERROR 22260 --- [npp] [main] c.project.npp.controller.AuthController  : Error: Username is already taken!
+2024-07-10T21:46:45.230+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:46:45.231+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:46:45.249+05:30  INFO 22260 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:46:45.289+05:30  INFO 22260 --- [npp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:46:45.299+05:30  INFO 22260 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-10T21:46:45.323+05:30  INFO 22260 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-10T21:48:08.841+05:30  INFO 13492 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Starting AuthControllerTest using Java 17.0.9 with PID 13492 (started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-07-10T21:48:08.844+05:30  INFO 13492 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-07-10T21:48:10.426+05:30  INFO 13492 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-10T21:48:10.568+05:30  INFO 13492 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 8 JPA repository interfaces.
+2024-07-10T21:48:14.184+05:30  INFO 13492 --- [npp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-10T21:48:14.338+05:30  INFO 13492 --- [npp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-10T21:48:14.441+05:30  INFO 13492 --- [npp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-10T21:48:14.731+05:30  INFO 13492 --- [npp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-10T21:48:14.797+05:30  INFO 13492 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-10T21:48:15.490+05:30  INFO 13492 --- [npp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbbd98c
+2024-07-10T21:48:15.495+05:30  INFO 13492 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-10T21:48:15.582+05:30  WARN 13492 --- [npp] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-10T21:48:17.243+05:30  INFO 13492 --- [npp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-10T21:48:17.410+05:30  INFO 13492 --- [npp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:48:18.451+05:30  WARN 13492 --- [npp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-10T21:48:18.503+05:30  INFO 13492 --- [npp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-10T21:48:18.504+05:30  WARN 13492 --- [npp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-10T21:48:19.098+05:30  INFO 13492 --- [npp] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@71b38b11, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a2d8488, org.springframework.security.web.context.SecurityContextHolderFilter@1c023dcb, org.springframework.security.web.header.HeaderWriterFilter@13c0ced1, org.springframework.web.filter.CorsFilter@1a120e41, org.springframework.security.web.authentication.logout.LogoutFilter@46984524, com.project.npp.security.jwt.AuthTokenFilter@4ab8c3c0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67aedd28, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@361eed12, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17fd9fbb, org.springframework.security.web.session.SessionManagementFilter@413773e6, org.springframework.security.web.access.ExceptionTranslationFilter@302fa67a, org.springframework.security.web.access.intercept.AuthorizationFilter@730e663a]
+2024-07-10T21:48:19.790+05:30  INFO 13492 --- [npp] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-10T21:48:19.791+05:30  INFO 13492 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-10T21:48:19.793+05:30  INFO 13492 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-07-10T21:48:19.868+05:30  INFO 13492 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Started AuthControllerTest in 11.697 seconds (process running for 13.756)
+2024-07-10T21:48:20.235+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:48:20.242+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:48:20.383+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:48:20.460+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:48:20.499+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:48:20.524+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:48:20.526+05:30 ERROR 13492 --- [npp] [main] c.project.npp.controller.AuthController  : Error: Username is already taken!
+2024-07-10T21:48:20.552+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:48:20.553+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:48:20.577+05:30  INFO 13492 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:48:20.621+05:30  INFO 13492 --- [npp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:48:20.625+05:30  INFO 13492 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-10T21:48:20.650+05:30  INFO 13492 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-07-10T21:49:08.994+05:30  INFO 16388 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Starting AuthControllerTest using Java 17.0.9 with PID 16388 (started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-07-10T21:49:08.997+05:30  INFO 16388 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2024-07-10T21:49:10.486+05:30  INFO 16388 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-10T21:49:10.611+05:30  INFO 16388 --- [npp] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 8 JPA repository interfaces.
+2024-07-10T21:49:14.154+05:30  INFO 16388 --- [npp] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-10T21:49:14.295+05:30  INFO 16388 --- [npp] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-10T21:49:14.384+05:30  INFO 16388 --- [npp] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-10T21:49:14.664+05:30  INFO 16388 --- [npp] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-10T21:49:14.723+05:30  INFO 16388 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-10T21:49:15.387+05:30  INFO 16388 --- [npp] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7120daa6
+2024-07-10T21:49:15.392+05:30  INFO 16388 --- [npp] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-10T21:49:15.498+05:30  WARN 16388 --- [npp] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-10T21:49:17.214+05:30  INFO 16388 --- [npp] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-10T21:49:17.358+05:30  INFO 16388 --- [npp] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:49:18.344+05:30  WARN 16388 --- [npp] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-10T21:49:18.400+05:30  INFO 16388 --- [npp] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-10T21:49:18.404+05:30  WARN 16388 --- [npp] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-10T21:49:18.986+05:30  INFO 16388 --- [npp] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@64b7719f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@414b785c, org.springframework.security.web.context.SecurityContextHolderFilter@59dae020, org.springframework.security.web.header.HeaderWriterFilter@698b2343, org.springframework.web.filter.CorsFilter@4fe0aa21, org.springframework.security.web.authentication.logout.LogoutFilter@20fdd484, com.project.npp.security.jwt.AuthTokenFilter@2ea3f905, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e49ab66, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c023dcb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d1f906b, org.springframework.security.web.session.SessionManagementFilter@7ad0d002, org.springframework.security.web.access.ExceptionTranslationFilter@3c2956a6, org.springframework.security.web.access.intercept.AuthorizationFilter@497d9489]
+2024-07-10T21:49:19.654+05:30  INFO 16388 --- [npp] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-07-10T21:49:19.655+05:30  INFO 16388 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-07-10T21:49:19.658+05:30  INFO 16388 --- [npp] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2024-07-10T21:49:19.740+05:30  INFO 16388 --- [npp] [main] c.p.npp.controller.AuthControllerTest    : Started AuthControllerTest in 11.301 seconds (process running for 13.213)
+2024-07-10T21:49:20.176+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:49:20.185+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:49:20.394+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:49:20.458+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:49:20.486+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:49:20.512+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:49:20.513+05:30 ERROR 16388 --- [npp] [main] c.project.npp.controller.AuthController  : Error: Username is already taken!
+2024-07-10T21:49:20.536+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:49:20.541+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : User registered successfully!
+2024-07-10T21:49:20.560+05:30  INFO 16388 --- [npp] [main] c.project.npp.controller.AuthController  : signin
+2024-07-10T21:49:20.612+05:30  INFO 16388 --- [npp] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-10T21:49:20.618+05:30  INFO 16388 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-07-10T21:49:20.640+05:30  INFO 16388 --- [npp] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
