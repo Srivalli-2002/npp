@@ -1,28 +1,138 @@
-2024-07-11T14:22:52.306+05:30  INFO 22768 --- [npp] [restartedMain] com.project.npp.NppApplication           : Starting NppApplication using Java 17.0.9 with PID 22768 (D:\NumberPortabilityPortalProject\npp\backend\target\classes started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
-2024-07-11T14:22:52.314+05:30  INFO 22768 --- [npp] [restartedMain] com.project.npp.NppApplication           : No active profile set, falling back to 1 default profile: "default"
-2024-07-11T14:22:52.394+05:30  INFO 22768 --- [npp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-07-11T14:22:52.394+05:30  INFO 22768 --- [npp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-07-11T14:22:53.386+05:30  INFO 22768 --- [npp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-11T14:22:53.499+05:30  INFO 22768 --- [npp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 8 JPA repository interfaces.
-2024-07-11T14:22:54.116+05:30  INFO 22768 --- [npp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-07-11T14:22:54.140+05:30  INFO 22768 --- [npp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-11T14:22:54.141+05:30  INFO 22768 --- [npp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-07-11T14:22:54.239+05:30  INFO 22768 --- [npp] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-11T14:22:54.239+05:30  INFO 22768 --- [npp] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1844 ms
-2024-07-11T14:22:54.443+05:30  INFO 22768 --- [npp] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-11T14:22:54.492+05:30  INFO 22768 --- [npp] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-07-11T14:22:54.537+05:30  INFO 22768 --- [npp] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-11T14:22:54.929+05:30  INFO 22768 --- [npp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-11T14:22:54.966+05:30  INFO 22768 --- [npp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-11T14:22:55.341+05:30  INFO 22768 --- [npp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b78f0b7
-2024-07-11T14:22:55.344+05:30  INFO 22768 --- [npp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-11T14:22:55.392+05:30  WARN 22768 --- [npp] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-07-11T14:22:56.486+05:30  INFO 22768 --- [npp] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-11T14:22:56.590+05:30  INFO 22768 --- [npp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-11T14:22:57.050+05:30  INFO 22768 --- [npp] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2024-07-11T14:22:57.051+05:30  WARN 22768 --- [npp] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2024-07-11T14:22:57.238+05:30  WARN 22768 --- [npp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-11T14:22:57.600+05:30  INFO 22768 --- [npp] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@704103c7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4def8f91, org.springframework.security.web.context.SecurityContextHolderFilter@1024dae7, org.springframework.security.web.header.HeaderWriterFilter@48e82e2e, org.springframework.web.filter.CorsFilter@fb2de68, org.springframework.security.web.authentication.logout.LogoutFilter@208213b8, com.project.npp.security.jwt.AuthTokenFilter@1fd3b25e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44f36af1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69c06f49, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ab2b664, org.springframework.security.web.session.SessionManagementFilter@15c73786, org.springframework.security.web.access.ExceptionTranslationFilter@22166a42, org.springframework.security.web.access.intercept.AuthorizationFilter@76d9694f]
-2024-07-11T14:22:57.943+05:30  INFO 22768 --- [npp] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-07-11T14:22:57.994+05:30  INFO 22768 --- [npp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-07-11T14:22:58.010+05:30  INFO 22768 --- [npp] [restartedMain] com.project.npp.NppApplication           : Started NppApplication in 6.137 seconds (process running for 7.269)
+2024-07-13T14:26:56.164+05:30  INFO 13852 --- [npp] [restartedMain] com.project.npp.NppApplication           : Starting NppApplication using Java 17.0.9 with PID 13852 (D:\NumberPortabilityPortalProject\npp\backend\target\classes started by srivalli.p in D:\NumberPortabilityPortalProject\npp\backend)
+2024-07-13T14:26:56.170+05:30  INFO 13852 --- [npp] [restartedMain] com.project.npp.NppApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-07-13T14:26:56.218+05:30  INFO 13852 --- [npp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-13T14:26:56.219+05:30  INFO 13852 --- [npp] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-13T14:26:56.870+05:30  INFO 13852 --- [npp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-13T14:26:56.956+05:30  INFO 13852 --- [npp] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 8 JPA repository interfaces.
+2024-07-13T14:26:57.365+05:30  INFO 13852 --- [npp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-13T14:26:57.379+05:30  INFO 13852 --- [npp] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-13T14:26:57.380+05:30  INFO 13852 --- [npp] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-07-13T14:26:57.447+05:30  INFO 13852 --- [npp] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-13T14:26:57.448+05:30  INFO 13852 --- [npp] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1229 ms
+2024-07-13T14:26:57.654+05:30  INFO 13852 --- [npp] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-13T14:26:57.700+05:30  INFO 13852 --- [npp] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-13T14:26:57.743+05:30  INFO 13852 --- [npp] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-13T14:26:58.101+05:30  INFO 13852 --- [npp] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-13T14:26:58.124+05:30  INFO 13852 --- [npp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-13T14:26:58.415+05:30  INFO 13852 --- [npp] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39d9dcc7
+2024-07-13T14:26:58.417+05:30  INFO 13852 --- [npp] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-13T14:26:58.461+05:30  WARN 13852 --- [npp] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-13T14:26:59.313+05:30  INFO 13852 --- [npp] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-13T14:26:59.415+05:30  INFO 13852 --- [npp] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-13T14:26:59.751+05:30  INFO 13852 --- [npp] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-07-13T14:26:59.751+05:30  WARN 13852 --- [npp] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-07-13T14:26:59.900+05:30  WARN 13852 --- [npp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-13T14:27:00.113+05:30  INFO 13852 --- [npp] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@473203fa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f1c82a6, org.springframework.security.web.context.SecurityContextHolderFilter@36cba2a2, org.springframework.security.web.header.HeaderWriterFilter@795c7815, org.springframework.web.filter.CorsFilter@169a232e, org.springframework.security.web.authentication.logout.LogoutFilter@2338cbf0, com.project.npp.security.jwt.AuthTokenFilter@38e87a18, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fc21760, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a60bc71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@684909c1, org.springframework.security.web.session.SessionManagementFilter@5587c4f6, org.springframework.security.web.access.ExceptionTranslationFilter@5248b6d6, org.springframework.security.web.access.intercept.AuthorizationFilter@27f9e7f5]
+2024-07-13T14:27:00.345+05:30  INFO 13852 --- [npp] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-13T14:27:00.411+05:30  INFO 13852 --- [npp] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-13T14:27:00.420+05:30  INFO 13852 --- [npp] [restartedMain] com.project.npp.NppApplication           : Started NppApplication in 4.615 seconds (process running for 7.137)
+2024-07-13T14:35:21.424+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-13T14:35:21.424+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-13T14:35:21.424+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-07-13T14:57:14.947+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.project.npp.controller.AuthController  : signin
+2024-07-13T14:57:15.396+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T14:57:17.344+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T14:57:17.360+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T14:57:17.407+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T14:57:17.407+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T14:57:24.220+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T14:57:24.220+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-07-13T14:57:24.238+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T14:57:24.238+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T14:57:27.066+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T14:57:27.075+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T14:57:27.134+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T14:57:27.134+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T14:57:30.086+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T14:57:30.093+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-07-13T14:57:30.101+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T14:57:30.101+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T14:58:43.986+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T14:58:43.989+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T14:58:44.068+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T14:58:44.068+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T15:00:12.125+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:00:12.125+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T15:00:12.151+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T15:00:12.151+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T15:00:16.516+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:00:16.520+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-07-13T15:00:16.528+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T15:00:16.529+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T15:00:25.270+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:00:25.275+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T15:00:25.323+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T15:00:25.323+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T15:00:27.163+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:00:27.170+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-07-13T15:00:27.185+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T15:00:27.185+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T15:01:07.116+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:01:07.117+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T15:01:07.147+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T15:01:07.147+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T15:01:07.968+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:01:07.972+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-07-13T15:01:07.972+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T15:01:07.972+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T15:01:17.900+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.project.npp.controller.AuthController  : signin
+2024-07-13T15:01:17.900+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:02:20.466+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:02:20.466+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-13T15:02:20.482+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-13T15:02:20.482+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-13T15:03:40.148+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.project.npp.controller.AuthController  : signin
+2024-07-13T15:03:40.163+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:03:41.733+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:03:41.739+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T15:03:41.762+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T15:03:41.762+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T15:06:05.835+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:06:05.848+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T15:06:05.864+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T15:06:05.865+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T15:07:21.785+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:07:21.792+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-07-13T15:07:21.797+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T15:07:21.797+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-9] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T15:13:02.453+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:13:02.461+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : Get all Users
+2024-07-13T15:13:02.532+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-2] c.p.npp.service.UserEntityServiceImpl    : Role found
+2024-07-13T15:13:02.534+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-2] c.p.n.controller.SystemAdminController   : User found
+2024-07-13T15:13:18.223+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:13:18.228+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Get all Operators
+2024-07-13T15:13:18.236+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T15:13:18.237+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T15:13:26.821+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:13:26.828+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Get operatorby ID
+2024-07-13T15:13:26.831+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T15:13:26.831+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T15:13:29.106+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:13:29.108+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Get operatorby ID
+2024-07-13T15:13:29.109+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T15:13:29.109+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-6] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T15:13:30.972+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:13:30.974+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Get operatorby ID
+2024-07-13T15:13:30.975+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-7] c.p.npp.service.OperatorServiceImpl      : Operator found
+2024-07-13T15:13:30.975+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-7] c.p.n.controller.SystemAdminController   : Operator found
+2024-07-13T15:13:52.079+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.project.npp.controller.AuthController  : signin
+2024-07-13T15:13:52.079+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-8] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:13:53.630+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:13:53.633+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-13T15:13:53.643+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-13T15:13:53.643+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-10] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-13T15:13:56.005+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:13:56.007+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-1] c.p.n.c.CustomerServiceController        : Get customer by ID
+2024-07-13T15:13:56.007+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-1] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-13T15:13:56.022+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-1] c.p.n.c.CustomerServiceController        : Customer found
+2024-07-13T15:14:07.898+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:14:07.947+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-13T15:14:07.947+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-4] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-13T15:14:09.827+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:14:09.829+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.n.c.CustomerServiceController        : Get port request by ID
+2024-07-13T15:14:09.829+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.npp.service.PortRequestServiceImpl   : Port request found
+2024-07-13T15:14:09.829+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-3] c.p.n.c.CustomerServiceController        : Portrequest found
+2024-07-13T15:14:14.506+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.UserEntityServiceImpl    : User found
+2024-07-13T15:14:14.512+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.n.c.CustomerServiceController        : Get all customers
+2024-07-13T15:14:14.524+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.npp.service.CustomerServiceImpl      : Customer found
+2024-07-13T15:14:14.524+05:30  INFO 13852 --- [npp] [http-nio-8080-exec-5] c.p.n.c.CustomerServiceController        : Customer found

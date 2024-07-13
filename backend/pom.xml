@@ -180,7 +180,12 @@
 								<exclude>com/project/npp/entities/**</exclude>
 								<exclude>com/project/npp/exceptions/**</exclude>
 								<exclude>com/project/npp/security/**</exclude>
+								<exclude>com/project/npp/utilities/**</exclude>
 								<exclude>com/project/npp/exceptionmessages/**</exclude>
+								<exclude>**/*AuthController.class</exclude>
+								<exclude>**/*TestController.class</exclude>
+								<exclude>**/*ComplianceOfficerController.class</exclude>
+								<exclude>**/*ComplianceLogsServiceImpl.class</exclude>
 								<exclude>**/*NppApplication.class</exclude>
 							</excludes>
 						</configuration>

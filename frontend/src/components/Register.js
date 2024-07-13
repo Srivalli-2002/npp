@@ -93,9 +93,9 @@ const Register = () => {
 
   return (
     <div className="container-fluid vh-100 d-flex align-items-center justify-content-center" style={{ color: 'white' }}>
-      <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%', backgroundColor: 'white', color: '#488b8f' }}>
+      <div className="card p-4 shadow-lg border-0 rounded-3" style={{ maxWidth: '400px', width: '100%', backgroundColor: 'white', color: '#a21232' }}>
         <div className="card-body">
-          <h3 className="card-title text-center mb-4" style={{ fontFamily: 'Georgia', color:'#488b8f'}}>Sign Up</h3>
+          <h3 className="card-title text-center mb-4" style={{ fontFamily: 'Cambria', color:'#a21232'}}>Sign Up</h3>
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
@@ -107,7 +107,7 @@ const Register = () => {
             {!successful && (
               <div>
                 <div className="form-group mb-3">
-                  <label htmlFor="username" className="form-label"  style={{ fontFamily: 'Georgia', color:'#488b8f'}}>Username</label>
+                  <label htmlFor="username" className="form-label"  style={{ fontFamily: 'Cambria', color:'#a21232'}}>Username</label>
                   <Input
                     type="text"
                     className="form-control rounded-pill"
@@ -119,7 +119,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                  <label htmlFor="password" className="form-label"  style={{ fontFamily: 'Georgia', color:'#488b8f'}}>Password</label>
+                  <label htmlFor="password" className="form-label"  style={{ fontFamily: 'Cambria', color:'#a21232'}}>Password</label>
                   <Input
                     type="password"
                     className="form-control rounded-pill"
@@ -131,7 +131,7 @@ const Register = () => {
                 </div>
 
                 <div className="form-group mb-3">
-                  <label htmlFor="operatorName" className="form-label"  style={{ fontFamily: 'Georgia', color:'#488b8f'}}>Operator Name</label>
+                  <label htmlFor="operatorName" className="form-label"  style={{ fontFamily: 'Cambria', color:'#a21232'}}>Operator Name</label>
                   <Input
                     type="text"
                     className="form-control rounded-pill"
@@ -143,11 +143,11 @@ const Register = () => {
                 </div>
                 
                 <div className="d-grid mb-3">
-                  <button className="btn btn-default btn-block rounded-pill" style={{ backgroundColor: '#488b8f', borderColor: '#488b8f', fontFamily: 'Georgia' , color: '#ffffff'}}>Sign Up</button>
+                  <button className="btn btn-default btn-block rounded-pill" style={{ backgroundColor: '#a21232', borderColor: '#a21232', fontFamily: 'Cambria' , color: '#ffffff'}}>Sign Up</button>
                 </div>
                 <div className="card-footer text-center">
                 <div className="small"  style={{ fontFamily: 'Georgia'}}>
-                Already have an account? <Link to="/login" className="#" style={{color: '#488b8f', fontFamily: 'Georgia'}}>Sign in</Link>
+                Already have an account? <Link to="/login" className="#" style={{color: '#a21232', fontFamily: 'Cambria'}}>Sign in</Link>
                 </div>
               </div>
               </div>

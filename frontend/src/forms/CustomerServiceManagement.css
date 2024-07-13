@@ -12,7 +12,7 @@
 
 .table tbody tr td button a {
     text-decoration: none;
-    color: #5ea3a3;
+    color: #a21232;
 }
 
 .table tbody tr td button a:hover {
@@ -22,8 +22,8 @@
 
 .btn-default {
     background-color: #faf9f9;
-    border-color: #5ea3a3;
-    color: #5ea3a3;
+    border-color: #a21232;
+    color: #a21232;
     font-size: 0.875rem;
 }
 

@@ -128,10 +128,13 @@ public class CustomerServiceController {
 	// API end point to get all customers
 	@GetMapping("/getallcustomers")
 	public ResponseEntity<List<Customer>> getAllCustomer() throws CustomerNotFoundException {
-		loggers.info("Get all customers");
-		List<Customer> customers = customerService.getAllCustomers();
-		loggers.info(QueryMapper.GET_CUSTOMER);
-		return new ResponseEntity<>(customers, HttpStatus.OK);
+	    loggers.info("Get all customers");
+	    List<Customer> customers = customerService.getAllCustomers();
+	    loggers.info(QueryMapper.GET_CUSTOMER);
+	    if (customers.isEmpty()) {
+	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	    }
+	    return new ResponseEntity<>(customers, HttpStatus.OK);
 	}
 
 	// API end point to submit a port request

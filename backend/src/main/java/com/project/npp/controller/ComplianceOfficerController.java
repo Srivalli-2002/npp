@@ -68,7 +68,7 @@ public class ComplianceOfficerController {
 			throws LogNotFoundException, PortRequestNotFoundException, CustomerNotFoundException,
 			VerificationDetailsNotFoundException, OperatorNotFoundException {
 		loggers.info("Update log");
-		String message = complianceLogsService.VerifyAndUpdateLog(req.getLogId());
+		String message = complianceLogsService.verifyAndUpdateLog(req.getLogId());
 		loggers.info(QueryMapper.GET_LOG_SUCCESSFULL);
 		return new ResponseEntity<String>(message, HttpStatus.OK);
 	}

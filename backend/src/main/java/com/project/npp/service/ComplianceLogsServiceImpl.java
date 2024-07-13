@@ -48,9 +48,6 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 	@Autowired
 	private OperatorService operatorService;
 
-	@Autowired
-	private VerificationDetailsConversion convert;
-
 	// Method to add a compliance log
 	@Override
 	public ComplianceLogs addLog(ComplianceLogs complianceLogs)
@@ -116,10 +113,10 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 	}
 
 	// Method to update and verify log
-	@SuppressWarnings("static-access")
 	@Override
-	public String VerifyAndUpdateLog(Integer logId) throws LogNotFoundException, PortRequestNotFoundException,
+	public String verifyAndUpdateLog(Integer logId) throws LogNotFoundException, PortRequestNotFoundException,
 			CustomerNotFoundException, VerificationDetailsNotFoundException, OperatorNotFoundException {
+		
 		Optional<ComplianceLogs> log = repo.findById(logId);
 		Long phoneNumber = log.get().getCustomer().getPhoneNumber();
 		if (log.isPresent()) {
@@ -127,7 +124,7 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 			Operator operatorAirtel = operatorService.getOperatorByOperatorName("airtel");
 			if (log.get().getCustomer().getCurrentOperator().equals(operatorJio)) {
 				JioVerificationDetails vDetails = jioVerificationDetailsService.getByPhoneNumber(phoneNumber);
-				VerificationDetails details = convert.convertToVerificationDetails(vDetails);
+				VerificationDetails details = VerificationDetailsConversion.convertToVerificationDetails(vDetails);
 				if (details.getCustomerIdentityVerified() && details.getNoOutstandingPayments()
 						&& details.getNumberStatus() == NumberStatus.ACTIVE
 						&& details.getTimeSinceLastPort() > details.getContractualObligationsMet()) {
@@ -188,7 +185,7 @@ public class ComplianceLogsServiceImpl implements ComplianceLogsService {
 			}
 			if (log.get().getCustomer().getCurrentOperator().equals(operatorAirtel)) {
 				AirtelVerificationDetails vDetails = airtelVerificationDetailsService.getByPhoneNumber(phoneNumber);
-				VerificationDetails details = convert.convertToVerificationDetails(vDetails);
+				VerificationDetails details = VerificationDetailsConversion.convertToVerificationDetails(vDetails);
 				if (details.getCustomerIdentityVerified() && details.getNoOutstandingPayments()
 						&& details.getNumberStatus() == NumberStatus.ACTIVE
 						&& details.getTimeSinceLastPort() > details.getContractualObligationsMet()) {

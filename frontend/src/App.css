@@ -30,18 +30,18 @@ label {
 /* Navbar Styles */
 .navbar,
 .custom-navbar {
-  background-color: #488b8f;
+  background-color: #a21232;
 }
 
 .navbar-brand {
   color: #faf9f9;
-  font-family: Georgia;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
   font-size: 30px;
 }
 
 .nav-link {
   color: #faf9f9;
-  font-family: Georgia;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
   font-size: large;
 }
 

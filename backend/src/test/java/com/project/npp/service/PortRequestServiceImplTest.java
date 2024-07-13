@@ -1,159 +1,254 @@
 package com.project.npp.service;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-
+ 
+import com.project.npp.entities.*;
+import com.project.npp.exceptions.*;
+import com.project.npp.repositories.PortRequestRepository;
+import com.project.npp.utilities.AirtelVerificationDetailsService;
+import com.project.npp.utilities.JioVerificationDetailsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import com.project.npp.entities.Customer;
-import com.project.npp.entities.Operator;
-import com.project.npp.entities.PortRequest;
-import com.project.npp.entities.Status;
-import com.project.npp.exceptions.CustomerNotFoundException;
-import com.project.npp.exceptions.LogNotFoundException;
-import com.project.npp.exceptions.OperatorNotFoundException;
-import com.project.npp.exceptions.PortRequestNotFoundException;
-import com.project.npp.exceptions.VerificationDetailsNotFoundException;
-import com.project.npp.repositories.PortRequestRepository;
-import com.project.npp.utilities.AirtelVerificationDetailsService;
-import com.project.npp.utilities.JioVerificationDetailsService;
-
+ 
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+import java.util.ArrayList;
+ 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+ 
 @ExtendWith(MockitoExtension.class)
 public class PortRequestServiceImplTest {
-
-    @Mock
-    private PortRequestRepository portRequestRepository;
-
-    @Mock
-    private CustomerService customerService;
-
-    @Mock
-    private AirtelVerificationDetailsService airtelService;
-
-    @Mock
-    private JioVerificationDetailsService jioService;
-
-    @Mock
-    private OperatorService operatorService;
-
+ 
     @InjectMocks
     private PortRequestServiceImpl portRequestService;
-
+ 
+    @Mock
+    private PortRequestRepository portRequestRepository;
+ 
+    @Mock
+    private CustomerService customerService;
+ 
+    @Mock
+    private AirtelVerificationDetailsService airtelService;
+ 
+    @Mock
+    private JioVerificationDetailsService jioService;
+ 
+    @Mock
+    private OperatorService operatorService;
+ 
     private PortRequest portRequest;
     private Customer customer;
-    private Operator operator;
-
+    private Operator operatorJio;
+    private Operator operatorAirtel;
+ 
     @BeforeEach
-    public void setup() {
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
+ 
         customer = new Customer();
         customer.setCustomerId(1);
-        customer.setUsername("testuser");
         customer.setPhoneNumber(1234567890L);
-        customer.setStatus(Status.PENDING);
-
-        operator = new Operator();
-        operator.setOperatorId(1);
-        operator.setOperatorName("jio");
-
+ 
+        operatorJio = new Operator();
+        operatorJio.setOperatorId(1);
+        operatorJio.setOperatorName("jio");
+ 
+        operatorAirtel = new Operator();
+        operatorAirtel.setOperatorId(2);
+        operatorAirtel.setOperatorName("airtel");
+ 
+        // Set currentOperator for the customer
+        customer.setCurrentOperator(operatorJio);
+ 
         portRequest = new PortRequest();
         portRequest.setRequestId(1);
         portRequest.setCustomer(customer);
         portRequest.setApprovalStatus(Status.PENDING);
+        portRequest.setComplianceChecked(false);
+    }
+ 
+    @Test
+    public void testAddPortRequest() {
+        when(portRequestRepository.save(any(PortRequest.class))).thenReturn(portRequest);
+ 
+        PortRequest savedPortRequest = portRequestService.addPortRequest(portRequest);
+ 
+        assertNotNull(savedPortRequest);
+        assertEquals(Status.PENDING, savedPortRequest.getApprovalStatus());
+        verify(portRequestRepository, times(1)).save(portRequest);
+    }
+ 
+    @Test
+    public void testGetPortRequest() throws PortRequestNotFoundException {
+        when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
+ 
+        PortRequest foundPortRequest = portRequestService.getPortRequest(1);
+ 
+        assertNotNull(foundPortRequest);
+        assertEquals(1, foundPortRequest.getRequestId());
+        verify(portRequestRepository, times(1)).findById(1);
+    }
+ 
+    @Test
+    public void testGetPortRequestNotFound() {
+        when(portRequestRepository.findById(1)).thenReturn(Optional.empty());
+ 
+        assertThrows(PortRequestNotFoundException.class, () -> {
+            portRequestService.getPortRequest(1);
+        });
+        verify(portRequestRepository, times(1)).findById(1);
+    }
+    
+    @Test
+    public void testUpdatePortRequestCompleted_Jio() throws Exception {
+        when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
+        when(customerService.getCustomerById(1)).thenReturn(customer);
+        when(portRequestRepository.save(any(PortRequest.class))).thenReturn(portRequest);
+        when(operatorService.getOperatorByOperatorName("jio")).thenReturn(operatorJio);
+        when(operatorService.getOperatorByOperatorName("airtel")).thenReturn(operatorAirtel);
+
+        portRequest.setApprovalStatus(Status.COMPLETED);
+
+        PortRequest updatedPortRequest = portRequestService.updatePortRequest(portRequest);
+
+        assertNotNull(updatedPortRequest);
+        assertEquals(Status.COMPLETED, updatedPortRequest.getApprovalStatus());
+        assertEquals(LocalDate.now(), updatedPortRequest.getCompletionDate());
+        verify(portRequestRepository, times(1)).save(portRequest);
+        verify(jioService, times(1)).delete(customer.getPhoneNumber());
+        verify(airtelService, never()).delete(anyLong());
     }
 
     @Test
-    public void addPortRequest_savesPortRequest() {
-        when(portRequestRepository.save(portRequest)).thenReturn(portRequest);
+    public void testUpdatePortRequestCompleted_Airtel() throws Exception {
+        when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
+        when(customerService.getCustomerById(1)).thenReturn(customer);
+        when(portRequestRepository.save(any(PortRequest.class))).thenReturn(portRequest);
+        when(operatorService.getOperatorByOperatorName("jio")).thenReturn(operatorJio);
+        when(operatorService.getOperatorByOperatorName("airtel")).thenReturn(operatorAirtel);
 
-        PortRequest result = portRequestService.addPortRequest(portRequest);
+        portRequest.setApprovalStatus(Status.COMPLETED);
+        customer.setCurrentOperator(operatorAirtel);
 
-        assertEquals(portRequest, result);
+        PortRequest updatedPortRequest = portRequestService.updatePortRequest(portRequest);
+
+        assertNotNull(updatedPortRequest);
+        assertEquals(Status.COMPLETED, updatedPortRequest.getApprovalStatus());
+        assertEquals(LocalDate.now(), updatedPortRequest.getCompletionDate());
+        verify(portRequestRepository, times(1)).save(portRequest);
+        verify(airtelService, times(1)).delete(customer.getPhoneNumber());
+        verify(jioService, never()).delete(anyLong());
+    }
+
+    @Test
+    public void testUpdatePortRequestRejected() throws Exception {
+        when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
+        when(customerService.getCustomerById(1)).thenReturn(customer);
+        when(portRequestRepository.save(any(PortRequest.class))).thenReturn(portRequest);
+
+        portRequest.setApprovalStatus(Status.REJECTED);
+
+        PortRequest updatedPortRequest = portRequestService.updatePortRequest(portRequest);
+
+        assertNotNull(updatedPortRequest);
+        assertEquals(Status.REJECTED, updatedPortRequest.getApprovalStatus());
+        assertEquals(LocalDate.now(), updatedPortRequest.getCompletionDate());
+        verify(portRequestRepository, times(1)).save(portRequest);
+    }
+
+    @Test
+    public void testUpdatePortRequestPending() throws Exception {
+        when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
+        when(portRequestRepository.save(any(PortRequest.class))).thenReturn(portRequest);
+
+        portRequest.setApprovalStatus(Status.PENDING);
+
+        PortRequest updatedPortRequest = portRequestService.updatePortRequest(portRequest);
+
+        assertNotNull(updatedPortRequest);
+        assertEquals(Status.PENDING, updatedPortRequest.getApprovalStatus());
+        assertEquals(null, updatedPortRequest.getCompletionDate());
         verify(portRequestRepository).save(portRequest);
     }
 
     @Test
-    public void getPortRequest_existingId_returnsPortRequest() throws PortRequestNotFoundException {
-        when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
-
-        PortRequest result = portRequestService.getPortRequest(1);
-
-        assertEquals(portRequest, result);
-        verify(portRequestRepository).findById(1);
-    }
-
-    @Test
-    public void getPortRequest_nonExistingId_throwsPortRequestNotFoundException() {
+    public void testUpdatePortRequestNotFound() {
         when(portRequestRepository.findById(1)).thenReturn(Optional.empty());
 
-        assertThrows(PortRequestNotFoundException.class, () -> portRequestService.getPortRequest(1));
-    }
-
-//    @Test
-//    public void updatePortRequest_existingPortRequest_updatesPortRequest() throws CustomerNotFoundException, PortRequestNotFoundException, LogNotFoundException, OperatorNotFoundException, VerificationDetailsNotFoundException {
-//        when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
-//        when(customerService.getCustomerById(1)).thenReturn(customer);
-//        when(portRequestRepository.save(portRequest)).thenReturn(portRequest);
-//        when(operatorService.getOperatorByOperatorName("jio")).thenReturn(operator);
-//
-//        portRequest.setApprovalStatus(Status.COMPLETED);
-//
-//        PortRequest result = portRequestService.updatePortRequest(portRequest);
-//
-//        assertEquals(portRequest, result);
-//        verify(customerService).updateCustomer(customer);
-//        verify(portRequestRepository).save(portRequest);
-//        verify(jioService).delete(1234567890L);
-//    }
-
-    @Test
-    public void updatePortRequest_nonExistingPortRequest_throwsPortRequestNotFoundException() {
-        when(portRequestRepository.findById(1)).thenReturn(Optional.empty());
-
-        assertThrows(PortRequestNotFoundException.class, () -> portRequestService.updatePortRequest(portRequest));
+        assertThrows(PortRequestNotFoundException.class, () -> {
+            portRequestService.updatePortRequest(portRequest);
+        });
+        verify(portRequestRepository, never()).save(any(PortRequest.class));
     }
 
     @Test
-    public void deletePortRequest_existingId_deletesPortRequest() throws PortRequestNotFoundException {
+    public void testUpdatePortRequestOperatorNotFoundException() throws Exception {
+        portRequest.setApprovalStatus(Status.COMPLETED);
+
+        // Set a current operator that is neither Jio nor Airtel
+        Operator unknownOperator = new Operator();
+        unknownOperator.setOperatorName("unknown");
+        customer.setCurrentOperator(unknownOperator);
+
         when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
+        when(customerService.getCustomerById(1)).thenReturn(customer);
+        when(operatorService.getOperatorByOperatorName("jio")).thenReturn(operatorJio);
+        when(operatorService.getOperatorByOperatorName("airtel")).thenReturn(operatorAirtel);
 
+        assertThrows(OperatorNotFoundException.class, () -> {
+            portRequestService.updatePortRequest(portRequest);
+        });
+    }
+
+ 
+    @Test
+    public void testDeletePortRequest() throws PortRequestNotFoundException {
+        when(portRequestRepository.findById(1)).thenReturn(Optional.of(portRequest));
+        doNothing().when(portRequestRepository).deleteById(1);
+ 
         String result = portRequestService.deletePortRequest(1);
-
+ 
         assertEquals("Deleted Successfully!!", result);
-        verify(portRequestRepository).deleteById(1);
+        verify(portRequestRepository, times(1)).deleteById(1);
     }
-
+ 
     @Test
-    public void deletePortRequest_nonExistingId_throwsPortRequestNotFoundException() {
+    public void testDeletePortRequestNotFound() {
         when(portRequestRepository.findById(1)).thenReturn(Optional.empty());
-
-        assertThrows(PortRequestNotFoundException.class, () -> portRequestService.deletePortRequest(1));
+ 
+        assertThrows(PortRequestNotFoundException.class, () -> {
+            portRequestService.deletePortRequest(1);
+        });
+        verify(portRequestRepository, times(1)).findById(1);
     }
-
+ 
     @Test
-    public void getAllPortRequest_returnsAllPortRequests() throws PortRequestNotFoundException {
-        List<PortRequest> allPortRequests = Arrays.asList(portRequest);
-        when(portRequestRepository.findAll()).thenReturn(allPortRequests);
-
+    public void testGetAllPortRequest() throws PortRequestNotFoundException {
+        List<PortRequest> portRequests = new ArrayList<>();
+        portRequests.add(portRequest);
+ 
+        when(portRequestRepository.findAll()).thenReturn(portRequests);
+ 
         List<PortRequest> result = portRequestService.getAllPortRequest();
-
-        assertEquals(allPortRequests, result);
-        verify(portRequestRepository).findAll();
+ 
+        assertNotNull(result);
+        assertFalse(result.isEmpty());
+        verify(portRequestRepository, times(1)).findAll();
     }
-
+ 
     @Test
-    public void getAllPortRequest_noPortRequestsFound_throwsPortRequestNotFoundException() {
-        when(portRequestRepository.findAll()).thenReturn(Arrays.asList());
-
-        assertThrows(PortRequestNotFoundException.class, () -> portRequestService.getAllPortRequest());
+    public void testGetAllPortRequestNotFound() {
+        when(portRequestRepository.findAll()).thenReturn(new ArrayList<>());
+ 
+        assertThrows(PortRequestNotFoundException.class, () -> {
+            portRequestService.getAllPortRequest();
+        });
+        verify(portRequestRepository, times(1)).findAll();
     }
 }

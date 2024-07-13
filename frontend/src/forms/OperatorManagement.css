@@ -1,44 +1,44 @@
 .container {
   margin-top: 50px;
-  color: #488b8f;
-  font-family: Georgia;
+  color: #a21232;
+  font-family: 'Cambria';
 }
 
 h2 {
   padding-top: 3rem;
-  font-family: 'Georgia';
-  color: #488b8f;
+  font-family: 'Cambria';
+  color: #a21232;
 }
 
 h3 {
-  font-family: 'Georgia';
-  color: #488b8f;
+  font-family: 'Cambria';
+  color: #a21232;
 }
 
 p {
-  font-family: 'Georgia';
-  color: #488b8f;
+  font-family: 'Cambria';
+  color: #a21232;
 }
 
 .card-container {
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Georgia';
+  font-family: 'Cambria';
 }
 
 .table {
   margin-top: 30px;
-  font-family: 'Georgia';
+  font-family: 'Cambria';
 }
 
 .table thead {
-  background-color: #5ea3a3;
+  background-color: #a21232;
   color: #faf9f9;
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #add2c9;
+  background-color: #e8d8d8;
 }
 
 .table tbody tr:nth-child(odd) {
@@ -50,13 +50,13 @@ p {
 }
 
 .table tbody tr:nth-child(odd) .btn-default {
-  border-color: #5ea3a3;
+  border-color: #a21232;
 }
 
 .btn-default {
   background-color: #faf9f9;
-  border-color: #5ea3a3;
-  color: #5ea3a3;
+  border-color: #a21232;
+  color: #a21232;
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
 }
@@ -69,8 +69,8 @@ p {
 .btn-primary,
 .btn-danger {
   background-color: #faf9f9;
-  border-color: #5ea3a3;
-  color: #5ea3a3;
+  border-color: #a21232;
+  color: #a21232;
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
 }

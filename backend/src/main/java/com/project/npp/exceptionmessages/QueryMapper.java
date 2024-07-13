@@ -35,6 +35,8 @@ public class QueryMapper {
 	public static final String GET_PORTREQUEST = "Port request found";
 	public static final String UPDATE_PORTREQUEST = "Port request found";
 	public static final String DELETE_PORTREQUEST = "Port request found";
+	public static final String PORT_REQUEST_SUCCESSFUL = "Porting request is successful";
+	public static final String PORT_REQUEST_UNSUCCESSFUL = "Porting request is unsuccessful";
 	
 	public static final String USERNAME_TAKEN ="Error: Username is already taken!";
 	public static final String USERNAME_REGISTERED ="User registered successfully!";

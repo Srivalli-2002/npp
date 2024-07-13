@@ -29,7 +29,7 @@ public interface ComplianceLogsService {
 	public List<ComplianceLogs> getAllComplianceLogs() throws LogNotFoundException;
 
 	// Verify and update log
-	public String VerifyAndUpdateLog(Integer logId) throws LogNotFoundException, PortRequestNotFoundException,
+	public String verifyAndUpdateLog(Integer logId) throws LogNotFoundException, PortRequestNotFoundException,
 			CustomerNotFoundException, VerificationDetailsNotFoundException, OperatorNotFoundException;
 
 }

@@ -1,7 +1,7 @@
 .h2 {
   padding-top: 3rem;
-  font-family: 'Georgia';
-  color: #5ea3a3;
+  font-family: 'Cambria';
+  color: #a21232;
 }
 
 .table {
@@ -10,31 +10,31 @@
 }
 
 .table thead {
-  background-color:#5ea3a3;
+  background-color:#a21232;
   color: #faf9f9;
-  font-family: 'Georgia';
+  font-family: 'Cambria';
   text-align: center;
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #add2c9;
-  font-family: 'Georgia';
+  background-color: #e8d8d8;
+  font-family: 'Cambria';
   text-align: center;
 }
 
 .table tbody tr:nth-child(odd) {
   background-color:  #faf9f9;
-  font-family: 'Georgia';
+  font-family: 'Cambria';
   text-align: center;
 }
 
 .btn-default {
   background-color: #faf9f9;
-  border-color: #5ea3a3;
-  color: #5ea3a3;
-  font-family: 'Georgia';
+  border-color: #a21232;
+  color: #a21232;
+  font-family: 'Cambria';
 }
 
 .btn-default:hover{
-  color: #5ea3a3;
+  color: #a21232;
 }

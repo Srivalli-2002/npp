@@ -5,7 +5,7 @@
 }
 
 .custom-button {
-  background-color: #488b8f; /* Default Bootstrap primary color */
+  background-color: #a21232; /* Default Bootstrap primary color */
   border: none;
   color: white;
   padding: 0.5rem 1rem; /* Adjust padding as needed */
@@ -19,7 +19,7 @@
 }
 
 .custom-button:hover {
-  background-color: #488b8f; /* Darker shade for hover */
+  background-color: #a21232; /* Darker shade for hover */
   color: white;
 }
 
